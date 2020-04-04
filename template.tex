@@ -1,0 +1,454 @@
+% !TEX TS-program = xelatex
+% !TEX encoding = UTF-8 Unicode
+
+\documentclass{LZUThesis}
+
+
+
+\begin{document}
+%=====%
+%
+%封皮页填写内容
+%
+%=====%
+
+% 标题样式 使用 \title{{}}; 使用时必须保证至少两个外侧括号
+%  如： 短标题 \title{{第一行}},  
+% 	      长标题 \title{{第一行}{第二行}}
+%             超长标题\tiitle{{第一行}{...}{第N行}}
+
+\title{{LaTeX到底怎么用}}
+
+
+
+% 标题样式 使用 \entitle{{}}; 使用时必须保证至少两个外侧括号
+%  如： 短标题 \entitle{{First row}},  
+% 	      长标题 \entitle{{First row}{ Second row}}
+%             超长标题\entitle{{First row}{...}{ Next N row}}
+% 注意：  英文标题多行时 需要在开头加个空格 防止摘要标题处英语单词粘连。
+\entitle{{The Template of LZU Thesis}{ for undergraduate}}
+
+\author{yuhldr}
+\major{物理科学与技术学院}
+\advisor{兰朵儿}
+\college{兰州大学}
+\grade{2016级}
+
+
+
+\maketitle
+
+%======%
+%诚信说明页
+%授权说明书
+%======%
+\makestatement
+
+%=====%
+%论文（设计）成绩
+%=====%
+
+\supervisorcomment{导师评价你人很好}
+\recommendedgrade{80}
+
+
+\supervisorsignature{
+    \raisebox{-10pt}{
+        \includegraphics[width=60pt]{signature.pdf}
+    }
+}
+
+ \committeecomment{优秀}
+ \finalgrade{100}
+\Grade
+
+
+\frontmatter
+
+\Intro{
+	这里是绪论，也可以说是引言，在LZUThesis2020.clc里面改，引言写什么呢，先凑字数，
+
+	是真的在打广告啊，嗯，做兰大毕业论文LaTex模板时，顺便介绍一下我写的软件：i兰大易班
+
+	注意啊，段落在latex里面是要空一行的，不要简单一个回车
+}
+
+
+%中文摘要
+\ZhAbstract{这是真的在打广告啊，嗯，做兰大毕业论文latex模板时，顺便介绍一下我写的软件。嗯，好像本科生也不用打广告啦，目前两万多人在用，但是研究生没几个人在用啊，很多在写论文的你们马上就是兰州大学的研究生了吧，试一下i兰大易班？
+
+不要仅仅把它当做广告，这里面有很多latex的用法说明}
+
+{兰朵儿，i兰大易班，yuh}
+%英文摘要
+\EnAbstract{Lanzhou University (LZU) is a key university in China. LZU was founded in 1909. It is one of the oldest universities in China. 
+\par LZU has beautiful campuses, Library, Various laboratories. It has been actively involved in international academic exchange programs.It is the center of China Education and Research Network in northwest China region, through computer networks, LZU has faster and closer connection with the world.
+}{LZU, key university，beautiful campus}
+
+%生成目录
+\tableofcontents
+%文章主体
+\mainmatter
+\chapter{latex部分用法简介}
+
+注意啊，看这个教程，template.pdf配合template.tex\textbf{一起看}，才能学习latex怎么用的
+
+网页跳转怎么用？图片插入怎么用？图片横着两个并排站呢？代码怎么插入？表格听说挺复杂？公式听说也挺难的
+
+啥啥啥，你说你还不知道什么是LaTeX ，你去分不清XeLaTex、pdfLaTex，百度一下竟然还让我安装TexLive，这也就算了，甚至还有人说vscode？sublime text3？texstudio？Texmaker？我只是想写个论文排版方便一些，你要干嘛？
+
+上面这些问题，后面都会一点点介绍
+
+\section{用latex需要安装什么}
+需要安装texlive，外加一个IDE
+
+\subsection{texlive下载安装}
+最近可能出了2020了，可以用兰大的镜像下载应该在用校园网时快一些，额，你还是用清华的镜像吧，我刚才找了一下，兰大镜像这会儿竟然挂了。。。
+
+下载地址\footnote{这个地址会自动更新比如2020版出了以后你下载的就是2020了}： 点下面的字跳转浏览器下载了，方便吧
+
+\begin{itemize}
+	\item \href{https://mirrors.tuna.tsinghua.edu.cn/CTAN/systems/texlive/Images/texlive.iso}{TexLive2019 \quad Windows版}
+	\item \href{http://tug.org/cgi-bin/mactex-download/MacTeX.pkg}{TexLive2019 \quad Mac版}
+\end{itemize}
+
+上面的文件直接双击安装一路next就行，但是texlive这是个啥？
+
+用过python吧，texlive就相当于你下载的python安装包，但是你总不能在终端里写代码吧，一般用pycharm，这个就是IDE，所以你需要再安装一个IDE。
+
+
+为什么没linux版？用的人不多，真心不想给。。。其实安装文件就是windows的那个版本
+
+\subsubsection{linux系统图形界面安装texlive} % (fold)
+\label{ssub:linux图形界面安装方式}
+
+\begin{itemize}
+	\item[1. ] 安装per组件： sudo apt-get install perl-tk
+	\item[2. ] 加载该ISO文件：sudo mount -o loop texlive2019.iso /mnt （换掉文件路径即可）\footnote{注意：使用该命令会出现错误提示，mount: /dev/loop1 is write-protected, mounting read-only.不必管它}
+	\item[3. ]启动图形化安装界面： cd /mnt \& sudo ./install-tl -gui
+\end{itemize}
+
+注意倒数第二项，改成 是，创建符号链接，下面那个图是网上随便找的，都差不多
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.7\textwidth]{figures/install_texlive.png}
+    \caption{启动图形化安装界面}
+    \label{fig_2d_c_a}
+\end{figure}
+
+
+
+% subsubsection linux图形界面安装方式 (end)
+
+
+\subsection{安装IDE} % (fold)
+\label{sub:安装ide}
+
+
+IDE这个就是写论文的地方，它会调用你刚才安装的texlive，具体用什么，各有所爱，我喜欢sublime text3，这个颜值是真的高，而且体积小，启动快，可以预览公式什么的，很多常用的代码可以自动提示补全，但是这个需要安装插件LaTexTools，pdf需要安装其他的东西进行正反向跳转\footnote{就是点tex文件某一行跳转到pdf对应的地方，点击pdf跳转到tex对应的那一行，mac上安装skim，windows安装sumatra}，小白的话就算了吧，想折腾，百度一下吧
+
+
+另外一个我比较喜欢的是vscode，也需要安装插件，很方便，和sublime text3差不多，但是用起来简单一些，也自己百度去吧
+
+另外几个是\href{https://www.xm1math.net/texmaker}{Texmaker}、或者\href{http://texstudio.sourceforge.net/}{texstudio}\footnote{这个有可能需要番羽墙才能访问，什么意思，别问我，我不知道，啥都不知道}，这两个你点名字就跳转官网了，这两个基本上是打开就可可以用，怎么用，自己百度吧，很多详细的图文教程
+
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.9\textwidth]{figures/sublime.png}
+    \caption{sublime text3}
+    \label{fig_2d_c_a}
+\end{figure}
+
+
+% subsection 安装ide (end)
+
+
+
+\section{常用的一些东西} % (fold)
+\label{sec:常用的一些东西}
+
+用到相关的直接到这里复制，然后修改就行
+
+\subsection{国际三线表格} % (fold)
+\label{sub:国际三线表格}
+
+\begin{table}[H]
+    \centering
+    \caption{二硫化钼纳米管参数}
+    \begin{tabular}{cccccc} % 控制表格的格式，可以是l,c,r
+    \toprule
+    参数& m & n & 原子数  & 内径 & 长度\\
+    \midrule
+    数值 & 15 & 15  & 2880 & 2.3014nm & 9.95nm \\
+    \bottomrule
+    \end{tabular}
+    \label{tbl_mos2_nanotube}
+\end{table}
+
+这个注意，有多少列，后面就要有多少个c \footnote{否则会报错：Extra alignment tab has been changed to cr.有什么报错百度一下一般就找到了},这个c表示这一列居中(center)，靠左的话：l，右：r;
+
+那个label后面的名字自己取，但是不能有重复，是为了引用，比如这样，表格\ref{tbl_mos2_nanotube}，方程、图片也是这样引用的，好处是，中间加一个表格导致这个表格的序号变了也没事，你不用再去修改其他地方的引用
+
+\begin{lstlisting}[language = tex]
+\begin{table}[H]
+    \centering
+    \caption{二硫化钼纳米管参数}
+    \begin{tabular}{cccccc} % 控制表格的格式，可以是l,c,r
+    \toprule
+    参数& m & n & 原子数  & 内径 & 长度\\
+    \midrule
+    数值 & 15 & 15  & 2880 & 2.3014nm & 9.95nm \\
+    \bottomrule
+    \end{tabular}
+    \label{tbl_mos2_nanotube}
+\end{table}
+\end{lstlisting}
+
+% subsection 国际三线表格 (end)
+
+
+\subsection{字体} % (fold)
+\label{sub:字体}
+
+\begin{table}[H]
+    \centering
+    \caption{字体}
+    \begin{tabular}{ccccccc} % 控制表格的格式
+    \toprule
+    名称& 加粗 & 倾斜 & 宋体  & 仿宋 & 黑体 & 雅黑\\
+    \midrule
+    显示 & \textbf{兰朵儿} & \textit{兰朵儿}  & \songti{兰朵儿} & \fangsong{兰朵儿} & \heiti{兰朵儿} & \yahei{兰朵儿} \\
+    显示 & \textbf{ldr} & \textit{ldr}  & \songti{ldr} & \fangsong{ldr} & \heiti{ldr} & \yahei{ldr} \\
+    \bottomrule
+    \end{tabular}
+    \label{tbl_font}
+\end{table}
+发现没，中文斜体没有效果的；
+
+注意如果系统没有字体，安装以后在这里自己改，比如雅黑字体，mac、linux需要自己安装，然后根据自己安装的名字在LZUThesis.clc里面修改
+
+\begin{lstlisting}[language = tex]
+%字体自定义========请根据自己电脑上的字体名称修改
+% fontenc中没有yahei这个别称，所以需要自定义，先安装雅黑字体
+\setCJKfamilyfont{yahei}{MicrosoftYaHei}
+%微软雅黑
+\newcommand{\yahei}{\CJKfamily{yahei}}
+% fontenc中有songti等这些名称，如果报错，直接根据自己电脑上的字体名修改就行
+% 宋体，STSongti-SC-Regular：这个名字请根据自己安装的字体名字（mac字体管理，PostScript名称）进行修改
+% \setCJKfamilyfont{songti}{STSongti-SC-Regular} 
+% \setCJKfamilyfont{heiti}{SimHei} %黑题 和上面的类似
+% \setCJKfamilyfont{kaiti}{KaiTi_GB2312} % 楷体...
+% \setCJKfamilyfont{fangsong}{FangSong} % 仿宋...
+% 如果报错，或者字体与实际不符合请根据自己电脑上的字体名称修改
+\end{lstlisting}
+
+
+% subsection 常用的 (end)
+
+\subsection{公式} % (fold)
+\label{sub:公式}
+所有的符号都要用美元符号包裹\$，需要用到某一个但是不知道，直接百度，基本上都有
+\begin{table}[H]
+    \centering
+    \caption{公式}
+    \begin{tabular}{ccccccccc} % 控制表格的格式
+    \toprule
+    名称& 分数 & 下角标 & 上角标  & 矢量 & 根号 & 希腊字母 & 点乘 & 叉乘\\
+    \midrule
+    显示 & $\frac{1}{2}$ & $O_2$  & $a^2$ & $\vec{AB}$ & $\sqrt[2]{3}$ & $\theta$ & $\cdot$ & $\times$\\
+   
+    \bottomrule
+    \end{tabular}
+    \label{tbl_mos2_nanotube}
+\end{table}
+% subsection 公式 (end)
+
+\subsection{左边大括号} % (fold)
+\label{sub:左边大括号}
+
+\begin{equation}
+    \left\{
+    \begin{array}{rcl}
+        \vec{e_1} &= \frac{3a}{2} \vec{i} + \frac{\sqrt{3a}}{2} \vec{j} \\
+        \vec{e_2} &= \frac{3a}{2} \vec{i} - \frac{\sqrt{3a}}{2} \vec{j}
+    \end{array}
+    \right.
+    \label{e1e2}
+\end{equation}
+
+注意后面有个方程的编号，如果想取消，把上下的两个$equation$改成$equation*$
+
+\begin{equation*}
+    \left\{
+    \begin{array}{rcl}
+        \vec{e_1} &= \frac{3a}{2} \vec{i} + \frac{\sqrt{3a}}{2} \vec{j} \\
+        \vec{e_2} &= \frac{3a}{2} \vec{i} - \frac{\sqrt{3a}}{2} \vec{j}
+    \end{array}
+    \right.
+    \label{e1e2}
+\end{equation*}
+
+% subsection 左边大括号 (end)
+
+\subsection{复杂公式} % (fold)
+\label{sub:复杂公式}
+不会输出的符号，请百度，啥都有
+
+\begin{equation}
+\hat{H}=\frac{\epsilon}{2}\hat{\sigma}_{z}-\frac{\Delta}{2}\hat{\sigma}_{x}+\sum_{k}\omega_{k}\hat{b}_{k}^{\dagger}\hat{b}_{k}+\sum_{k}\frac{g_{k}}{2}\hat{\sigma}_{z}(\hat{b}_{k}+\hat{b}_{k}^{\dagger})\label{eq:sbm}
+\end{equation}
+
+% subsection 复杂公式 (end)
+
+
+\subsection{等号对齐站} % (fold)
+\label{sub:等号对齐站}
+
+主要是用这个aligned放在了方程的环境里，等号前面\&控制对齐，每一行后面双斜杠换行
+
+\begin{equation}
+    \begin{aligned}
+        \vec{CH} & = m\cdot \vec{e_1} + n\cdot \vec{e_2} \\
+        & = \frac{3(m+n)a}{2} \vec{i} + \frac{\sqrt{3}(m-n)a}{2} \vec{j} 
+    \end{aligned}
+    \label{ch}
+\end{equation}
+
+% subsection 等号对齐站 (end)
+
+\subsection{矩阵乘法} % (fold)
+\label{sub:矩阵乘法}
+
+其实就是几个array组合
+
+\begin{equation}
+    \left[ 
+    \begin{array}{c}
+    x'\\
+    y'\\
+    \end{array}
+    \right]=
+    \left[ 
+    \begin{array}{cc}
+    cos \theta & sin \theta \\
+    - sin \theta & cos \theta 
+    \end{array}
+    \right]
+    \cdot
+    \left[ 
+    \begin{array}{c}
+        x\\
+        y\\
+    \end{array}
+    \right]
+\end{equation}
+% subsection 矩阵乘法 (end)
+
+
+\subsection{图，并列排} % (fold)
+\label{sub:图_并列排}
+
+这一句代表这个图片宽度为纸张的$\frac{3}{10}$
+\begin{lstlisting}[language = tex]
+width=0.3\textwidth
+\end{lstlisting}
+
+
+
+\begin{figure}[H]
+	\centering
+	\subfloat[首页]{
+        \includegraphics[width=0.3\textwidth]{figures/ldr1.jpg}
+    }
+	\subfloat[课表]{
+        \includegraphics[width=0.3\textwidth]{figures/ldr2.jpg}
+    }
+	\subfloat[我的]{
+        \includegraphics[width=0.3\textwidth]{figures/ldr4.jpg}
+    }\\	
+    \caption{i兰大易班截图}
+    \label{fig_ldr}
+
+\end{figure}
+
+% subsection 图_并列排 (end)
+
+
+\subsection{附页代码} % (fold)
+\label{sub:附页代码}
+可以在LZUThesis.clc里面修改代码格式
+
+java代码
+\begin{lstlisting}[language = java]
+System.out.print("i兰大易班")
+// 试一下中文注释
+\end{lstlisting}
+
+
+tex代码
+\begin{lstlisting}[language = tex]
+width=0.3\textwidth
+% 注释
+\end{lstlisting}
+
+python代码
+\begin{lstlisting}[language = python]
+print("i兰大易班")
+# 注释
+\end{lstlisting}
+
+matlab代码有专门的库，但是没必要高亮太多，而且中文适配有问题，直接按照下面这个就可以
+\begin{lstlisting}[language = matlab]
+display("i兰大易班")
+% 注释
+\end{lstlisting}
+
+% subsection 附页代码 (end)
+
+\subsection{参考文献} % (fold)
+\label{sub:参考文献}
+
+这个，百度学术等网站都可以导出bibtex格式的参考文献，直接放在bib/database.bib文件里、知网需要用其他东西转换，但是我建议用mendeley这个软件管理文献，然后可以导出bibtex格式的，甚至可以直接复制引用，很方便。
+
+具体怎么用可以百度，我这里告诉你什么可以用，但是具体的，建议百度，更靠谱一些
+
+
+有参考文献时，编译要经过4步，直接XeLaTeX --> BibTeX --> XeLaTeX --> XeLaTeX，不然很多问题，我用的sublime text3，配合插件LatexTool，直接快快捷键ctrl - B，就可以自动完成4步了，很方便
+
+% subsection 参考文献 (end)
+
+% section 图标等常用的教程 (end)
+
+
+
+
+
+
+
+
+%论文后部
+\backmatter
+
+
+%=======%
+%引入参考文献文件
+%=======%
+\bibdatabase{bib/database}%bib文件名称 仅修改bib/ 后部分
+\printbib
+
+
+
+
+\Appendix
+
+
+这里是附录页，附上你的程序或必要的相关知识\cite{partl2016}
+
+{\bfseries 编译方式:} XeLaTeX -->BibTeX --> XeLaTeX-->XeLaTeX
+\Thanks
+这里是致谢页，你可以在这里致谢你的舍友，老师，朋友，或者我。
+
+
+\end{document}
