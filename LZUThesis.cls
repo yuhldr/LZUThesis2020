@@ -59,6 +59,7 @@
     \def\CTEX@contentsname{目\LZUspace 录}
 }%
 
+\RequirePackage{textcomp}
 \RequirePackage{gensymb}
 
 %============================ 一些章节的配置文件 =========%
@@ -129,9 +130,9 @@
 
 %字体自定义========请根据自己电脑上的字体名称修改
 % fontenc中没有yahei这个别称，所以需要自定义，先安装雅黑字体
-\setCJKfamilyfont{yahei}{MicrosoftYaHei}
-%微软雅黑
-\newcommand{\yahei}{\CJKfamily{yahei}}
+%微软雅黑，如果是mac（已经测试过了）或者linux电脑，把下面两行前面的%删掉，然后安装font文件夹里面的字体，再编译就可以了
+% \setCJKfamilyfont{yahei}{MicrosoftYaHei}
+% \newcommand{\yahei}{\CJKfamily{yahei}}
 
 % fontenc中有songti等这些名称，如果报错，直接根据自己电脑上的字体名修改就行
 % 
