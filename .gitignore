@@ -1,4 +1,6 @@
 .DS_Store
+paper-mac(linux)
+paper-windows
 
 ## Core latex/pdflatex auxiliary files:
 *.aux
@@ -13,6 +15,8 @@
 *.cb
 *.cb2
 *.xdv
+
+
 
 ## Intermediate documents:
 *.dvi
