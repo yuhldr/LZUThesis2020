@@ -1,13 +1,8 @@
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesClass{LZUThesis}[2020/04/04 V1.0 Thesis for LZUer By yuhldr]
-\LoadClass[cs4size, a4paper, UTF8, openany, hyperref,oneside]{ctexbook}
+\ProvidesClass{LZUThesis}[2020/02/02 V0.1 Thesis for LZUer By yuhldr]
+\LoadClass[12pt, a4paper, UTF8, openany,oneside]{ctexbook}
 
-% 部分内容参考了https://github.com/suchot/LZUThesis2017
-% 适配了2020最新的毕业论文（草拟稿）要求，最近还会修改
-% 1. 页眉：单条线、页脚：页码居中
-% 2. 封面、包括logo，
-% 3. 成绩表各种加黑问题
-% 制作人：兰朵儿网络工作室：余航（i兰大易班app开发者）
+% 部分内容参考了https://github.com/suchot/LZUThesis2017，适配了2020最新的毕业论文要求
 
 %============================ 一些章节的配置文件 =========%
 %%
@@ -64,13 +59,27 @@
 
 %============================ 一些章节的配置文件 =========%
 
-% 目录设置
+% 目录设置，图片
 
+\RequirePackage{subfig}
+% 修复上面的冲突
+\RequirePackage[titles,subfigure]{tocloft}
+
+
+%============================ 我自己用的一些小命令 =========%
 % 
-\RequirePackage{titlesec}
-\RequirePackage{titletoc}
+% 针对那些使用mendeley这一类软件的，直接复制（导出）过来的参考文献，可以在参考文献处点击跳转到文献所在网址
+\providecommand \doibase [0]{http://dx.doi.org/}%
+
+% 正文中有些下角标等公式，我们并不想让它斜体，公式不斜体:如 \eqrm{MoS_2}
+\newcommand{\eqrm}[1]{
+    $\rm #1 $
+}
 
 
+%============================ 我自己用的一些小命令 =========%
+
+\RequirePackage{textcomp}%摄氏度
 
 
 
@@ -86,6 +95,9 @@
 \RequirePackage[top=2.5cm, bottom=2.5cm,outer=2cm, inner=2.5cm, headheight=1.5cm, footskip=1.5cm, heightrounded]{geometry}
 
 
+%=======package
+%代码风格设置
+%=======package
 \RequirePackage{listings}
 
 \lstset{
@@ -101,13 +113,14 @@
  stringstyle=\rmfamily\slshape\color[RGB]{128,0,0},   % 设置字符串格式
  showstringspaces=false,                              % 不显示字符串中的空格
  language=tex,   
- alsolanguage=[ANSI]C,      %可以添加很多个alsolanguage,如alsolanguage=matlab,alsolanguage=VHDL等
+ alsolanguage=[ANSI]C, %可以添加很多个alsolanguage,如alsolanguage=matlab,alsolanguage=VHDL等
  alsolanguage=python,
  alsolanguage=java,
  alsolanguage=XML,
  alsolanguage=c++,
  alsolanguage=matlab,
 }
+
 
 %=======package
 %数学宏包
@@ -126,26 +139,6 @@
 
 \RequirePackage{booktabs}
 \RequirePackage{harpoon}
-
-
-%字体自定义========请根据自己电脑上的字体名称修改
-% fontenc中没有yahei这个别称，所以需要自定义，先安装雅黑字体
-%微软雅黑，如果是mac（已经测试过了）或者linux电脑，把下面两行前面的%删掉，然后安装font文件夹里面的字体，再编译就可以了
-% \setCJKfamilyfont{yahei}{MicrosoftYaHei}
-% \newcommand{\yahei}{\CJKfamily{yahei}}
-
-% fontenc中有songti等这些名称，如果报错，直接根据自己电脑上的字体名修改就行
-% 
-% \setCJKfamilyfont{songti}{STSongti-SC-Regular} %宋体，STSongti-SC-Regular：这个名字请根据自己安装的字体名字（mac字体管理，PostScript名称）进行修改
-% 
-% \setCJKfamilyfont{heiti}{SimHei} %黑题 和上面的类似
-% 
-% \setCJKfamilyfont{kaiti}{KaiTi_GB2312} % 楷体...
-% 
-% \setCJKfamilyfont{fangsong}{FangSong} % 仿宋...
-% 
-%========如果报错，或者字体与实际不符合请根据自己电脑上的字体名称修改
-
 
 
 %=======head and foot
@@ -181,7 +174,7 @@
     % Footers
     \fancyfoot{} % clear all footer fields
     \cfoot[C]{\thepage}
-    \renewcommand\headrule{ \kern 2pt \hrule width \hsize height 0.4pt}
+    \renewcommand\headrule{ \kern 2pt \hrule width \hsize height 0.3pt}
 }
 
 \appto\mainmatter{\pagestyle{mainmatterstyle}}
@@ -192,10 +185,15 @@
 \AtBeginDocument{\addtocontents{toc}{\protect\thispagestyle{frontmatterstyle}}}
 
 
-
 %=======format
 %标题样式
 %=======format
+
+% 1.“目录”两字间空1个字符间隙，字体为黑体，三号，加粗，居中，单倍行距，段前24磅，段后18磅；目录中标题不能超过三级，
+% 一级标题字体为宋体，四号，加粗；
+% 二级标题字体为宋体，四号；
+% 三级标题字体为宋体，小四号。
+
 \usepackage[font=small]{caption}
 
 \RequirePackage[titles]{tocloft}
@@ -203,9 +201,9 @@
 \renewcommand\cftdotsep{0.5}                    %虚线间隔
 \renewcommand{\cftchapafterpnum}{\vspace{6pt}} %章节间隔 ，节前6磅
 \setlength{\cftbeforesecskip}{6pt}              %章节间隔 ，节前6磅
-\renewcommand\cftchapfont{\zihao{4}}
-\renewcommand\cftsecfont{\zihao{-4}}
-\renewcommand\cftsubsecfont{\zihao{-4}}
+\renewcommand\cftchapfont{\zihao{4}\bf \songti}
+\renewcommand\cftsecfont{\zihao{4} \songti}
+\renewcommand\cftsubsecfont{\zihao{-4} \songti}
 \renewcommand\cftchappagefont{\mdseries}
 \setlength\cftbeforetoctitleskip{24pt}
 \setlength\cftaftertoctitleskip{18pt}
@@ -245,47 +243,50 @@
     \begin{center}
         \includegraphics[width=6.27cm]{lzu.png}\\
         \vspace*{21.8pt}
-        {\fontsize{28bp}{0pt}\ziju{0}{\yahei{本科生毕业论文（设计）}}\\}
+
+        {\zihao{1}\heiti{本科生毕业论文（设计）\\}}
         \vspace{21.8pt}
         \par
         \zihao{4}
         \def\tabcolsep{6pt}
         \expandarg
         \newcounter{title_str_number}
-        \vspace*{50pt}
+        \vspace*{60pt}
 
         \begin{tabular}{ll}
-            \bfseries \songti 论文题目（中文）
+            \bfseries \songti \zihao{3} 论文题目（中文）
             \forloop{title_str_number}{1}{\value{title_str_number}<6}{%
                 \StrFindGroup{\@title}{\value{title_str_number}}[\mygroup]%
                 \IfStrEq{\mygroup}{}{}{%
-                    & {\StrFindGroup{\@title}{\value{title_str_number}}[\mygroup]\LZUunderline[258pt]{ \songti\fontspec{Times New Roman}\zihao{3}\mygroup}}\\[0.40cm]%
+                    & {\StrFindGroup{\@title}{\value{title_str_number}}[\mygroup]\LZUunderline[320pt]{ \songti \zihao{3}\mygroup}}\\[0.40cm]%
                 }%
             }%
-            \bfseries \songti 论文题目（英文）
+            \bfseries \songti  \zihao{3} 论文题目（英文）
             \forloop{title_str_number}{1}{\value{title_str_number}<6}{%
                 \StrFindGroup{\the\entitle}{\value{title_str_number}}[\mygroup]%
                 \IfStrEq{\mygroup}{}{}{%
-                    & {\StrFindGroup{\the\entitle}{\value{title_str_number}}[\mygroup]\LZUunderline[258pt]{\fontspec{Times New Roman}\zihao{3}\mygroup}}\\[0.40cm]%
+                    & {\StrFindGroup{\the\entitle}{\value{title_str_number}}[\mygroup]\LZUunderline[320pt]{\zihao{3}\mygroup}}\\[0.40cm]%
                 }%
             }%
         \end{tabular}
 
+        \vspace*{60pt}
+
         \begin{tabular}{cc}
-            {\songti {学生姓名}} &
-            {\LZUunderline[180pt]{ \songti \zihao{-3}\@author}}\\[0.40cm]
-            {\songti {指导教师}} &
-            {\LZUunderline[180pt]{ \songti \zihao{-3}  \the\advisor}} \\[0.40cm]
-            {\songti {学\qquad 院}} &
-            {\LZUunderline[180pt]{ \songti  \zihao{-3} \the\college}} \\[0.40cm]
-            {\songti {专\qquad 业}} &
-            {\LZUunderline[180pt]{ \songti  \zihao{-3} \the\major}}\\[0.40cm]
-            {\songti {年\qquad 级}} &
-            {\LZUunderline[180pt]{ \songti \zihao{-3}  \the\grade}}\\[0.40cm]
+            {\songti \zihao{3}{学生姓名}} &
+            {\LZUunderline[180pt]{ \songti \zihao{3}\@author}}\\[0.40cm]
+            {\songti \zihao{3}{指导教师}} &
+            {\LZUunderline[180pt]{ \songti \zihao{3}  \the\advisor}} \\[0.40cm]
+            {\songti \zihao{3}{学\qquad 院}} &
+            {\LZUunderline[180pt]{ \songti  \zihao{3} \the\college}} \\[0.40cm]
+            {\songti \zihao{3} {专\qquad 业}} &
+            {\LZUunderline[180pt]{ \songti  \zihao{3} \the\major}}\\[0.40cm]
+            {\songti \zihao{3}{年\qquad 级}} &
+            {\LZUunderline[180pt]{ \songti \zihao{3}  \the\grade}}\\[0.40cm]
         \end{tabular}
         \par
-        \vspace{70pt}
-        { \ziju{0.3}\zihao{-3} \yahei{兰州大学教务处}}
+        \vspace{40pt}
+        {\ziju{0}\zihao{3} \heiti{兰州大学教务处}}
     \end{center}
     \clearpage
 }
@@ -337,6 +338,7 @@
     \begin{center}
         \begin{tabular*}{\textwidth}{rlcrl}
             论文作者签名 ：&\LZUunderline[\fifth]{} & \hspace{\middlespace} &  导师签名 ：&\LZUunderline[\fifth]{} \\
+            \quad\\
             日\qquad \qquad 期：&\LZUunderline[\fifth]{} & \hspace{\middlespace} & 日\qquad 期：&\LZUunderline[\fifth]{}
         \end{tabular*}
     \end{center}
@@ -362,24 +364,30 @@
     \zihao{-3}\bfseries\songti
     \begin{tabularx}{\textwidth}{|X|}
         \multicolumn{1}{c}{
-        \zihao{3}\yahei\mdseries 论文（设计）成绩
-        }\\
+            \zihao{3}\heiti \mdseries 毕业论文（设计）成绩表
+        } \\
+        \multicolumn{1}{c}{} \\
         \hline
         \centerline{%
-        \mdseries
+            \mdseries
             \begin{minipage}[t][10cm][t]{0.92\textwidth}
                 \setlength\parindent{\ccwd}
-                \zihao{-4} \the \supervisorcomment   
-            \end{minipage}}\\
-        建议成绩\LZUunderline[80pt]{\the \recommendedgrade}\hfill 指导教师（签字）\LZUunderline[80pt]{
-\the \supervisorsignature}\\
+                \zihao{4} \the \supervisorcomment   
+            \end{minipage}
+        }\\
+        建议成绩\LZUunderline[80pt]{\the \recommendedgrade}
+        \hfill 
+        指导教师（签字）\LZUunderline[80pt]{
+            \the \supervisorsignature
+        }\\
         \hline
         答辩委员会意见\\
-\centerline{%
+        \centerline{%
             \begin{minipage}[t][2cm][t]{0.92\textwidth}
                 \setlength\parindent{\ccwd}
                 \zihao{-4} \the\committeecomment
-            \end{minipage}}
+            \end{minipage}
+        }
         \hfill 答辩委员会负责人（签字）\underline{\hspace{80pt}}\\
         \hline
         \\[2.3cm]
@@ -396,6 +404,10 @@
 %摘要页
 %
 %=======abstract
+
+% 2.中英文关键词。毕业论文（设计）中应列出3～8个关键词，关键词与摘要之间空1行，置于摘要之后。中文关键词字体为宋体，小四号，加粗置顶格；英文关键词所述含义与中文关键词须一致。“关键词”为“Key words”，字体为Times New Roman，小四号，加粗，置顶格。
+
+% 中文摘要以300-400字为宜。毕业论文（设计）题目字体为宋体，二号，加粗，段前24磅，段后18磅；“中文摘要”居中，字体为黑体，三号；摘要正文字体为宋体，小四号。行间距为固定值20磅。
 \newcommand{\ZhAbstract}[2]{%
     \clearpage
     \phantomsection
@@ -406,15 +418,16 @@
         \begin{minipage}{0.8\textwidth}
             \linespread{1.3889}
             \centering
-            \zihao{3}\heiti\bfseries \noindent\@title\the\titlextra%
+            \zihao{2}\songti\bfseries \noindent\@title\the\titlextra%
         \end{minipage}
     \end{center}%
     \begin{center}%
         \linespread{1}
-        \setlength{\parskip}{24pt}
+        \setlength{\parskip}{18pt}
         \zihao{3}\heiti  中文摘要                     %事例页面表现效果
     \end{center}%
-    \linespread{1.3889}
+    %行距20磅 http://blog.sina.com.cn/s/blog_5e16f1770100ly96.html
+    \setlength{\baselineskip}{20pt} 
     \selectfont
     \setlength{\parskip}{0pt}
     \vspace{10pt}
@@ -422,6 +435,8 @@
     \vbox{}\\
     {\songti \bf 关键词：} #2
 }
+
+% 英文摘要实际单词在300个左右，应与中文摘要内容一致。毕业论文（设计）英文题目字体为Times New Roman，二号，段前24磅，段后18磅；“英文摘要”为“Abstract”，字体为Arial，三号，加粗居中；英文摘要正文每段开头空4个字符间隙，字体为Times New Roman，小四号。行间距为固定值20磅。
 
 \newcommand{\EnAbstract}[2]{%
     \clearpage
@@ -434,35 +449,36 @@
             \linespread{1}
             \selectfont
             \centering
-            \zihao{3} \bfseries \noindent \expandafter\MakeUppercase\expandafter{\the\entitle\ \the\entitletra}%
+            \zihao{2} \bfseries \noindent \expandafter\MakeUppercase\expandafter{\the\entitle\ \the\entitletra}%
         \end{minipage}
     \end{center}%
     \begin{center}%
         \linespread{1}
         \selectfont
-        \setlength{\parskip}{24pt}
+        \setlength{\parskip}{18pt}
         \zihao{3}\fontspec{Arial}\bfseries Abstract%
     \end{center}%
     \setlength{\parskip}{0pt}
-    {\zihao{5}
-    \linespread{1.27} %行距20磅
+    \setlength{\baselineskip}{20pt} %行距20磅
     \selectfont
     \vspace{11pt}
     \par #1\\%
     \vbox{}\\
-    {\bfseries Key Words:} #2}
+    {\bfseries Key Words:} #2
 }
 
 
 
 %%=======space
-\newcommand\LZUspace{\phantom{永}}
+\newcommand\LZUspace{\quad}
 
 
 %=======appendix
 %附录页和感谢页
 %
 %=======appendix
+
+% 附录中的插图、表格、公式、参考文献等的序号需与正文区分，另行编制，如编为“图1”、“表1”、“式（1）”、“文献[1]”等。“附录”两字间空2个汉字间隙，三号字，黑体，加粗，居中，单倍行距，段前24磅，段后18磅。附录的内容为宋体，五号（英文用Times New Roman体，10.5磅），行间距为固定值20磅。
 \newcommand{\Appendix}{%
     \setcounter{section}{0}
     \renewcommand{\thechapter}{A}%
@@ -472,6 +488,9 @@
     \zihao{5}
 }
 
+
+% “致谢”两字间空2个字符间隙，字体为黑体，三号字，加粗居中。单倍行距，段前24磅，段后18磅。正文部分首行缩进两个汉字符，小四号字，仿宋，行距20磅。
+
 \newcommand{\Thanks}{%
     \addcontentsline{toc}{chapter}{致 谢}
     \chapter*{致\LZUspace\LZUspace 谢}
@@ -480,10 +499,12 @@
 
 
 \newcommand{\Intro}{%
-    \clearpage
     \phantomsection
     \addcontentsline{toc}{chapter}{绪 论}
     \chapter*{绪 \LZUspace 论}
+
+    \setcounter{section}{0}
+    \setcounter{chapter}{1}
     \zihao{-4}\songti
 
 }
@@ -560,9 +581,6 @@
 \crefname{conjecture}{猜想}{猜想}
 
 
-% 图片并列排
-\RequirePackage{subfig}
-
 
 %---------------------------
 %程序伪代码实现
@@ -574,9 +592,13 @@
 \renewcommand{\algorithmicensure}{\textbf{输出:}}  
   
 %改变图表的编号格式
-\renewcommand{\thefigure}{\thechapter-\@arabic\c@figure}
-\renewcommand{\thetable}{\thechapter-\@arabic\c@table}   
-
+\renewcommand{\thefigure}{\thechapter.\@arabic \c@figure}
+\renewcommand{\thetable}{\thechapter.\@arabic \c@table} 
+% 图序与图名之间空1个汉字符。  
+\RequirePackage[labelsep = quad]{caption}
+% https://www.latexstudio.net/archives/8652.html
+\setlength{\abovecaptionskip}{6pt}
+\setlength{\belowcaptionskip}{6pt}
 
 %%=======%
 %参考文献
@@ -596,4 +618,4 @@
 
 \endinput
 %%
-%% End of file `LZUthesis.cls'.
+%% End of file `LZUThesis.cls'.

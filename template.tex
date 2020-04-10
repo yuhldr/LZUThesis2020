@@ -17,7 +17,7 @@
 % 	      长标题 \title{{第一行}{第二行}}
 %             超长标题\tiitle{{第一行}{...}{第N行}}
 
-\title{{LaTeX到底怎么用}}
+\title{{中国分析哲学研究}}
 
 
 
@@ -26,7 +26,7 @@
 % 	      长标题 \entitle{{First row}{ Second row}}
 %             超长标题\entitle{{First row}{...}{ Next N row}}
 % 注意：  英文标题多行时 需要在开头加个空格 防止摘要标题处英语单词粘连。
-\entitle{{The Template of LZU Thesis}{ for undergraduate}}
+\entitle{{Studies in Analytic Philosophy in China}}
 
 \author{yuhldr}
 \major{物理科学与技术学院}
@@ -65,30 +65,43 @@
 
 \frontmatter
 
-\Intro{
-	这里是绪论，也可以说是引言，在LZUThesis2020.clc里面改，引言写什么呢，先凑字数，
 
-	是真的在打广告啊，嗯，做兰大毕业论文LaTex模板时，顺便介绍一下我写的软件：i兰大易班
-
-	注意啊，段落在latex里面是要空一行的，不要简单一个回车
+%英文摘要
+\EnAbstract{This essay explores the history of studies in analytical philosophy in China since the beginning of the last century, by dividing into three phases. It shows that, in these phases, analytic philosophy was always at a disadvantage in confronting serious challenges coming from both Chinese traditional philosophy and modern philosophical trends. The authors argue that Chinese philosophers have both done preliminary studies and offered their own analyses of various problems as well as some new applications of analytic philosophy especially in the latest period. Meanwhile, Chinese traditional philosophy was always trying to adjust its cultural mentality in the struggle with analytic philosophy, and accommodated in its own way the rationalistic spirit and scientific method represented in analytic philosophy.}
+{analytical philosophy; Chinese philosophers; philosophical analysis;
+dialogue in philosophy.
 }
 
-
 %中文摘要
-\ZhAbstract{这是真的在打广告啊，嗯，做兰大毕业论文latex模板时，顺便介绍一下我写的软件。嗯，好像本科生也不用打广告啦，目前两万多人在用，但是研究生没几个人在用啊，很多在写论文的你们马上就是兰州大学的研究生了吧，试一下i兰大易班？
+\ZhAbstract{注意，2020要求英文摘要在前面；这是真的在打广告啊，嗯，做兰大毕业论文latex模板时，顺便介绍一下我写的软件。嗯，好像本科生也不用打广告啦，目前两万多人在用，但是研究生没几个人在用啊，很多在写论文的你们马上就是兰州大学的研究生了吧，试一下i兰大易班？
 
-不要仅仅把它当做广告，这里面有很多latex的用法说明}
-
-{兰朵儿，i兰大易班，yuh}
-%英文摘要
-\EnAbstract{Lanzhou University (LZU) is a key university in China. LZU was founded in 1909. It is one of the oldest universities in China. 
-\par LZU has beautiful campuses, Library, Various laboratories. It has been actively involved in international academic exchange programs.It is the center of China Education and Research Network in northwest China region, through computer networks, LZU has faster and closer connection with the world.
-}{LZU, key university，beautiful campus}
+不要仅仅把它当做广告，这里面有很多latex的用法说明}{兰朵儿，i兰大易班，yuh}
 
 %生成目录
 \tableofcontents
 %文章主体
 \mainmatter
+
+
+\Intro{
+    这里是绪论，也可以说是引言，在LZUThesis2020.clc里面改，引言写什么呢，先凑字数，
+
+    是真的在打广告啊，嗯，做兰大毕业论文LaTex模板时，顺便介绍一下我写的软件：i兰大易班，兰大专属的app，可以看课表，充值校园卡（微信、支付宝都可以），查成绩（可以算绩点），还可以……，好多好多好多
+
+    注意啊，段落在latex里面是要空一行的，不要简单一个回车
+
+    \section{二级标题}
+    123
+
+}
+
+% =======正文从第一章开始
+
+\setcounter{section}{0}
+\setcounter{chapter}{0}
+
+
+
 \chapter{latex部分用法简介}
 
 注意啊，看这个教程，template.pdf配合template.tex\textbf{一起看}，才能学习latex怎么用的
@@ -217,32 +230,16 @@ IDE这个就是写论文的地方，它会调用你刚才安装的texlive，具�
     \caption{字体}
     \begin{tabular}{ccccccc} % 控制表格的格式
     \toprule
-    名称& 加粗 & 倾斜 & 宋体  & 仿宋 & 黑体 & 雅黑\\
+    名称& 加粗 & 倾斜 & 宋体  & 仿宋 & 黑体 \\
     \midrule
-    显示 & \textbf{兰朵儿} & \textit{兰朵儿}  & \songti{兰朵儿} & \fangsong{兰朵儿} & \heiti{兰朵儿} & \yahei{兰朵儿} \\
-    显示 & \textbf{ldr} & \textit{ldr}  & \songti{ldr} & \fangsong{ldr} & \heiti{ldr} & \yahei{ldr} \\
+    显示 & \textbf{兰朵儿} & \textit{兰朵儿}  & \songti{兰朵儿} & \fangsong{兰朵儿} & \heiti{兰朵儿}  \\
+    显示 & \textbf{ldr} & \textit{ldr}  & \songti{ldr} & \fangsong{ldr} & \heiti{ldr}  \\
     \bottomrule
     \end{tabular}
     \label{tbl_font}
 \end{table}
 发现没，中文斜体没有效果的；
 
-注意如果系统没有字体，安装以后在这里自己改，比如雅黑字体，mac、linux需要自己安装，然后根据自己安装的名字在LZUThesis.clc里面修改，windows可能会报错，yahei重复，所以我把这两行注释掉了，mac、linux把这两行打开！！！
-
-\begin{lstlisting}[language = tex]
-%字体自定义========请根据自己电脑上的字体名称修改
-% fontenc中没有yahei这个别称，所以需要自定义，先安装雅黑字体
-\setCJKfamilyfont{yahei}{MicrosoftYaHei}
-%微软雅黑
-\newcommand{\yahei}{\CJKfamily{yahei}}
-% fontenc中有songti等这些名称，如果报错，直接根据自己电脑上的字体名修改就行
-% 宋体，STSongti-SC-Regular：这个名字请根据自己安装的字体名字（mac字体管理，PostScript名称）进行修改
-% \setCJKfamilyfont{songti}{STSongti-SC-Regular} 
-% \setCJKfamilyfont{heiti}{SimHei} %黑题 和上面的类似
-% \setCJKfamilyfont{kaiti}{KaiTi_GB2312} % 楷体...
-% \setCJKfamilyfont{fangsong}{FangSong} % 仿宋...
-% 如果报错，或者字体与实际不符合请根据自己电脑上的字体名称修改
-\end{lstlisting}
 
 
 % subsection 常用的 (end)
@@ -263,6 +260,9 @@ IDE这个就是写论文的地方，它会调用你刚才安装的texlive，具�
     \end{tabular}
     \label{tbl_gs}
 \end{table}
+
+但是有时候我们只是正文中想用$MoS_2$，它竟然斜体，不想斜体，我写了个命令，这样用\eqrm{MoS_2}，正的吧，常用的命令可以自定义
+
 % subsection 公式 (end)
 
 \subsection{左边大括号} % (fold)
@@ -350,7 +350,7 @@ IDE这个就是写论文的地方，它会调用你刚才安装的texlive，具�
 \subsection{图，并列排} % (fold)
 \label{sub:图_并列排}
 
-这一句代表这个图片宽度为纸张的$\frac{3}{10}$
+这一句代表这个图片宽度为一行文本宽度的$\frac{3}{10}$
 \begin{lstlisting}[language = tex]
 width=0.3\textwidth
 \end{lstlisting}
@@ -382,27 +382,27 @@ width=0.3\textwidth
 
 java代码
 \begin{lstlisting}[language = java]
-System.out.print("i兰大易班")
-// 试一下中文注释
+    System.out.print("i兰大易班")
+    // 试一下中文注释
 \end{lstlisting}
 
 
 tex代码
 \begin{lstlisting}[language = tex]
-width=0.3\textwidth
-% 注释
+    width=0.3\textwidth
+    % 注释
 \end{lstlisting}
 
 python代码
 \begin{lstlisting}[language = python]
-print("i兰大易班")
-# 注释
+    print("i兰大易班")
+    # 注释
 \end{lstlisting}
 
 matlab代码有专门的库，但是没必要高亮太多，而且中文适配有问题，直接按照下面这个就可以
 \begin{lstlisting}[language = matlab]
-display("i兰大易班")
-% 注释
+    display("i兰大易班")
+    % 注释
 \end{lstlisting}
 
 % subsection 附页代码 (end)
@@ -410,7 +410,7 @@ display("i兰大易班")
 \subsection{参考文献} % (fold)
 \label{sub:参考文献}
 
-这个，百度学术等网站都可以导出bibtex格式的参考文献，直接放在bib/database.bib文件里、知网需要用其他东西转换，但是我建议用mendeley这个软件管理文献，然后可以导出bibtex格式的，甚至可以直接复制引用，很方便。
+这个，百度学术、谷歌学术等网站都可以导出bibtex格式的参考文献（知网不行，网上有个人写了个转换器，但是windows用不了，就不放了，尽量用谷歌学术把那个文献找出来吧），直接放在bib/database.bib文件里、知网需要用其他东西转换，但是我建议用mendeley这个软件管理文献，然后可以导出bibtex格式的，甚至可以直接复制引用，很方便。
 
 具体怎么用可以百度，我这里告诉你什么可以用，但是具体的，建议百度，更靠谱一些
 
