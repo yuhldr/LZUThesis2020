@@ -15,8 +15,8 @@
 %正文另起一行。正文：宋体，小四（英文用Times New Roman字体，12磅），两端对齐，段落首行左缩进2个汉字符，行间距为固定值20磅，段前段后0磅。
 %
 %\CTEXsetup[format+={\sffamily\bfseries\small}]{chapter}
-\def\CTEX@chapter@nameformat{\bfseries\heiti\zihao{3}}
-\def\CTEX@chapter@titleformat{\bfseries\heiti\zihao{3}}
+\def\CTEX@chapter@nameformat{\bfseries\heiti\zihao{3}} % 应该是加粗（黑体加粗）
+\def\CTEX@chapter@titleformat{\bfseries\heiti\zihao{3}} % 应该是加粗（黑体加粗）
 \def\CTEX@chapter@beforeskip{24pt}
 \def\CTEX@chapter@afterskip{18pt}
 %\def\CTEX@chapter@titleformat{\bfseries\heiti\fontspec{Times New Roman}\zihao{3}}
@@ -201,7 +201,7 @@
 \renewcommand\cftdotsep{0.5}                    %虚线间隔
 \renewcommand{\cftchapafterpnum}{\vspace{6pt}} %章节间隔 ，节前6磅
 \setlength{\cftbeforesecskip}{6pt}              %章节间隔 ，节前6磅
-\renewcommand\cftchapfont{\zihao{4}\heiti}
+\renewcommand\cftchapfont{\zihao{4}\heiti}  % 目录中一级标题，应该是加粗（宋体加粗）
 \renewcommand\cftsecfont{\zihao{4} \songti}
 \renewcommand\cftsubsecfont{\zihao{-4} \songti}
 \renewcommand\cftchappagefont{\mdseries}
@@ -244,7 +244,7 @@
         \includegraphics[width=6.27cm]{lzu.png}\\
         \vspace*{21.8pt}
 
-        {\zihao{1}\heiti{本科生毕业论文（设计）\\}}
+        {\zihao{1}\heiti{本科生毕业论文（设计）\\}}% 封面这几个字，应该是雅黑
         \vspace{21.8pt}
         \par
         \zihao{4}
@@ -254,14 +254,14 @@
         \vspace*{60pt}
 
         \begin{tabular}{ll}
-            \heiti \zihao{3} 论文题目（中文）
+            \heiti \zihao{3} 论文题目（中文）% “论文题目（中文）”这几个字，应该是加粗（宋体加粗）
             \forloop{title_str_number}{1}{\value{title_str_number}<6}{%
                 \StrFindGroup{\@title}{\value{title_str_number}}[\mygroup]%
                 \IfStrEq{\mygroup}{}{}{%
                     & {\StrFindGroup{\@title}{\value{title_str_number}}[\mygroup]\LZUunderline[320pt]{ \songti \zihao{3}\mygroup}}\\[0.40cm]%
                 }%
             }%
-            \heiti  \zihao{3} 论文题目（英文）
+            \heiti  \zihao{3} 论文题目（英文）% “论文题目（英文）”这几个字，应该是加粗（宋体加粗）
             \forloop{title_str_number}{1}{\value{title_str_number}<6}{%
                 \StrFindGroup{\the\entitle}{\value{title_str_number}}[\mygroup]%
                 \IfStrEq{\mygroup}{}{}{%
@@ -303,7 +303,7 @@
     \parskip 0pt
 
     \begin{center}
-        {\heiti\zihao{3}{诚信责任书}}
+        {\heiti\zihao{3}{诚信责任书}} % “诚信责任书”这几个字，应该是加粗（宋体加粗）
     \end{center}
 
     本人郑重声明：本人所呈交的毕业论文（设计），是在导师的指导下独立进行研究所取得的成果。毕业论文（设计）中凡引用他人已经发表或未发表的成果、数据、观点等，均已明确注明出处。除文中已经注明引用的内容外，不包含任何其他个人、集体已经发表或未发表的论文。
@@ -321,7 +321,7 @@
     \vskip2.0cm
 
     \begin{center}
-        {\heiti\zihao{3}{关于毕业论文（设计）使用授权的声明}}
+        {\heiti\zihao{3}{关于毕业论文（设计）使用授权的声明}}% “关于毕业论文（设计）使用授权的声明”这几个字，应该是加粗（宋体加粗）
     \end{center}
 
     本人在导师指导下所完成的论文及相关的职务作品，知识产权归属兰州大学。本人完全了解兰州大学有关保存、使用毕业论文（设计）的规定，同意学校保存或向国家有关部门或机构送交论文的纸质版和电子版，允许论文被查阅和借阅；本人授权兰州大学可以将本毕业论文（设计）的全部或部分内容编入有关数据库进行检索，可以采用任何复制手段保存和汇编本毕业论文（设计）。本人离校后发表、使用毕业论文（设计）或与该毕业论文（设计）直接相关的学术论文或成果时，第一署名单位仍然为兰州大学。
@@ -361,7 +361,7 @@
 % \phantomsection
 % \addcontentsline{toc}{chapter}{毕业论文（设计）成绩}
 \begin{center}
-    \zihao{-3}\heiti
+    \zihao{-3}\heiti  % 成绩这一页整体设置，应该是加粗（宋体加粗）
     \begin{tabularx}{\textwidth}{|X|}
         \multicolumn{1}{c}{
             \zihao{3}\heiti \mdseries 毕业论文（设计）成绩表
@@ -418,13 +418,14 @@
         \begin{minipage}{0.8\textwidth}
             \linespread{1.3889}
             \centering
-            \zihao{2}\heiti \noindent\@title\the\titlextra%
+            % 中文摘要标题，应该是加粗（宋体加粗）
+            \zihao{2}\heiti \noindent\@title\the\titlextra 
         \end{minipage}
     \end{center}%
     \begin{center}%
         \linespread{1}
         \setlength{\parskip}{18pt}
-        \zihao{3}\heiti  中文摘要                     %事例页面表现效果
+        \zihao{3}\heiti  中文摘要  % 中文摘要这几个字，应该是加粗（宋体加粗）
     \end{center}%
     %行距20磅 http://blog.sina.com.cn/s/blog_5e16f1770100ly96.html
     \setlength{\baselineskip}{20pt} 
@@ -433,6 +434,7 @@
     \vspace{10pt}
     \par #1\\%
     \vbox{}\\
+    % 关键词这几个字，应该是加粗（宋体加粗）
     {\heiti 关键词：} #2
 }
 
@@ -449,14 +451,14 @@
             \linespread{1}
             \selectfont
             \centering
-            \zihao{2} \heiti \noindent \expandafter\MakeUppercase\expandafter{\the\entitle\ \the\entitletra}%
+            \zihao{2} \bfseries \noindent \expandafter\MakeUppercase\expandafter{\the\entitle\ \the\entitletra}%
         \end{minipage}
     \end{center}%
     \begin{center}%
         \linespread{1}
         \selectfont
         \setlength{\parskip}{18pt}
-        \zihao{3}\fontspec{Arial}\bfseries Abstract%
+        \zihao{3}\fontspec{Arial}\bfseries Abstract %Linux没有这个字体，需要自己安装，或者自定义命令
     \end{center}%
     \setlength{\parskip}{0pt}
     \setlength{\baselineskip}{20pt} %行距20磅
@@ -592,13 +594,20 @@
 \renewcommand{\algorithmicensure}{\textbf{输出:}}  
   
 %改变图表的编号格式
+
+% 图：图名置于图的下方，五号字，宋体，居中（英文用Times New Roman体10.5磅），单倍行距，段前6磅，段后12磅，图序与图名之间空1个汉字符。
+% 表：表名置于表的上方，五号字，宋体，居中（英文用Times New Roman体10.5磅），单倍行距，段前6磅，段后6磅，表序与表名之间空1个汉字符。 
+% 图和表下方的注释为五号字，宋体，居左（英文用Times New Roman体10.5磅），单倍行距。
+
 \renewcommand{\thefigure}{\thechapter.\@arabic \c@figure}
 \renewcommand{\thetable}{\thechapter.\@arabic \c@table} 
 % 图序与图名之间空1个汉字符。  
 \RequirePackage[labelsep = quad]{caption}
-% https://www.latexstudio.net/archives/8652.html
+% 这应该图和表单独设置，但是我都设置了6，你可以自己在插入表格时单独设定图的要求
+% 参考如下： https://www.latexstudio.net/archives/8652.html
 \setlength{\abovecaptionskip}{6pt}
 \setlength{\belowcaptionskip}{6pt}
+
 
 %%=======%
 %参考文献
