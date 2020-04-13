@@ -1,16 +1,45 @@
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+
+- [兰州大学本科生（学士学位）LaTeX模板](#%e5%85%b0%e5%b7%9e%e5%a4%a7%e5%ad%a6%e6%9c%ac%e7%a7%91%e7%94%9f%e5%ad%a6%e5%a3%ab%e5%ad%a6%e4%bd%8dlatex%e6%a8%a1%e6%9d%bf)
+  - [一、使用方法](#%e4%b8%80%e4%bd%bf%e7%94%a8%e6%96%b9%e6%b3%95)
+  - [二、我怎么从老文件迁移过来？](#%e4%ba%8c%e6%88%91%e6%80%8e%e4%b9%88%e4%bb%8e%e8%80%81%e6%96%87%e4%bb%b6%e8%bf%81%e7%a7%bb%e8%bf%87%e6%9d%a5)
+    - [这个项目与LZUThesis2017主要区别](#%e8%bf%99%e4%b8%aa%e9%a1%b9%e7%9b%ae%e4%b8%8elzuthesis2017%e4%b8%bb%e8%a6%81%e5%8c%ba%e5%88%ab)
+    - [你需要做什么？](#%e4%bd%a0%e9%9c%80%e8%a6%81%e5%81%9a%e4%bb%80%e4%b9%88)
+  - [三、常见问题](#%e4%b8%89%e5%b8%b8%e8%a7%81%e9%97%ae%e9%a2%98)
+    - [1、编译出来的没有**参考文献**或**目录**，或者直接失败：](#1%e7%bc%96%e8%af%91%e5%87%ba%e6%9d%a5%e7%9a%84%e6%b2%a1%e6%9c%89%e5%8f%82%e8%80%83%e6%96%87%e7%8c%ae%e6%88%96%e7%9b%ae%e5%bd%95%e6%88%96%e8%80%85%e7%9b%b4%e6%8e%a5%e5%a4%b1%e8%b4%a5)
+    - [2、正文第一章，编号却是第二章？](#2%e6%ad%a3%e6%96%87%e7%ac%ac%e4%b8%80%e7%ab%a0%e7%bc%96%e5%8f%b7%e5%8d%b4%e6%98%af%e7%ac%ac%e4%ba%8c%e7%ab%a0)
+    - [3、linux环境下编译失败](#3linux%e7%8e%af%e5%a2%83%e4%b8%8b%e7%bc%96%e8%af%91%e5%a4%b1%e8%b4%a5)
+    - [4、为什么中文加粗命令`\textbf{}`或者`\bfseries`都没反应？](#4%e4%b8%ba%e4%bb%80%e4%b9%88%e4%b8%ad%e6%96%87%e5%8a%a0%e7%b2%97%e5%91%bd%e4%bb%a4textbf%e6%88%96%e8%80%85bfseries%e9%83%bd%e6%b2%a1%e5%8f%8d%e5%ba%94)
+    - [5、编译的和预期有差别，你把缓存的文件清理一下，重新四步走进行编译](#5%e7%bc%96%e8%af%91%e7%9a%84%e5%92%8c%e9%a2%84%e6%9c%9f%e6%9c%89%e5%b7%ae%e5%88%ab%e4%bd%a0%e6%8a%8a%e7%bc%93%e5%ad%98%e7%9a%84%e6%96%87%e4%bb%b6%e6%b8%85%e7%90%86%e4%b8%80%e4%b8%8b%e9%87%8d%e6%96%b0%e5%9b%9b%e6%ad%a5%e8%b5%b0%e8%bf%9b%e8%a1%8c%e7%bc%96%e8%af%91)
+    - [6、其他的](#6%e5%85%b6%e4%bb%96%e7%9a%84)
+  - [四、更新日志](#%e5%9b%9b%e6%9b%b4%e6%96%b0%e6%97%a5%e5%bf%97)
+    - [2020.4.13](#2020413)
+    - [2020.4.10](#2020410)
+    - [2020.4.7](#202047)
+    - [2020.4.4](#202044)
+  - [五、其他](#%e4%ba%94%e5%85%b6%e4%bb%96)
+    - [后续计划](#%e5%90%8e%e7%bb%ad%e8%ae%a1%e5%88%92)
+    - [学校的要求有哪些变化](#%e5%ad%a6%e6%a0%a1%e7%9a%84%e8%a6%81%e6%b1%82%e6%9c%89%e5%93%aa%e4%ba%9b%e5%8f%98%e5%8c%96)
+    - [项目主要文件](#%e9%a1%b9%e7%9b%ae%e4%b8%bb%e8%a6%81%e6%96%87%e4%bb%b6)
+    - [编译器选择](#%e7%bc%96%e8%af%91%e5%99%a8%e9%80%89%e6%8b%a9)
+    - [高级操作](#%e9%ab%98%e7%ba%a7%e6%93%8d%e4%bd%9c)
+
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
+
 # 兰州大学本科生（学士学位）LaTeX模板
 
-根据[这个项目](https://github.com/suchot/LZUThesis2017)进行修改的，mac、linux、windows三系统全部测试通过，linux缺一个字体，看`常见问题3`，其他出现什么问题，也看下面的[常见问题：linux环境下编译失败](#3%e3%80%81linux%e7%8e%af%e5%a2%83%e4%b8%8b%e7%bc%96%e8%af%91%e5%a4%b1%e8%b4%a5)。
+根据[这个项目](https://github.com/suchot/LZUThesis2017)进行修改的，mac、linux、windows三系统全部测试通过，linux缺一个字体，看[常见问题：linux环境下编译失败](#3%e3%80%81linux%e7%8e%af%e5%a2%83%e4%b8%8b%e7%bc%96%e8%af%91%e5%a4%b1%e8%b4%a5)，其他出现什么问题，也看下面的[常见问题](#%e4%b8%89%e5%b8%b8%e8%a7%81%e9%97%ae%e9%a2%98)
 
 > 另：template.pdf和template.tex两个文件可以用来学习latex，写了点东西
 
 我强烈建议你用git管理毕业论文，每天写完以后就提交到gitee（速度比github快无数倍）上！！！不然不小心删除了或者中病毒了什么的，哭都没地方哭去
 
-## 使用方法
+## 一、使用方法
 
 只要把[paper.zip](paper.zip)下载然后解压就可以了，所有的都在那单独有一份，直接在那里面的`paper.tex`里写论文
 
-## 我怎么从老文件迁移过来？
+## 二、我怎么从老文件迁移过来？
 
 ### 这个项目与[LZUThesis2017](https://github.com/suchot/LZUThesis2017)主要区别
    
@@ -87,7 +116,7 @@
     \chapter{latex部分用法简介}
     ```
 
-## 常见问题
+## 三、常见问题
 
 你可一定要先安装texlive，我用的2019版，mac上我用的mactex，按照上面[mac系统 vscode用法](https://www.jianshu.com/p/c09b3409317f)这个教程就可以
     
@@ -145,7 +174,7 @@
 
 -----
 
-## 更新日志
+## 四、更新日志
 
 ### 2020.4.13
 
@@ -195,7 +224,7 @@ mac版与windows分开打包，增加说明文件
 
 ------
 
-## 其他
+## 五、其他
 
 ### 后续计划
 
