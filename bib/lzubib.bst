@@ -1,4 +1,5 @@
 % BibTeX standard bibliography style `lzubib.bst' derived from `bnubib.bst'
+% 2020.5.9 修复作者问题
 % 2017/9/16
 ENTRY
   { address
@@ -62,7 +63,7 @@ STRINGS { s t }
 FUNCTION {output.nonnull}
 { 's :=
   output.state mid.sentence =
-    { ", " * write$ }
+    { ". " * write$ }
     { output.state after.block =
     { add.period$ write$
 %      newline$
@@ -280,21 +281,37 @@ FUNCTION {format.names}
   s num.names$ 'numnames :=
   numnames 'namesleft :=
     { namesleft #0 > }
-    { s nameptr "{f.~}{vv~}{ll}{, jj}" format.name$ 't :=
+    { s nameptr 
+      "{vv~}{ll}{ f{~}}{ jj}" 
+      format.name$ 
+      't :=
       nameptr #1 >
-	{ namesleft #1 >
-	    { ", " * t * }
-	    { numnames #2 >
-		{ "," * }
-		'skip$
-	      if$
-	      t "others" =
-		{ " {\em et.~al.}" * }
-		{ " and " * t * }
-	      if$
-	    }
-	  if$
-	}
+        {
+          nameptr #3
+          #1 + =
+          numnames #3
+          > and
+            { "others" 't :=
+              #1 'namesleft := }
+            'skip$
+          if$
+          namesleft #1 >
+            { ", " * t * }
+            {
+              s nameptr "{ll}" format.name$ duplicate$ "others" =
+                { 't := }
+                { pop$ }
+              if$
+              "," *
+              t "others" =
+                {
+                  " " * bbl.etal *
+                }
+                { " " * t * }
+              if$
+            }
+          if$
+        }
 	't
       if$
       nameptr #1 + 'nameptr :=

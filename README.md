@@ -1,33 +1,36 @@
 <!-- START doctoc generated TOC please keep comment here to allow auto update -->
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
 
-- [兰州大学本科生（学士学位）LaTeX模板](#%e5%85%b0%e5%b7%9e%e5%a4%a7%e5%ad%a6%e6%9c%ac%e7%a7%91%e7%94%9f%e5%ad%a6%e5%a3%ab%e5%ad%a6%e4%bd%8dlatex%e6%a8%a1%e6%9d%bf)
-  - [一、使用方法](#%e4%b8%80%e4%bd%bf%e7%94%a8%e6%96%b9%e6%b3%95)
-  - [二、我怎么从老文件迁移过来？](#%e4%ba%8c%e6%88%91%e6%80%8e%e4%b9%88%e4%bb%8e%e8%80%81%e6%96%87%e4%bb%b6%e8%bf%81%e7%a7%bb%e8%bf%87%e6%9d%a5)
-    - [这个项目与LZUThesis2017主要区别](#%e8%bf%99%e4%b8%aa%e9%a1%b9%e7%9b%ae%e4%b8%8elzuthesis2017%e4%b8%bb%e8%a6%81%e5%8c%ba%e5%88%ab)
-    - [你需要做什么？](#%e4%bd%a0%e9%9c%80%e8%a6%81%e5%81%9a%e4%bb%80%e4%b9%88)
-  - [三、常见问题](#%e4%b8%89%e5%b8%b8%e8%a7%81%e9%97%ae%e9%a2%98)
-    - [1、编译出来的没有**参考文献**或**目录**，或者直接失败：](#1%e7%bc%96%e8%af%91%e5%87%ba%e6%9d%a5%e7%9a%84%e6%b2%a1%e6%9c%89%e5%8f%82%e8%80%83%e6%96%87%e7%8c%ae%e6%88%96%e7%9b%ae%e5%bd%95%e6%88%96%e8%80%85%e7%9b%b4%e6%8e%a5%e5%a4%b1%e8%b4%a5)
-    - [2、正文第一章，编号却是第二章？](#2%e6%ad%a3%e6%96%87%e7%ac%ac%e4%b8%80%e7%ab%a0%e7%bc%96%e5%8f%b7%e5%8d%b4%e6%98%af%e7%ac%ac%e4%ba%8c%e7%ab%a0)
-    - [3、linux环境下编译失败](#3linux%e7%8e%af%e5%a2%83%e4%b8%8b%e7%bc%96%e8%af%91%e5%a4%b1%e8%b4%a5)
-    - [4、为什么中文加粗命令`\textbf{}`或者`\bfseries`都没反应？](#4%e4%b8%ba%e4%bb%80%e4%b9%88%e4%b8%ad%e6%96%87%e5%8a%a0%e7%b2%97%e5%91%bd%e4%bb%a4textbf%e6%88%96%e8%80%85bfseries%e9%83%bd%e6%b2%a1%e5%8f%8d%e5%ba%94)
-    - [5、编译的和预期有差别，你把缓存的文件清理一下，重新四步走进行编译](#5%e7%bc%96%e8%af%91%e7%9a%84%e5%92%8c%e9%a2%84%e6%9c%9f%e6%9c%89%e5%b7%ae%e5%88%ab%e4%bd%a0%e6%8a%8a%e7%bc%93%e5%ad%98%e7%9a%84%e6%96%87%e4%bb%b6%e6%b8%85%e7%90%86%e4%b8%80%e4%b8%8b%e9%87%8d%e6%96%b0%e5%9b%9b%e6%ad%a5%e8%b5%b0%e8%bf%9b%e8%a1%8c%e7%bc%96%e8%af%91)
-    - [6、其他的](#6%e5%85%b6%e4%bb%96%e7%9a%84)
-  - [四、更新日志](#%e5%9b%9b%e6%9b%b4%e6%96%b0%e6%97%a5%e5%bf%97)
+
+- [兰州大学本科生2020（学士学位）LaTeX模板](#%E5%85%B0%E5%B7%9E%E5%A4%A7%E5%AD%A6%E6%9C%AC%E7%A7%91%E7%94%9F2020%E5%AD%A6%E5%A3%AB%E5%AD%A6%E4%BD%8Dlatex%E6%A8%A1%E6%9D%BF)
+  - [一、使用方法](#%E4%B8%80%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95)
+    - [现状0：以前用的这个模板，现在需要升级](#%E7%8E%B0%E7%8A%B60%E4%BB%A5%E5%89%8D%E7%94%A8%E7%9A%84%E8%BF%99%E4%B8%AA%E6%A8%A1%E6%9D%BF%E7%8E%B0%E5%9C%A8%E9%9C%80%E8%A6%81%E5%8D%87%E7%BA%A7)
+    - [现状1：论文直接用这个模板开始写](#%E7%8E%B0%E7%8A%B61%E8%AE%BA%E6%96%87%E7%9B%B4%E6%8E%A5%E7%94%A8%E8%BF%99%E4%B8%AA%E6%A8%A1%E6%9D%BF%E5%BC%80%E5%A7%8B%E5%86%99)
+    - [现状2：以前用的LZUThesis2017](#%E7%8E%B0%E7%8A%B62%E4%BB%A5%E5%89%8D%E7%94%A8%E7%9A%84lzuthesis2017)
+      - [这个项目与LZUThesis2017主要区别](#%E8%BF%99%E4%B8%AA%E9%A1%B9%E7%9B%AE%E4%B8%8Elzuthesis2017%E4%B8%BB%E8%A6%81%E5%8C%BA%E5%88%AB)
+      - [你需要做什么](#%E4%BD%A0%E9%9C%80%E8%A6%81%E5%81%9A%E4%BB%80%E4%B9%88)
+  - [二、常见问题](#%E4%BA%8C%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98)
+    - [1、编译出来的没有**参考文献**或**目录**，或者直接失败：](#1%E7%BC%96%E8%AF%91%E5%87%BA%E6%9D%A5%E7%9A%84%E6%B2%A1%E6%9C%89%E5%8F%82%E8%80%83%E6%96%87%E7%8C%AE%E6%88%96%E7%9B%AE%E5%BD%95%E6%88%96%E8%80%85%E7%9B%B4%E6%8E%A5%E5%A4%B1%E8%B4%A5)
+    - [2、正文第一章，编号却是第二章？](#2%E6%AD%A3%E6%96%87%E7%AC%AC%E4%B8%80%E7%AB%A0%E7%BC%96%E5%8F%B7%E5%8D%B4%E6%98%AF%E7%AC%AC%E4%BA%8C%E7%AB%A0)
+    - [3、linux环境下编译失败](#3linux%E7%8E%AF%E5%A2%83%E4%B8%8B%E7%BC%96%E8%AF%91%E5%A4%B1%E8%B4%A5)
+    - [4、为什么中文加粗命令`\textbf{}`或者`\bfseries`都没反应？](#4%E4%B8%BA%E4%BB%80%E4%B9%88%E4%B8%AD%E6%96%87%E5%8A%A0%E7%B2%97%E5%91%BD%E4%BB%A4%5Ctextbf%E6%88%96%E8%80%85%5Cbfseries%E9%83%BD%E6%B2%A1%E5%8F%8D%E5%BA%94)
+    - [5、编译的和预期有差别，你把缓存的文件清理一下，重新四步走进行编译](#5%E7%BC%96%E8%AF%91%E7%9A%84%E5%92%8C%E9%A2%84%E6%9C%9F%E6%9C%89%E5%B7%AE%E5%88%AB%E4%BD%A0%E6%8A%8A%E7%BC%93%E5%AD%98%E7%9A%84%E6%96%87%E4%BB%B6%E6%B8%85%E7%90%86%E4%B8%80%E4%B8%8B%E9%87%8D%E6%96%B0%E5%9B%9B%E6%AD%A5%E8%B5%B0%E8%BF%9B%E8%A1%8C%E7%BC%96%E8%AF%91)
+    - [6、其他的](#6%E5%85%B6%E4%BB%96%E7%9A%84)
+  - [三、更新日志](#%E4%B8%89%E6%9B%B4%E6%96%B0%E6%97%A5%E5%BF%97)
+    - [2020.5.10](#2020510)
     - [2020.4.13](#2020413)
     - [2020.4.10](#2020410)
     - [2020.4.7](#202047)
     - [2020.4.4](#202044)
-  - [五、其他](#%e4%ba%94%e5%85%b6%e4%bb%96)
-    - [后续计划](#%e5%90%8e%e7%bb%ad%e8%ae%a1%e5%88%92)
-    - [学校的要求有哪些变化](#%e5%ad%a6%e6%a0%a1%e7%9a%84%e8%a6%81%e6%b1%82%e6%9c%89%e5%93%aa%e4%ba%9b%e5%8f%98%e5%8c%96)
-    - [项目主要文件](#%e9%a1%b9%e7%9b%ae%e4%b8%bb%e8%a6%81%e6%96%87%e4%bb%b6)
-    - [编译器选择](#%e7%bc%96%e8%af%91%e5%99%a8%e9%80%89%e6%8b%a9)
-    - [高级操作](#%e9%ab%98%e7%ba%a7%e6%93%8d%e4%bd%9c)
+  - [四、其他](#%E5%9B%9B%E5%85%B6%E4%BB%96)
+    - [学校的要求有哪些变化](#%E5%AD%A6%E6%A0%A1%E7%9A%84%E8%A6%81%E6%B1%82%E6%9C%89%E5%93%AA%E4%BA%9B%E5%8F%98%E5%8C%96)
+    - [项目主要文件](#%E9%A1%B9%E7%9B%AE%E4%B8%BB%E8%A6%81%E6%96%87%E4%BB%B6)
+    - [编译器选择](#%E7%BC%96%E8%AF%91%E5%99%A8%E9%80%89%E6%8B%A9)
+    - [高级操作](#%E9%AB%98%E7%BA%A7%E6%93%8D%E4%BD%9C)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
-# 兰州大学本科生（学士学位）LaTeX模板
+# 兰州大学本科生2020（学士学位）LaTeX模板
 
 根据[这个项目](https://github.com/suchot/LZUThesis2017)进行修改的，mac、linux、windows三系统全部测试通过，linux缺一个字体，看[常见问题：linux环境下编译失败](#3%e3%80%81linux%e7%8e%af%e5%a2%83%e4%b8%8b%e7%bc%96%e8%af%91%e5%a4%b1%e8%b4%a5)，其他出现什么问题，也看下面的[常见问题](#%e4%b8%89%e5%b8%b8%e8%a7%81%e9%97%ae%e9%a2%98)
 
@@ -37,19 +40,35 @@
 
 ## 一、使用方法
 
-只要把[paper.zip](paper.zip)下载然后解压就可以了，所有的都在那单独有一份，直接在那里面的`paper.tex`里写论文
+据说这个网站：[overleaf](https://cn.overleaf.com/)挺好用（我没用，不喜欢在线版的），可以直接直接上传这个模板，在线使用。如果你就这一次用LaTex，以后都不需要了，可以试一下，但是如果你还上研究生要发文章，还是按照下面的本地安装一下吧
 
-## 二、我怎么从老文件迁移过来？
+### 现状0：以前用的这个模板，现在需要升级
 
-### 这个项目与[LZUThesis2017](https://github.com/suchot/LZUThesis2017)主要区别
-   
-- lzubib.bst移动到了bib里面
+请下载[lzubib.bst](bib/lzubib.bst)和[LZUThesis.cls](/LZUThesis.cls)，替换你论文项目中原有的这两个文件。
+
+### 现状1：论文直接用这个模板开始写
+
+**前3步详细请见[template.pdf](template.pdf)**
+
+1. 安装texlive2020
+
+2. 测试安装是否成功
+
+3. 配置编译器，可见[编译器选择](#%e7%bc%96%e8%af%91%e5%99%a8%e9%80%89%e6%8b%a9)
+
+4. texlive安装好并且把编译器配置完成后，只要把[paper.zip](paper.zip)下载然后解压就可以了，所有的都在那单独有一份，直接在那里面的`paper.tex`里写论文
+
+### 现状2：以前用的[LZUThesis2017](https://github.com/suchot/LZUThesis2017)
+
+#### 这个项目与[LZUThesis2017](https://github.com/suchot/LZUThesis2017)主要区别
+
+- lzubib.bst移动到了bib里面，并且修改了参考文献的一些问题
 - 打包的里面LZUthesis.cls名字修改了
 - LZU.cfg被合并到LZUthesis.cls里面了
 - 适配了2020兰大毕业论文要求，并修改了他遗留下了的诸多问题！！！！！
 - 文件名我看着不舒服，改成LZUThesis了，T大写
 
-### 你需要做什么？
+#### 你需要做什么
 
 如果你配置好了LaTex的书写环境，先下载解压 [paper.zip](paper.zip)
 
@@ -58,7 +77,7 @@
 1. 模板名字
     > 如果以前的.tex文件复制过来，必须要把前面一行名字改掉，以前是
 
-    ```tex 
+    ```tex
     \documentclass{LZUthesis}
     % 或
     \documentclass{LZUthesisonline}
@@ -66,11 +85,12 @@
 
     > 注意，我的这里面 *Thesis*第一个字母大写了，不大写我看着不舒服，敲代码的人应该明白
 
-    ```tex 
-    \documentclass{LZUThesis} 
+    ```tex
+    \documentclass{LZUThesis}
     ```
 
-2. 成绩页在责任书之后，以前在前面，需要你自己移动，位置如下
+2. 成绩页在责任书之后，以前在前面，需要你自己移动，位置如
+
     ```tex
     \maketitle
 
@@ -101,9 +121,11 @@
 
     \frontmatter
     ```
+
 3. 英文摘要请放在中文摘要前面！
 
 4. 正文最前面有绪论（引言），模板中已经给了相关命令`\Intro`
+
     ```tex
     \tableofcontents
     %文章主体
@@ -116,9 +138,9 @@
     \chapter{latex部分用法简介}
     ```
 
-## 三、常见问题
+## 二、常见问题
 
-你可一定要先安装texlive，我用的2019版，mac上我用的mactex，按照上面[mac系统 vscode用法](https://www.jianshu.com/p/c09b3409317f)这个教程就可以
+你可一定要先安装texlive2020，可参考[现状1：论文直接用这个模板开始写](#%e7%8e%b0%e7%8a%b61%e8%ae%ba%e6%96%87%e7%9b%b4%e6%8e%a5%e7%94%a8%e8%bf%99%e4%b8%aa%e6%a8%a1%e6%9d%bf%e5%bc%80%e5%a7%8b%e5%86%99)
     
 ### 1、编译出来的没有**参考文献**或**目录**，或者直接失败：
 
@@ -155,26 +177,45 @@
 - 方法二：可以搜索在[LZUThesis.cls](LZUThesis.cls)文件中搜索`\fontspec{Arial}`，将这一个命令删除，这个字母不用这个字体了（有点不符合论文对英摘要的要求）。
 
 ### 4、为什么中文加粗命令`\textbf{}`或者`\bfseries`都没反应？
+
    不仅你没反应，你有没有发现“关键字”等需要宋体加粗的我用的都是黑体？你可以根据你自己的字体修改，但是对于latex中，中文加粗，大家的普遍做法都是改成黑体
 
    详情查看[高级操作](#%e9%ab%98%e7%ba%a7%e6%93%8d%e4%bd%9c)
 
 ### 5、编译的和预期有差别，你把缓存的文件清理一下，重新四步走进行编译
+
 缓存的文件：比如你的文件名是paper.tex，那就删除以paper开头的所有文件，当然，paper.tex不要删除！！！！
-    
+
 理论上是这么做的，但是你删错了不关我的事。。。
-    
+
 我用的sublime或者vscode点一下就删除了，好吧最多点两下，删错了，如果之前用了git的话，可以恢复
 
 ### 6、其他的
+
 > 百度错误的提示，基本上都能找到原因
 
-以后再补充，可以在issues里提交bugs，也可以直接联系我：肯定是兰大的，你登录i兰大易班，然后点 我的 - 关于我们 - 找到我们，直接内测群吧，不想在这放个人信息，也算是个广告吧。
+以后再补充，如果是bugs，可以在issues里提交bugs，请**勿**直接QQ联系我！
+
+我已经多次多人测试通过，如果你在[paper.zip](paper.zip)什么都没写，就直接编译失败的肯定是你自己的原因！！
+
+如：
+
+- 没有安装或者没有成功安装texlive2020（mac是mactex），请查看：[使用方法](#%e4%b8%80%e4%bd%bf%e7%94%a8%e6%96%b9%e6%b3%95)
+
+- vscode等编译器配置有问题，没有采用四步走，请查看：[四步走编译](#1%e7%bc%96%e8%af%91%e5%87%ba%e6%9d%a5%e7%9a%84%e6%b2%a1%e6%9c%89%e5%8f%82%e8%80%83%e6%96%87%e7%8c%ae%e6%88%96%e7%9b%ae%e5%bd%95%e6%88%96%e8%80%85%e7%9b%b4%e6%8e%a5%e5%a4%b1%e8%b4%a5)
+
+- 不怎么懂模板，还非要乱改
+- ……
 
 
 -----
 
-## 四、更新日志
+## 三、更新日志
+
+### 2020.5.10
+
+1. 修复参考文献的历史遗留问题
+2. 完善文档
 
 ### 2020.4.13
 
@@ -188,15 +229,17 @@
 
 1. 说明：上个版本的介绍中绪论写错位置了，应在正文最前面
 2. 去除雅黑字体，windows、linux、macos三合一，注意使用的时候最前面修改一下，别打我，这个以后绝对不改了
-    ```tex 
+
+    ```tex
     % 现在应该是
-    \documentclass{LZUThesis} 
-    
+    \documentclass{LZUThesis}
+
     % 之前是
-    \documentclass{LZUThesis-mac} 
+    \documentclass{LZUThesis-mac}
     % 或
-    \documentclass{LZUThesis-windows} 
+    \documentclass{LZUThesis-windows}
     ```
+
 3. 优化封面和成绩评语界面，与word版更相似
 4. 参考文献中可以由url、doi（mendeley生成的参考文献会携带），这样编译出来的pdf，点击参考文献可以直接跳转到原文界面
 5. 新增 `textcomp`包，可以输入 `\textcelsius`，会变成摄氏度
@@ -224,15 +267,8 @@ mac版与windows分开打包，增加说明文件
 
 ------
 
-## 五、其他
+## 四、其他
 
-### 后续计划
-
-> 毕业论文写完的早，有时间的话（论文不写完，不更这个库了）：
-
-1. 会对参考文献详细的改一下，目前2017那个库遗留问题很多
-2. 回学校后，针对windows系统对模板再度优化，没带windows电脑 ~
-3. 会对图表注释、图表字体大小；正文行间距、图表目录等要求再审查一边，我知道有问题……
 
 ### 学校的要求有哪些变化
 
@@ -248,14 +284,13 @@ mac版与windows分开打包，增加说明文件
 
 本项目精简了文件，只有LZUThesis.clc和bib、figure文件夹是必须的
 
-
 1. bib文件夹里，database.bib是用来放你的参考文献的，
 
 2. figure文件夹是一个图和导师签名
 
-2. LZUThesis.clc这是模板配置文件，lzubib.bst是参考文献配置文件，小白请千万不要更改；
+3. LZUThesis.clc这是模板配置文件，lzubib.bst是参考文献配置文件，小白请千万不要更改；
 
-3. template.tex是用来写论文的，这个文件名字可以修改
+4. template.tex是用来写论文的，这个文件名字可以修改
 
 
 --------
@@ -280,12 +315,13 @@ mac版与windows分开打包，增加说明文件
 
     ```tex
     %windows系统不需要这个操作，只有linux与mac需要先百度去安装字体，再自定义如下命令
-    
+
     \setCJKfamilyfont{yahei}{MicrosoftYaHei}
     \newcommand{\yahei}{\CJKfamily{yahei}}
     ```
+
     然后把现在设置在那几个字前面的`\heiti`改成`\yahei`
-    
+
     >MicrosoftYaHei为你的字体在你电脑上上显示的名字，比如苹果电脑上：打开字体册应用，找到你自己安装的雅黑字体的PostScript名称
 
 2. 成绩页等加粗字体有问题，并不是宋体加粗而是黑体！
@@ -295,6 +331,7 @@ mac版与windows分开打包，增加说明文件
     在最新版的LZUThesis.cls文件中搜索：`应该是加粗`，可以找到应该改的地方，把这里的黑体设置，改成旁边注释括号里的要求
 
     示例如下：
+
     ```tex
     原本是
 
@@ -311,7 +348,7 @@ mac版与windows分开打包，增加说明文件
     windows需要改成：
 
     %先百度安装字体，再在最前面合适的地方自定义加粗字体，比如你安装的字体名是：宋粗体
-    \setCJKfamilyfont{csong}{宋粗体}        
+    \setCJKfamilyfont{csong}{宋粗体}
     \newcommand{\csong}{\CJKfamily{csong}}
 
     %然后修改需要修改的地方

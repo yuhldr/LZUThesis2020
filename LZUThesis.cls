@@ -76,6 +76,16 @@
     $\rm #1 $
 }
 
+% 表格文字居中，其实就是相当于表格合并
+% 用法 \tabincell{c}{物理//量//单位}
+\newcommand{\tabincell}[2]{ \begin{tabular}{ #1 } #2 \end{tabular}}
+
+
+% 物理单位埃，已经加了 $ $， 不要再放在$$环境里面
+\newcommand{\angstrom}{
+    $\mathring{\text{A}}$
+}
+
 
 %============================ 我自己用的一些小命令 =========%
 
@@ -128,12 +138,13 @@
 %颜色宏包
 %字体宏包
 %=======package
-\RequirePackage{amsmath,amsfonts,amssymb}
+\RequirePackage{amsmath,amsfonts,amssymb,mathrsfs}
 \RequirePackage{graphicx}
 \graphicspath{{figures/}{figure/}{pictures/}
       {picture/}{pic/}{pics/}{image/}{images/}}
 \RequirePackage[svgnames]{xcolor}
-\RequirePackage{mathptmx}% %Times New Roman字体
+% 下面这个会导致花体，mathcal和mathscr完全相同，正常mathcal会花的轻一些
+% \RequirePackage{mathptmx}% %Times New Roman字体
 \RequirePackage{float}%控制图片位置 参数H
 \RequirePackage[T1]{fontenc}
 
