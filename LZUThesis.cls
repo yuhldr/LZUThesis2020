@@ -47,11 +47,11 @@
 \@ifclasslater{ctexbook}{2011/03/13}
 {%
     \ctexset{
-        contentsname={目\LZUspace 录}
+        contentsname={目\quad 录}
     }
 }
 {%
-    \def\CTEX@contentsname{目\LZUspace 录}
+    \def\CTEX@contentsname{目\quad 录}
 }%
 
 \RequirePackage{textcomp}
@@ -482,10 +482,6 @@
 
 
 
-%%=======space
-\newcommand\LZUspace{\quad}
-
-
 %=======appendix
 %附录页和感谢页
 %
@@ -493,11 +489,13 @@
 
 % 附录中的插图、表格、公式、参考文献等的序号需与正文区分，另行编制，如编为“图1”、“表1”、“式（1）”、“文献[1]”等。“附录”两字间空2个汉字间隙，三号字，黑体，加粗，居中，单倍行距，段前24磅，段后18磅。附录的内容为宋体，五号（英文用Times New Roman体，10.5磅），行间距为固定值20磅。
 \newcommand{\Appendix}{%
+    \cleardoublepage 
+    \phantomsection
     \setcounter{section}{0}
+    \setcounter{chapter}{1}
     \renewcommand{\thechapter}{A}%
-
     \addcontentsline{toc}{chapter}{附 录}
-    \chapter*{附 \LZUspace\LZUspace 录}
+    \chapter*{附 \qquad 录}
     \zihao{5}
 }
 
@@ -505,17 +503,19 @@
 % “致谢”两字间空2个字符间隙，字体为黑体，三号字，加粗居中。单倍行距，段前24磅，段后18磅。正文部分首行缩进两个汉字符，小四号字，仿宋，行距20磅。
 
 \newcommand{\Thanks}{%
+    \cleardoublepage 
+    \phantomsection
     \addcontentsline{toc}{chapter}{致 谢}
-    \chapter*{致\LZUspace\LZUspace 谢}
+    \chapter*{致\qquad 谢}
     \zihao{-4}\fangsong
 }
 
 
 \newcommand{\Intro}{%
+    \cleardoublepage 
     \phantomsection
     \addcontentsline{toc}{chapter}{绪 论}
-    \chapter*{绪 \LZUspace 论}
-
+    \chapter*{绪 \quad 论}
     \setcounter{section}{0}
     \setcounter{chapter}{1}
     \zihao{-4}\songti
@@ -626,13 +626,12 @@
 \newtoks\bibdatabase
 \RequirePackage{ }
 \newcommand{\printbib}{
-\zihao{5}
-\bibliographystyle{bib/lzubib}
-%\bibliographystyle{unsrt}
-\clearpage
-\phantomsection
-\addcontentsline{toc}{chapter}{参考文献}
-\bibliography{\the \bibdatabase}
+    \zihao{5}
+    \bibliographystyle{bib/lzubib}
+    \cleardoublepage 
+    \phantomsection
+    \addcontentsline{toc}{chapter}{参考文献}
+    \bibliography{\the \bibdatabase}
 }
 
 
