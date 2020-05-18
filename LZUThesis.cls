@@ -151,6 +151,12 @@
 \RequirePackage{booktabs}
 \RequirePackage{harpoon}
 
+\RequirePackage{tablefootnote}
+% 可以换页的表格
+\RequirePackage{longtable}
+% 连续参考文献横杠连接
+\RequirePackage{cite}
+
 
 %=======head and foot
 %页眉页脚
