@@ -375,7 +375,7 @@
     \zihao{-3}\heiti  % 成绩这一页整体设置，应该是加粗（宋体加粗）
     \begin{tabularx}{\textwidth}{|X|}
         \multicolumn{1}{c}{
-            \zihao{3}\heiti \mdseries 毕业论文（设计）成绩表
+            \zihao{3}\songti 毕业论文（设计）成绩表
         } \\
         \multicolumn{1}{c}{} \\
         \hline
@@ -494,8 +494,8 @@
     \setcounter{section}{0}
     \setcounter{chapter}{1}
     \renewcommand{\thechapter}{A}%
-    \addcontentsline{toc}{chapter}{\texorpdfstring{附 \qquad 录}{m squared}}
-    \chapter*{\texorpdfstring{附 \qquad 录}{m squared}}
+    \addcontentsline{toc}{chapter}{\texorpdfstring{附 \qquad 录}{附 \qquad 录}}
+    \chapter*{\texorpdfstring{附 \qquad 录}{附 \qquad 录}}
     \zihao{5}
 }
 
@@ -505,8 +505,8 @@
 \newcommand{\Thanks}{%
     \cleardoublepage 
     \phantomsection
-    \addcontentsline{toc}{chapter}{\texorpdfstring{致\qquad 谢}{m squared}}
-    \chapter*{\texorpdfstring{致\qquad 谢}{m squared}}
+    \addcontentsline{toc}{chapter}{\texorpdfstring{致\qquad 谢}{致\qquad 谢}}
+    \chapter*{\texorpdfstring{致\qquad 谢}{致\qquad 谢}}
     \zihao{-4}\fangsong
 }
 
@@ -514,8 +514,8 @@
 \newcommand{\Intro}{%
     \cleardoublepage 
     \phantomsection
-    \addcontentsline{toc}{chapter}{绪 论}
-    \chapter*{绪 \quad 论}
+    \addcontentsline{toc}{chapter}{\texorpdfstring{绪 \quad 论}{绪 \quad 论}}
+    \chapter*{\texorpdfstring{绪 \quad 论}{绪 \quad 论}}
     \setcounter{section}{0}
     \setcounter{chapter}{1}
     \zihao{-4}\songti
