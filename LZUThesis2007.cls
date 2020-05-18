@@ -1,5 +1,5 @@
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesClass{LZUThesis}[2020/05/10 V1.1.0 Thesis for LZUer By yuhldr]
+\ProvidesClass{LZUThesis2007}[2020/05/18 V1.2.0 Thesis for LZUer By yuhldr Use 2007 standard]
 \LoadClass[12pt, a4paper, UTF8, openany,oneside]{ctexbook}
 
 % 部分内容参考了https://github.com/suchot/LZUThesis2017，适配了2020最新的毕业论文要求
@@ -100,9 +100,9 @@
 
 %%=======page
 %页面边距
-%页边距为上2.5cm，下2.5cm，左2.5cm，右2cm，页眉边距为1.5cm，页脚边距为1.5cm。行间距为固定值20磅。
+%论文页边距一般要求：上边距3cm、下边距2.54cm,左右边距3.17cm,页眉页脚2.0cm。
 %%=======page
-\RequirePackage[top=2.5cm, bottom=2.5cm,outer=2cm, inner=2.5cm, headheight=1.5cm, footskip=1.5cm, heightrounded]{geometry}
+\RequirePackage[top=3cm, bottom=2.54cm,outer=3.17cm, inner=3.17cm, headheight=2.0cm, footskip=2.0cm, heightrounded]{geometry}
 
 
 %=======package
@@ -185,7 +185,7 @@
     % Footers
     \fancyfoot{} % clear all footer fields
     \cfoot[C]{\thepage}
-    \renewcommand\headrule{ \kern 0.8pt \hrule width \hsize height 0.3pt}
+    \renewcommand\headrule{\hrule width \hsize height 2pt \kern 2pt \hrule width \hsize height 0.4pt}
 }
 
 \appto\mainmatter{\pagestyle{mainmatterstyle}}
@@ -200,10 +200,12 @@
 %标题样式
 %=======format
 
-% 1.“目录”两字间空1个字符间隙，字体为黑体，三号，加粗，居中，单倍行距，段前24磅，段后18磅；目录中标题不能超过三级，
-% 一级标题字体为宋体，四号，加粗；
-% 二级标题字体为宋体，四号；
-% 三级标题字体为宋体，小四号。
+
+% “目录”两字间空1个汉字符间隙，三号字，黑体，加粗，居中，单倍行距，段前24磅，段后18磅。
+% 目录下方为章、节、条、款及其起始页码，章、节、条、款层次代号可以用阿拉伯数字或汉字。目录中一般只出现三级标题，
+% 一级标题为宋体，四号字, 行距20磅, 段前6磅，段后0磅，两端对齐,页码右对齐，
+% 二级、三级标题为宋体，小四号字,行距20磅, 段前6磅，段后0磅，两端对齐,页码右对齐,左缩进2个汉字符，序号与标题名间空1个字符宽度。
+
 
 \usepackage[font=small]{caption}
 
@@ -212,10 +214,9 @@
 \renewcommand\cftdotsep{0.5}                    %虚线间隔
 \renewcommand{\cftchapafterpnum}{\vspace{6pt}} %章节间隔 ，节前6磅
 \setlength{\cftbeforesecskip}{6pt}              %章节间隔 ，节前6磅
-\renewcommand\cftchapfont{\zihao{4}\heiti}  % 目录中一级标题，应该是加粗（宋体加粗）
-\renewcommand\cftsecfont{\zihao{4} \songti}
+\renewcommand\cftchapfont{\zihao{4}\songti}  
+\renewcommand\cftsecfont{\zihao{-4} \songti}
 \renewcommand\cftsubsecfont{\zihao{-4} \songti}
-\renewcommand\cftchappagefont{\mdseries}
 \setlength\cftbeforetoctitleskip{24pt}
 \setlength\cftaftertoctitleskip{18pt}
 
@@ -253,9 +254,12 @@
     \thispagestyle{empty}
     \begin{center}
         \includegraphics[width=6.27cm]{lzu.png}\\
-        \vspace*{21.8pt}
+        \vspace*{58pt}
 
-        {\zihao{1}\heiti{本科生毕业论文（设计）\\}}% 封面这几个字，应该是雅黑
+        {\fontsize{28bp}{0pt}\ziju{1}\heiti{毕业论文\\}}% 封面这几个字，应该是加粗（宋体加粗）
+        \vspace{21.8pt}
+        {\zihao{4} \heiti（本\quad 科\quad 生）}
+
         \vspace{21.8pt}
         \par
         \zihao{4}
@@ -265,39 +269,38 @@
         \vspace*{60pt}
 
         \begin{tabular}{ll}
-            \heiti \zihao{3} 论文题目（中文）% “论文题目（中文）”这几个字，应该是加粗（宋体加粗）
+            \heiti \zihao{4} 论文题目（中文）% “论文题目（中文）”这几个字，应该是加粗（宋体加粗）
+
+            % 论文题目用三号字，宋体，加粗，其他信息用小三号字，宋体，加粗，居中。
             \forloop{title_str_number}{1}{\value{title_str_number}<6}{%
                 \StrFindGroup{\@title}{\value{title_str_number}}[\mygroup]%
                 \IfStrEq{\mygroup}{}{}{%
-                    & {\StrFindGroup{\@title}{\value{title_str_number}}[\mygroup]\LZUunderline[320pt]{ \songti \zihao{3}\mygroup}}\\[0.40cm]%
+                    & {\StrFindGroup{\@title}{\value{title_str_number}}[\mygroup]\LZUunderline[320pt]{ \songti \zihao{3}\heiti\mygroup}}\\[0.40cm]%
                 }%
             }%
-            \heiti  \zihao{3} 论文题目（英文）% “论文题目（英文）”这几个字，应该是加粗（宋体加粗）
+            \heiti  \zihao{4} 论文题目（英文）% “论文题目（英文）”这几个字，应该是加粗（宋体加粗）
             \forloop{title_str_number}{1}{\value{title_str_number}<6}{%
                 \StrFindGroup{\the\entitle}{\value{title_str_number}}[\mygroup]%
                 \IfStrEq{\mygroup}{}{}{%
-                    & {\StrFindGroup{\the\entitle}{\value{title_str_number}}[\mygroup]\LZUunderline[320pt]{\zihao{3}\mygroup}}\\[0.40cm]%
+                    & {\StrFindGroup{\the\entitle}{\value{title_str_number}}[\mygroup]\LZUunderline[320pt]{\zihao{3}\bf\mygroup}}\\[0.40cm]%
                 }%
             }%
+            % “学生姓名等、指导教师、……”这几个字，应该是加粗（宋体加粗）
+            {\heiti \zihao{4}{学\hfill 生\hfill 姓\hfill 名}} &
+            {\LZUunderline[320pt]{ \songti \zihao{4}\@author}}\\[0.40cm]
+            {\heiti \zihao{4}{导\hfill 师\hfill 姓\hfill 名\hfill 、\hfill 职\hfill 称}} &
+            {\LZUunderline[320pt]{ \songti \zihao{4}  \the\advisor}} \\[0.40cm]
+            {\heiti \zihao{4}{学\hfill 生\hfill 所\hfill 属\hfill 学\hfill 院}} &
+            {\LZUunderline[320pt]{ \songti  \zihao{4} \the\college}} \\[0.40cm]
+            {\heiti \zihao{4} {专\hfill 业}} &
+            {\LZUunderline[320pt]{ \songti  \zihao{4} \the\major}}\\[0.40cm]
+            {\heiti \zihao{4}{年\hfill 级}} &
+            {\LZUunderline[320pt]{ \songti \zihao{4}  \the\grade}}\\[0.40cm]
         \end{tabular}
 
-        \vspace*{60pt}
-
-        \begin{tabular}{cc}
-            {\songti \zihao{3}{学生姓名}} &
-            {\LZUunderline[180pt]{ \songti \zihao{3}\@author}}\\[0.40cm]
-            {\songti \zihao{3}{指导教师}} &
-            {\LZUunderline[180pt]{ \songti \zihao{3}  \the\advisor}} \\[0.40cm]
-            {\songti \zihao{3}{学\qquad 院}} &
-            {\LZUunderline[180pt]{ \songti  \zihao{3} \the\college}} \\[0.40cm]
-            {\songti \zihao{3} {专\qquad 业}} &
-            {\LZUunderline[180pt]{ \songti  \zihao{3} \the\major}}\\[0.40cm]
-            {\songti \zihao{3}{年\qquad 级}} &
-            {\LZUunderline[180pt]{ \songti \zihao{3}  \the\grade}}\\[0.40cm]
-        \end{tabular}
         \par
-        \vspace{40pt}
-        {\ziju{0}\zihao{3} \heiti{兰州大学教务处}}
+        \vspace{120pt}
+        {\ziju{0.3}\zihao{-4} {兰州大学教务处}}% “兰州大学教务处”这几个字，应该是雅黑
     \end{center}
     \clearpage
 }
@@ -317,11 +320,12 @@
         {\heiti\zihao{3}{诚信责任书}} % “诚信责任书”这几个字，应该是加粗（宋体加粗）
     \end{center}
 
-    本人郑重声明：本人所呈交的毕业论文（设计），是在导师的指导下独立进行研究所取得的成果。毕业论文（设计）中凡引用他人已经发表或未发表的成果、数据、观点等，均已明确注明出处。除文中已经注明引用的内容外，不包含任何其他个人、集体已经发表或未发表的论文。
+    本人郑重声明：本人所呈交的毕业论文（设计），是在导师的指导下独立进行研究所取得的成果。毕业论文（设计）中凡引用他人已经发表或未发表的成果、数据、观点等，均已明确注明出处。除文中已经注明引用的内容外，不包含任何其他个人或集体已经发表或在网上发表的论文。
 
     本声明的法律责任由本人承担。
 
-    \vskip1cm
+
+    \vskip1.5cm
 
     \begin{center}
         \begin{tabular*}{\textwidth}{rm{\fifth}lm{\fifth} cm{\fifth}rp{\fifth}lm{\fifth}}
@@ -367,23 +371,25 @@
 \newtoks \committeecomment
 \newtoks \finalgrade
 \newcommand{\Grade}{
-\clearpage
+
 \thispagestyle{empty}
-% \phantomsection
-% \addcontentsline{toc}{chapter}{毕业论文（设计）成绩}
+
+    \cleardoublepage 
+    \phantomsection
+    \addcontentsline{toc}{chapter}{论文（设计）成绩}
+    
 \begin{center}
     \zihao{-3}\heiti  % 成绩这一页整体设置，应该是加粗（宋体加粗）
     \begin{tabularx}{\textwidth}{|X|}
         \multicolumn{1}{c}{
-            \zihao{3}\heiti \mdseries 毕业论文（设计）成绩表
+            \zihao{3}\heiti 毕业论文（设计）成绩表
         } \\
-        \multicolumn{1}{c}{} \\
         \hline
         \centerline{%
             \songti 
             \begin{minipage}[t][10cm][t]{0.92\textwidth}
                 \setlength\parindent{0pt}
-                \zihao{4} \the \supervisorcomment   
+                \zihao{-3} \the \supervisorcomment   
             \end{minipage}
         }\\
         建议成绩\LZUunderline[80pt]{\the \recommendedgrade}
@@ -392,7 +398,7 @@
             \the \supervisorsignature
         }\\
         \hline
-        答辩委员会意见\\
+        答辩小组意见\\
         \centerline{%
             \begin{minipage}[t][2cm][t]{0.92\textwidth}
                 \setlength\parindent{\ccwd}
@@ -430,13 +436,13 @@
             \linespread{1.3889}
             \centering
             % 中文摘要标题，应该是加粗（宋体加粗）
-            \zihao{2}\heiti \noindent\@title\the\titlextra 
+            \zihao{3}\heiti \noindent\@title\the\titlextra 
         \end{minipage}
     \end{center}%
     \begin{center}%
         \linespread{1}
         \setlength{\parskip}{18pt}
-        \zihao{3}\heiti  中文摘要  % 中文摘要这几个字，应该是加粗（宋体加粗）
+        \zihao{3}\heiti  中文摘要
     \end{center}%
     %行距20磅 http://blog.sina.com.cn/s/blog_5e16f1770100ly96.html
     \setlength{\baselineskip}{20pt} 
@@ -462,7 +468,7 @@
             \linespread{1}
             \selectfont
             \centering
-            \zihao{2} \bfseries \noindent \expandafter\MakeUppercase\expandafter{\the\entitle\ \the\entitletra}%
+            \zihao{3} \bfseries \noindent \expandafter\MakeUppercase\expandafter{\the\entitle\ \the\entitletra}%
         \end{minipage}
     \end{center}%
     \begin{center}%
@@ -510,17 +516,6 @@
     \zihao{-4}\fangsong
 }
 
-
-\newcommand{\Intro}{%
-    \cleardoublepage 
-    \phantomsection
-    \addcontentsline{toc}{chapter}{绪 论}
-    \chapter*{绪 \quad 论}
-    \setcounter{section}{0}
-    \setcounter{chapter}{1}
-    \zihao{-4}\songti
-
-}
 
 %---------------------------
 %超链接
