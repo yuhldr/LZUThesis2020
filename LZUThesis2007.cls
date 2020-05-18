@@ -15,8 +15,8 @@
 %正文另起一行。正文：宋体，小四（英文用Times New Roman字体，12磅），两端对齐，段落首行左缩进2个汉字符，行间距为固定值20磅，段前段后0磅。
 %
 %\CTEXsetup[format+={\sffamily\bfseries\small}]{chapter}
-\def\CTEX@chapter@nameformat{\bfseries\heiti\zihao{3}} % 应该是加粗（黑体加粗）
-\def\CTEX@chapter@titleformat{\bfseries\heiti\zihao{3}} % 应该是加粗（黑体加粗）
+\def\CTEX@chapter@nameformat{\textbf\heiti\zihao{3}} % 应该是加粗（黑体加粗）
+\def\CTEX@chapter@titleformat{\textbf\heiti\zihao{3}} % 应该是加粗（黑体加粗）
 \def\CTEX@chapter@beforeskip{24pt}
 \def\CTEX@chapter@afterskip{18pt}
 %\def\CTEX@chapter@titleformat{\bfseries\heiti\fontspec{Times New Roman}\zihao{3}}
@@ -254,7 +254,7 @@
     \thispagestyle{empty}
     \begin{center}
         \includegraphics[width=6.27cm]{lzu.png}\\
-        \vspace*{58pt}
+        \vspace{21.8pt}
 
         {\fontsize{28bp}{0pt}\ziju{1}\heiti{毕业论文\\}}% 封面这几个字，应该是加粗（宋体加粗）
         \vspace{21.8pt}
@@ -361,61 +361,6 @@
 }
 
 
-%---------------------------
-%论文成绩
-%---------------------------
-\RequirePackage{tabularx}
-\newtoks \supervisorcomment
-\newtoks \recommendedgrade
-\newtoks \supervisorsignature
-\newtoks \committeecomment
-\newtoks \finalgrade
-\newcommand{\Grade}{
-
-\thispagestyle{empty}
-
-    \cleardoublepage 
-    \phantomsection
-    \addcontentsline{toc}{chapter}{论文（设计）成绩}
-    
-\begin{center}
-    \zihao{-3}\heiti  % 成绩这一页整体设置，应该是加粗（宋体加粗）
-    \begin{tabularx}{\textwidth}{|X|}
-        \multicolumn{1}{c}{
-            \zihao{3}\heiti 毕业论文（设计）成绩表
-        } \\
-        \hline
-        \centerline{%
-            \songti 
-            \begin{minipage}[t][10cm][t]{0.92\textwidth}
-                \setlength\parindent{0pt}
-                \zihao{-3} \the \supervisorcomment   
-            \end{minipage}
-        }\\
-        建议成绩\LZUunderline[80pt]{\the \recommendedgrade}
-        \hfill 
-        指导教师（签字）\LZUunderline[80pt]{
-            \the \supervisorsignature
-        }\\
-        \hline
-        答辩小组意见\\
-        \centerline{%
-            \begin{minipage}[t][2cm][t]{0.92\textwidth}
-                \setlength\parindent{\ccwd}
-                \zihao{-4} \the\committeecomment
-            \end{minipage}
-        }
-        \hfill 答辩委员会负责人（签字）\underline{\hspace{80pt}}\\
-        \hline
-        \\[2.3cm]
-        成绩\LZUunderline[80pt]{\the \finalgrade}\hfill 学院（盖章）\underline{\hspace{80pt}}\\
-        \hfill{\zihao{-4}年\hspace{20pt}月\hspace{20pt}日}\\
-        \hline
-    \end{tabularx}
-\end{center}
-}
-
-
 
 %=======abstract
 %摘要页
@@ -484,36 +429,6 @@
     \par #1\\%
     \vbox{}\\
     {\bfseries Key Words:} #2
-}
-
-
-
-%=======appendix
-%附录页和感谢页
-%
-%=======appendix
-
-% 附录中的插图、表格、公式、参考文献等的序号需与正文区分，另行编制，如编为“图1”、“表1”、“式（1）”、“文献[1]”等。“附录”两字间空2个汉字间隙，三号字，黑体，加粗，居中，单倍行距，段前24磅，段后18磅。附录的内容为宋体，五号（英文用Times New Roman体，10.5磅），行间距为固定值20磅。
-\newcommand{\Appendix}{%
-    \cleardoublepage 
-    \phantomsection
-    \setcounter{section}{0}
-    \setcounter{chapter}{1}
-    \renewcommand{\thechapter}{A}%
-    \addcontentsline{toc}{chapter}{\texorpdfstring{附 \qquad 录}{附 \qquad 录}}
-    \chapter*{\texorpdfstring{附 \qquad 录}{附 \qquad 录}}
-    \zihao{5}
-}
-
-
-% “致谢”两字间空2个字符间隙，字体为黑体，三号字，加粗居中。单倍行距，段前24磅，段后18磅。正文部分首行缩进两个汉字符，小四号字，仿宋，行距20磅。
-
-\newcommand{\Thanks}{%
-    \cleardoublepage 
-    \phantomsection
-    \addcontentsline{toc}{chapter}{\texorpdfstring{致\qquad 谢}{致\qquad 谢}}
-    \chapter*{\texorpdfstring{致\qquad 谢}{致\qquad 谢}}
-    \zihao{-4}\fangsong
 }
 
 
@@ -628,6 +543,97 @@
     \addcontentsline{toc}{chapter}{参考文献}
     \bibliography{\the \bibdatabase}
 }
+
+
+
+%=======appendix
+%附录页和感谢页
+%
+%=======appendix
+
+% 附录中的插图、表格、公式、参考文献等的序号需与正文区分，另行编制，如编为“图1”、“表1”、“式（1）”、“文献[1]”等。“附录”两字间空2个汉字间隙，三号字，黑体，加粗，居中，单倍行距，段前24磅，段后18磅。附录的内容为宋体，五号（英文用Times New Roman体，10.5磅），行间距为固定值20磅。
+\newcommand{\Appendix}{%
+    \cleardoublepage 
+    \phantomsection
+    \setcounter{section}{0}
+    \setcounter{chapter}{1}
+    \renewcommand{\thechapter}{A}%
+    \addcontentsline{toc}{chapter}{\texorpdfstring{附 \qquad 录}{附录}}
+    \chapter*{附 \qquad 录}
+    \zihao{5}
+}
+
+
+% “致谢”两字间空2个字符间隙，字体为黑体，三号字，加粗居中。单倍行距，段前24磅，段后18磅。正文部分首行缩进两个汉字符，小四号字，仿宋，行距20磅。
+
+\newcommand{\Thanks}{%
+    \cleardoublepage 
+    \phantomsection
+    \setcounter{section}{0}
+    \setcounter{chapter}{1}
+    \renewcommand{\thechapter}{A}%
+    \addcontentsline{toc}{chapter}{\texorpdfstring{致\qquad 谢}{致谢}}
+    \chapter*{致\qquad 谢}
+    \zihao{-4}\fangsong
+}
+
+
+
+%---------------------------
+%论文成绩
+%---------------------------
+\RequirePackage{tabularx}
+\newtoks \supervisorcomment
+\newtoks \recommendedgrade
+\newtoks \supervisorsignature
+\newtoks \committeecomment
+\newtoks \finalgrade
+\newcommand{\Grade}{
+
+\cleardoublepage 
+\phantomsection
+\setcounter{section}{0}
+\setcounter{chapter}{1}
+\addcontentsline{toc}{chapter}{论文（设计）成绩}
+
+\begin{center}
+    \zihao{-3}\heiti  % 成绩这一页整体设置，应该是加粗（宋体加粗）
+    \begin{tabularx}{\textwidth}{|X|}
+        \multicolumn{1}{c}{
+            \zihao{3}\heiti 论文（设计）成绩表
+        } \\
+        \hline
+        \centerline{%
+            \songti 
+            \begin{minipage}[t][10cm][t]{0.92\textwidth}
+                \setlength\parindent{0pt}
+                \zihao{-3} \the \supervisorcomment   
+            \end{minipage}
+        }\\
+        建议成绩\LZUunderline[80pt]{\the \recommendedgrade}
+        \hfill 
+        指导教师（签字）\LZUunderline[80pt]{
+            \the \supervisorsignature
+        }\\
+        \hline
+        答辩小组意见\\
+        \centerline{%
+            \begin{minipage}[t][2cm][t]{0.92\textwidth}
+                \setlength\parindent{\ccwd}
+                \zihao{-4} \the\committeecomment
+            \end{minipage}
+        }
+        \hfill 答辩委员会负责人（签字）\underline{\hspace{80pt}}\\
+        \hline
+        \\[2.3cm]
+        成绩\LZUunderline[80pt]{\the \finalgrade}\hfill 学院（盖章）\underline{\hspace{80pt}}\\
+        \hfill{\zihao{-4}年\hspace{20pt}月\hspace{20pt}日}\\
+        \hline
+    \end{tabularx}
+\end{center}
+}
+
+
 
 
 \endinput
