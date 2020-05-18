@@ -45,7 +45,7 @@
 
 ### 现状0：以前用的这个模板，现在需要升级
 
-请下载[lzubib.bst](bib/lzubib.bst)和[LZUThesis.cls](/LZUThesis.cls)，替换你论文项目中原有的这两个文件。
+请下载[lzubib.bst](bib/lzubib.bst)和[LZUThesis.cls](/LZUThesis.cls)（很多学院还是要求之前的模板，如果你要用2007的模板，请下载[LZUThesis2007.cls](/LZUThesis2007.cls)，我已经适配，但是注意把成绩页放在最后！把中文摘要放在英文摘要前面！把第一行LZUThesis换成LZUThesis2007！），替换你论文项目中原有的这两个文件。
 
 注意更新以后，请使用四步走重新编译出pdf文件
 
@@ -59,7 +59,8 @@
 
 3. 配置编译器，可见[编译器选择](#%e7%bc%96%e8%af%91%e5%99%a8%e9%80%89%e6%8b%a9)
 
-4. texlive安装好并且把编译器配置完成后，只要把[paper.zip](paper.zip)下载然后解压就可以了，所有的都在那单独有一份，直接在那里面的`paper.tex`里写论文
+4. texlive安装好并且把编译器配置完成后，只要把[paper.zip](paper.zip)下载然后解压就可以了，所有的都在那单独有一份，直接在那里面的`paper.tex`里写论文（很多学院还是要求之前的模板，如果你要用2007的模板，请在里面的`paper2007.tex`里写论文）
+
 
 ### 现状2：以前用的[LZUThesis2017](https://github.com/suchot/LZUThesis2017)
 

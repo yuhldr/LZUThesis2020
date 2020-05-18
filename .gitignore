@@ -2,6 +2,7 @@
 paper-mac(linux)
 paper-windows
 paper
+~$*
 
 ## Core latex/pdflatex auxiliary files:
 *.aux

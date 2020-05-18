@@ -500,8 +500,8 @@
     \setcounter{section}{0}
     \setcounter{chapter}{1}
     \renewcommand{\thechapter}{A}%
-    \addcontentsline{toc}{chapter}{\texorpdfstring{附 \qquad 录}{m squared}}
-    \chapter*{\texorpdfstring{附 \qquad 录}{m squared}}
+    \addcontentsline{toc}{chapter}{\texorpdfstring{附 \qquad 录}{附 \qquad 录}}
+    \chapter*{\texorpdfstring{附 \qquad 录}{附 \qquad 录}}
     \zihao{5}
 }
 
@@ -511,8 +511,8 @@
 \newcommand{\Thanks}{%
     \cleardoublepage 
     \phantomsection
-    \addcontentsline{toc}{chapter}{\texorpdfstring{致\qquad 谢}{m squared}}
-    \chapter*{\texorpdfstring{致\qquad 谢}{m squared}}
+    \addcontentsline{toc}{chapter}{\texorpdfstring{致\qquad 谢}{致\qquad 谢}}
+    \chapter*{\texorpdfstring{致\qquad 谢}{致\qquad 谢}}
     \zihao{-4}\fangsong
 }
 
