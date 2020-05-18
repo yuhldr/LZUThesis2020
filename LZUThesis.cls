@@ -494,8 +494,8 @@
     \setcounter{section}{0}
     \setcounter{chapter}{1}
     \renewcommand{\thechapter}{A}%
-    \addcontentsline{toc}{chapter}{\texorpdfstring{附 \qquad 录}{附 \qquad 录}}
-    \chapter*{\texorpdfstring{附 \qquad 录}{附 \qquad 录}}
+    \addcontentsline{toc}{chapter}{\texorpdfstring{附 \qquad 录}{附录}}
+    \chapter*{\texorpdfstring{附 \qquad 录}{附录}}
     \zihao{5}
 }
 
@@ -505,8 +505,8 @@
 \newcommand{\Thanks}{%
     \cleardoublepage 
     \phantomsection
-    \addcontentsline{toc}{chapter}{\texorpdfstring{致\qquad 谢}{致\qquad 谢}}
-    \chapter*{\texorpdfstring{致\qquad 谢}{致\qquad 谢}}
+    \addcontentsline{toc}{chapter}{\texorpdfstring{致\qquad 谢}{致谢}}
+    \chapter*{\texorpdfstring{致\qquad 谢}{致谢}}
     \zihao{-4}\fangsong
 }
 
@@ -514,8 +514,8 @@
 \newcommand{\Intro}{%
     \cleardoublepage 
     \phantomsection
-    \addcontentsline{toc}{chapter}{\texorpdfstring{绪 \quad 论}{绪 \quad 论}}
-    \chapter*{\texorpdfstring{绪 \quad 论}{绪 \quad 论}}
+    \addcontentsline{toc}{chapter}{\texorpdfstring{绪 \quad 论}{绪论}}
+    \chapter*{\texorpdfstring{绪 \quad 论}{绪论}}
     \setcounter{section}{0}
     \setcounter{chapter}{1}
     \zihao{-4}\songti
