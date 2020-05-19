@@ -218,7 +218,7 @@
 \renewcommand\cftdotsep{0.5}                    %虚线间隔
 \renewcommand{\cftchapafterpnum}{\vspace{6pt}} %章节间隔 ，节前6磅
 \setlength{\cftbeforesecskip}{6pt}              %章节间隔 ，节前6磅
-\renewcommand\cftchapfont{\zihao{4}\heiti}  % 目录中一级标题，应该是加粗（宋体加粗）
+\renewcommand\cftchapfont{\zihao{4}\bfseries\songti}  % 目录中一级标题，应该是加粗（宋体加粗）
 \renewcommand\cftsecfont{\zihao{4} \songti}
 \renewcommand\cftsubsecfont{\zihao{-4} \songti}
 \renewcommand\cftchappagefont{\mdseries}
@@ -271,14 +271,14 @@
         \vspace*{60pt}
 
         \begin{tabular}{ll}
-            \heiti \zihao{3} 论文题目（中文）% “论文题目（中文）”这几个字，应该是加粗（宋体加粗）
+            \songti\bfseries \zihao{3} 论文题目（中文）% “论文题目（中文）”这几个字，应该是加粗（宋体加粗）
             \forloop{title_str_number}{1}{\value{title_str_number}<6}{%
                 \StrFindGroup{\@title}{\value{title_str_number}}[\mygroup]%
                 \IfStrEq{\mygroup}{}{}{%
                     & {\StrFindGroup{\@title}{\value{title_str_number}}[\mygroup]\LZUunderline[320pt]{ \songti \zihao{3}\mygroup}}\\[0.40cm]%
                 }%
             }%
-            \heiti  \zihao{3} 论文题目（英文）% “论文题目（英文）”这几个字，应该是加粗（宋体加粗）
+            \songti\bfseries  \zihao{3} 论文题目（英文）% “论文题目（英文）”这几个字，应该是加粗（宋体加粗）
             \forloop{title_str_number}{1}{\value{title_str_number}<6}{%
                 \StrFindGroup{\the\entitle}{\value{title_str_number}}[\mygroup]%
                 \IfStrEq{\mygroup}{}{}{%
@@ -320,7 +320,7 @@
     \parskip 0pt
 
     \begin{center}
-        {\heiti\zihao{3}{诚信责任书}} % “诚信责任书”这几个字，应该是加粗（宋体加粗）
+        {\songti\bfseries\zihao{3}{诚信责任书}} % “诚信责任书”这几个字，应该是加粗（宋体加粗）
     \end{center}
 
     本人郑重声明：本人所呈交的毕业论文（设计），是在导师的指导下独立进行研究所取得的成果。毕业论文（设计）中凡引用他人已经发表或未发表的成果、数据、观点等，均已明确注明出处。除文中已经注明引用的内容外，不包含任何其他个人、集体已经发表或未发表的论文。
@@ -338,7 +338,7 @@
     \vskip2.0cm
 
     \begin{center}
-        {\heiti\zihao{3}{关于毕业论文（设计）使用授权的声明}}% “关于毕业论文（设计）使用授权的声明”这几个字，应该是加粗（宋体加粗）
+        {\songti\bfseries\zihao{3}{关于毕业论文（设计）使用授权的声明}}% “关于毕业论文（设计）使用授权的声明”这几个字，应该是加粗（宋体加粗）
     \end{center}
 
     本人在导师指导下所完成的论文及相关的职务作品，知识产权归属兰州大学。本人完全了解兰州大学有关保存、使用毕业论文（设计）的规定，同意学校保存或向国家有关部门或机构送交论文的纸质版和电子版，允许论文被查阅和借阅；本人授权兰州大学可以将本毕业论文（设计）的全部或部分内容编入有关数据库进行检索，可以采用任何复制手段保存和汇编本毕业论文（设计）。本人离校后发表、使用毕业论文（设计）或与该毕业论文（设计）直接相关的学术论文或成果时，第一署名单位仍然为兰州大学。
@@ -378,10 +378,10 @@
 % \phantomsection
 % \addcontentsline{toc}{chapter}{毕业论文（设计）成绩}
 \begin{center}
-    \zihao{-3}\heiti  % 成绩这一页整体设置，应该是加粗（宋体加粗）
+    \zihao{-3}\songti\bfseries  % 成绩这一页整体设置，应该是加粗（宋体加粗）
     \begin{tabularx}{\textwidth}{|X|}
         \multicolumn{1}{c}{
-            \zihao{3}\songti 毕业论文（设计）成绩表
+            \zihao{3}\heiti\mdseries 毕业论文（设计）成绩表
         } \\
         \multicolumn{1}{c}{} \\
         \hline
@@ -389,10 +389,10 @@
             \songti 
             \begin{minipage}[t][10cm][t]{0.92\textwidth}
                 \setlength\parindent{0pt}
-                \zihao{4} \the \supervisorcomment   
+                \zihao{4}\mdseries \the \supervisorcomment   
             \end{minipage}
         }\\
-        建议成绩\LZUunderline[80pt]{\the \recommendedgrade}
+        \zihao{4}{建议成绩}\LZUunderline[80pt]{\the \recommendedgrade}
         \hfill 
         指导教师（签字）\LZUunderline[80pt]{
             \the \supervisorsignature
@@ -402,7 +402,7 @@
         \centerline{%
             \begin{minipage}[t][2cm][t]{0.92\textwidth}
                 \setlength\parindent{\ccwd}
-                \zihao{-4} \the\committeecomment
+                \zihao{-4}\mdseries \the\committeecomment
             \end{minipage}
         }
         \hfill 答辩委员会负责人（签字）\underline{\hspace{80pt}}\\
@@ -436,13 +436,13 @@
             \linespread{1.3889}
             \centering
             % 中文摘要标题，应该是加粗（宋体加粗）
-            \zihao{2}\heiti \noindent\@title\the\titlextra 
+            \zihao{2}\bfseries\songti \noindent\@title\the\titlextra 
         \end{minipage}
     \end{center}%
     \begin{center}%
         \linespread{1}
         \setlength{\parskip}{18pt}
-        \zihao{3}\heiti  中文摘要  % 中文摘要这几个字，应该是加粗（宋体加粗）
+        \zihao{3}\heiti  中文摘要  
     \end{center}%
     %行距20磅 http://blog.sina.com.cn/s/blog_5e16f1770100ly96.html
     \setlength{\baselineskip}{20pt} 
@@ -452,7 +452,7 @@
     \par #1\\%
     \vbox{}\\
     % 关键词这几个字，应该是加粗（宋体加粗）
-    {\heiti 关键词：} #2
+    {\songti\bfseries 关键词：} #2
 }
 
 % 英文摘要实际单词在300个左右，应与中文摘要内容一致。毕业论文（设计）英文题目字体为Times New Roman，二号，段前24磅，段后18磅；“英文摘要”为“Abstract”，字体为Arial，三号，加粗居中；英文摘要正文每段开头空4个字符间隙，字体为Times New Roman，小四号。行间距为固定值20磅。
