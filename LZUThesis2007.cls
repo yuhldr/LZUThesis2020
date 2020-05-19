@@ -262,7 +262,7 @@
         \includegraphics[width=6.27cm]{lzu.png}\\
         \vspace{21.8pt}
 
-        {\fontsize{28bp}{0pt}\ziju{1}\heiti{毕业论文\\}}% 封面这几个字，应该是加粗（雅黑加粗）
+        {\fontsize{28bp}{0pt}\ziju{1}\bfseries\heiti{毕业论文\\}}% 封面这几个字，应该是加粗（雅黑加粗）
         \vspace{21.8pt}
         {\zihao{4} \heiti（本\quad 科\quad 生）}
 
@@ -275,16 +275,16 @@
         \vspace*{60pt}
 
         \begin{tabular}{ll}
-            \heiti \zihao{4} 论文题目（中文）% “论文题目（中文）”这几个字，应该是加粗（宋体加粗）
+            \bfseries\songti \zihao{4} 论文题目（中文）% “论文题目（中文）”这几个字，应该是加粗（宋体加粗）
 
             % 论文题目用三号字，宋体，加粗，其他信息用小三号字，宋体，加粗，居中。
             \forloop{title_str_number}{1}{\value{title_str_number}<6}{%
                 \StrFindGroup{\@title}{\value{title_str_number}}[\mygroup]%
                 \IfStrEq{\mygroup}{}{}{%
-                    & {\StrFindGroup{\@title}{\value{title_str_number}}[\mygroup]\LZUunderline[320pt]{ \heiti \zihao{3}\mygroup}}\\[0.40cm]%
+                    & {\StrFindGroup{\@title}{\value{title_str_number}}[\mygroup]\LZUunderline[320pt]{ \bfseries\songti \zihao{3}\mygroup}}\\[0.40cm]%
                 }%
             }%
-            \heiti  \zihao{4} 论文题目（英文）% “论文题目（英文）”这几个字，应该是加粗（宋体加粗）
+            \bfseries\songti  \zihao{4} 论文题目（英文）% “论文题目（英文）”这几个字，应该是加粗（宋体加粗）
             \forloop{title_str_number}{1}{\value{title_str_number}<6}{%
                 \StrFindGroup{\the\entitle}{\value{title_str_number}}[\mygroup]%
                 \IfStrEq{\mygroup}{}{}{%
@@ -292,21 +292,21 @@
                 }%
             }%
             % “学生姓名等、指导教师、……”这几个字，应该是加粗（宋体加粗）
-            {\heiti \zihao{4}{学\hfill 生\hfill 姓\hfill 名}} &
-            {\LZUunderline[320pt]{ \songti \zihao{4}\@author}}\\[0.40cm]
-            {\heiti \zihao{4}{导\hfill 师\hfill 姓\hfill 名\hfill 、\hfill 职\hfill 称}} &
-            {\LZUunderline[320pt]{ \songti \zihao{4}  \the\advisor}} \\[0.40cm]
-            {\heiti \zihao{4}{学\hfill 生\hfill 所\hfill 属\hfill 学\hfill 院}} &
-            {\LZUunderline[320pt]{ \songti  \zihao{4} \the\college}} \\[0.40cm]
-            {\heiti \zihao{4} {专\hfill 业}} &
-            {\LZUunderline[320pt]{ \songti  \zihao{4} \the\major}}\\[0.40cm]
-            {\heiti \zihao{4}{年\hfill 级}} &
-            {\LZUunderline[320pt]{ \songti \zihao{4}  \the\grade}}\\[0.40cm]
+            {\bfseries\songti \zihao{4}{学\hfill 生\hfill 姓\hfill 名}} &
+            {\LZUunderline[320pt]{ \bfseries\songti \zihao{-3}\@author}}\\[0.40cm]
+            {\bfseries\songti \zihao{4}{导\hfill 师\hfill 姓\hfill 名\hfill 、\hfill 职\hfill 称}} &
+            {\LZUunderline[320pt]{ \bfseries\songti \zihao{-3}  \the\advisor}} \\[0.40cm]
+            {\bfseries\songti \zihao{4}{学\hfill 生\hfill 所\hfill 属\hfill 学\hfill 院}} &
+            {\LZUunderline[320pt]{ \bfseries\songti \zihao{-3}\the\college}} \\[0.40cm]
+            {\bfseries\songti \zihao{4} {专\hfill 业}} &
+            {\LZUunderline[320pt]{ \bfseries\songti \zihao{-3} \the\major}}\\[0.40cm]
+            {\bfseries\songti \zihao{4}{年\hfill 级}} &
+            {\LZUunderline[320pt]{ \bfseries\songti \zihao{-3}  \the\grade}}\\[0.40cm]
         \end{tabular}
 
         \par
         \vspace{120pt}
-        {\ziju{0.3}\zihao{-4} {兰州大学教务处}}% “兰州大学教务处”这几个字，应该是雅黑
+        {\ziju{0.3}\zihao{-4} \heiti{兰州大学教务处}}% “兰州大学教务处”这几个字，应该是雅黑
     \end{center}
     \clearpage
 }
@@ -323,7 +323,7 @@
     \parskip 0pt
 
     \begin{center}
-        {\heiti\zihao{3}{诚信责任书}} % “诚信责任书”这几个字，应该是加粗（宋体加粗）
+        {\bfseries\songti\zihao{3}{诚信责任书}} % “诚信责任书”这几个字，应该是加粗（宋体加粗）
     \end{center}
 
     本人郑重声明：本人所呈交的毕业论文（设计），是在导师的指导下独立进行研究所取得的成果。毕业论文（设计）中凡引用他人已经发表或未发表的成果、数据、观点等，均已明确注明出处。除文中已经注明引用的内容外，不包含任何其他个人或集体已经发表或在网上发表的论文。
@@ -342,7 +342,7 @@
     \vskip2.0cm
 
     \begin{center}
-        {\heiti\zihao{3}{关于毕业论文（设计）使用授权的声明}}% “关于毕业论文（设计）使用授权的声明”这几个字，应该是加粗（宋体加粗）
+        {\bfseries\songti\zihao{3}{关于毕业论文（设计）使用授权的声明}}% “关于毕业论文（设计）使用授权的声明”这几个字，应该是加粗（宋体加粗）
     \end{center}
 
     本人在导师指导下所完成的论文及相关的职务作品，知识产权归属兰州大学。本人完全了解兰州大学有关保存、使用毕业论文（设计）的规定，同意学校保存或向国家有关部门或机构送交论文的纸质版和电子版，允许论文被查阅和借阅；本人授权兰州大学可以将本毕业论文（设计）的全部或部分内容编入有关数据库进行检索，可以采用任何复制手段保存和汇编本毕业论文（设计）。本人离校后发表、使用毕业论文（设计）或与该毕业论文（设计）直接相关的学术论文或成果时，第一署名单位仍然为兰州大学。
@@ -386,14 +386,14 @@
         \begin{minipage}{0.8\textwidth}
             \linespread{1.3889}
             \centering
-            % 中文摘要标题，应该是加粗（宋体加粗）
-            \zihao{3}\heiti \noindent\@title\the\titlextra 
+            % 中文摘要标题，应该是加粗（黑体加粗）
+            \zihao{3}\bfseries\heiti \noindent\@title\the\titlextra 
         \end{minipage}
     \end{center}%
     \begin{center}%
         \linespread{1}
         \setlength{\parskip}{18pt}
-        \zihao{3}\heiti  中文摘要
+        \zihao{3}\bfseries\heiti   中文摘要
     \end{center}%
     %行距20磅 http://blog.sina.com.cn/s/blog_5e16f1770100ly96.html
     \setlength{\baselineskip}{20pt} 
@@ -403,7 +403,7 @@
     \par #1\\%
     \vbox{}\\
     % 关键词这几个字，应该是加粗（宋体加粗）
-    {\heiti 关键词：} #2
+    {\bfseries\songti 关键词：} #2
 }
 
 % 英文摘要实际单词在300个左右，应与中文摘要内容一致。毕业论文（设计）英文题目字体为Times New Roman，二号，段前24磅，段后18磅；“英文摘要”为“Abstract”，字体为Arial，三号，加粗居中；英文摘要正文每段开头空4个字符间隙，字体为Times New Roman，小四号。行间距为固定值20磅。
@@ -426,7 +426,7 @@
         \linespread{1}
         \selectfont
         \setlength{\parskip}{18pt}
-        \zihao{3}\fontspec{Arial}\bfseries Abstract %Linux没有这个字体，需要自己安装，或者自定义命令
+        \zihao{3}\bfseries Abstract %Linux没有这个字体，需要自己安装，或者自定义命令
     \end{center}%
     \setlength{\parskip}{0pt}
     \setlength{\baselineskip}{20pt} %行距20磅
@@ -603,20 +603,20 @@
 \addcontentsline{toc}{chapter}{论文（设计）成绩}
 
 \begin{center}
-    \zihao{-3}\heiti  % 成绩这一页整体设置，应该是加粗（宋体加粗）
+    \zihao{-3}\bfseries\songti  % 成绩这一页整体设置，应该是加粗（宋体加粗）
     \begin{tabularx}{\textwidth}{|X|}
         \multicolumn{1}{c}{
-            \zihao{3}\heiti 论文（设计）成绩表
+            \zihao{3}\heiti\mdseries {论文（设计）成绩表}
         } \\
         \hline
         \centerline{%
             \songti 
             \begin{minipage}[t][10cm][t]{0.92\textwidth}
                 \setlength\parindent{0pt}
-                \zihao{-3} \the \supervisorcomment   
+                 \the \supervisorcomment   
             \end{minipage}
         }\\
-        建议成绩\LZUunderline[80pt]{\the \recommendedgrade}
+        \zihao{4}{建议成绩}\LZUunderline[80pt]{\the \recommendedgrade}
         \hfill 
         指导教师（签字）\LZUunderline[80pt]{
             \the \supervisorsignature
