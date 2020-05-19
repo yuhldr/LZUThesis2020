@@ -15,8 +15,8 @@
 %正文另起一行。正文：宋体，小四（英文用Times New Roman字体，12磅），两端对齐，段落首行左缩进2个汉字符，行间距为固定值20磅，段前段后0磅。
 %
 %\CTEXsetup[format+={\sffamily\bfseries\small}]{chapter}
-\def\CTEX@chapter@nameformat{\textbf\heiti\zihao{3}} % 应该是加粗（黑体加粗）
-\def\CTEX@chapter@titleformat{\textbf\heiti\zihao{3}} % 应该是加粗（黑体加粗）
+\def\CTEX@chapter@nameformat{\bfseries\heiti\zihao{3}} % 应该是加粗（黑体加粗）
+\def\CTEX@chapter@titleformat{\bfseries\heiti\zihao{3}} % 应该是加粗（黑体加粗）
 \def\CTEX@chapter@beforeskip{24pt}
 \def\CTEX@chapter@afterskip{18pt}
 %\def\CTEX@chapter@titleformat{\bfseries\heiti\fontspec{Times New Roman}\zihao{3}}
@@ -262,7 +262,7 @@
         \includegraphics[width=6.27cm]{lzu.png}\\
         \vspace{21.8pt}
 
-        {\fontsize{28bp}{0pt}\ziju{1}\heiti{毕业论文\\}}% 封面这几个字，应该是加粗（宋体加粗）
+        {\fontsize{28bp}{0pt}\ziju{1}\heiti{毕业论文\\}}% 封面这几个字，应该是加粗（雅黑加粗）
         \vspace{21.8pt}
         {\zihao{4} \heiti（本\quad 科\quad 生）}
 
@@ -281,14 +281,14 @@
             \forloop{title_str_number}{1}{\value{title_str_number}<6}{%
                 \StrFindGroup{\@title}{\value{title_str_number}}[\mygroup]%
                 \IfStrEq{\mygroup}{}{}{%
-                    & {\StrFindGroup{\@title}{\value{title_str_number}}[\mygroup]\LZUunderline[320pt]{ \songti \zihao{3}\heiti\mygroup}}\\[0.40cm]%
+                    & {\StrFindGroup{\@title}{\value{title_str_number}}[\mygroup]\LZUunderline[320pt]{ \heiti \zihao{3}\mygroup}}\\[0.40cm]%
                 }%
             }%
             \heiti  \zihao{4} 论文题目（英文）% “论文题目（英文）”这几个字，应该是加粗（宋体加粗）
             \forloop{title_str_number}{1}{\value{title_str_number}<6}{%
                 \StrFindGroup{\the\entitle}{\value{title_str_number}}[\mygroup]%
                 \IfStrEq{\mygroup}{}{}{%
-                    & {\StrFindGroup{\the\entitle}{\value{title_str_number}}[\mygroup]\LZUunderline[320pt]{\zihao{3}\bf\mygroup}}\\[0.40cm]%
+                    & {\StrFindGroup{\the\entitle}{\value{title_str_number}}[\mygroup]\LZUunderline[320pt]{\zihao{3}\bfseries\mygroup}}\\[0.40cm]%
                 }%
             }%
             % “学生姓名等、指导教师、……”这几个字，应该是加粗（宋体加粗）
@@ -517,8 +517,8 @@
 \RequirePackage{algorithm}
 \RequirePackage{algorithmic}
 \floatname{algorithm}{算法}  
-\renewcommand{\algorithmicrequire}{\textbf{输入:}}  
-\renewcommand{\algorithmicensure}{\textbf{输出:}}  
+\renewcommand{\algorithmicrequire}{\bfseries{输入:}}  
+\renewcommand{\algorithmicensure}{\bfseries{输出:}}  
   
 %改变图表的编号格式
 

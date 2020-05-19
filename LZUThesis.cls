@@ -607,8 +607,8 @@
 \RequirePackage{algorithm}
 \RequirePackage{algorithmic}
 \floatname{algorithm}{算法}  
-\renewcommand{\algorithmicrequire}{\textbf{输入:}}  
-\renewcommand{\algorithmicensure}{\textbf{输出:}}  
+\renewcommand{\algorithmicrequire}{\bfseries{输入:}}  
+\renewcommand{\algorithmicensure}{\bfseries{输出:}}  
   
 %改变图表的编号格式
 
