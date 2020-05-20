@@ -426,7 +426,7 @@
         \linespread{1}
         \selectfont
         \setlength{\parskip}{18pt}
-        \zihao{3}\bfseries Abstract %Linux没有这个字体，需要自己安装，或者自定义命令
+        \zihao{3}\fontspec{Arial}\bfseries Abstract %Linux没有这个字体，需要自己安装，或者自定义命令
     \end{center}%
     \setlength{\parskip}{0pt}
     \setlength{\baselineskip}{20pt} %行距20磅
