@@ -1,6 +1,7 @@
 % !TEX TS-program = xelatex
 % !TEX encoding = UTF-8 Unicode
 
+% \documentclass[AutoFakeBold]{LZUThesis}
 \documentclass[AutoFakeBold]{LZUThesis2007}
 
 
@@ -97,13 +98,13 @@ dialogue in philosophy.
 需要安装texlive，外加一个IDE
 
 \subsection{texlive下载安装}
-最近可能出了2020了，可以用兰大的镜像下载应该在用校园网时快一些，额，你还是用清华的镜像吧，我刚才找了一下，兰大镜像这会儿竟然挂了。。。
+最近出2020了，可以用兰大的镜像下载应该在用校园网时快一些，额，你还是用清华的镜像吧，我刚才找了一下，兰大镜像这会儿竟然挂了。。。
 
 下载地址\footnote{这个地址会自动更新比如2020版出了以后你下载的就是2020了}： 点下面的字跳转浏览器下载了，方便吧
 
 \begin{itemize}
-	\item \href{https://mirrors.tuna.tsinghua.edu.cn/CTAN/systems/texlive/Images/texlive.iso}{TexLive2019 \quad Windows版}
-	\item \href{http://tug.org/cgi-bin/mactex-download/MacTeX.pkg}{TexLive2019 \quad Mac版}
+	\item \href{https://mirrors.tuna.tsinghua.edu.cn/CTAN/systems/texlive/Images/texlive.iso}{TexLive最新版 \quad Windows版}
+	\item \href{http://tug.org/cgi-bin/mactex-download/MacTeX.pkg}{TexLive最新版 \quad Mac版}
 \end{itemize}
 
 上面的文件直接双击安装一路next就行，但是texlive这是个啥？
@@ -136,7 +137,7 @@ dialogue in philosophy.
 % subsubsection linux图形界面安装方式 (end)
 
 
-\subsection{安装IDE} % (fold)
+\subsection{安装IDE（vscode）} % (fold)
 \label{sub:安装ide}
 
 在这之前，请测试texlive是否安装成功！！！在命令行输入tex，显示类似如下结果，注意必须包含“TeX Live 2020”字样
@@ -150,28 +151,105 @@ dialogue in philosophy.
 如果确实安装了，但是没有显示，请根据各自系统自行百度配环境变量，此处不再详细介绍
 
 
-IDE这个就是写论文的地方，它会调用你刚才安装的texlive，具体用什么，各有所爱，我喜欢sublime text3，这个颜值是真的高，而且体积小，启动快，可以预览公式什么的，很多常用的代码可以自动提示补全，但是这个需要安装插件LaTexTools，pdf需要安装其他的东西进行正反向跳转\footnote{就是点tex文件某一行跳转到pdf对应的地方，点击pdf跳转到tex对应的那一行，mac上安装skim，windows安装sumatra}，小白的话就算了吧，想折腾，百度一下吧
-
-
-另外一个我比较喜欢的是vscode，也需要安装插件，很方便，和sublime text3差不多，但是用起来简单一些，也自己百度去吧
-
-另外几个是\href{https://www.xm1math.net/texmaker}{Texmaker}、或者\href{http://texstudio.sourceforge.net/}{texstudio}\footnote{这个有可能需要番羽墙才能访问，什么意思，别问我，我不知道，啥都不知道}，这两个你点名字就跳转官网了，这两个基本上是打开就可可以用，怎么用，自己百度吧，很多详细的图文教程
+IDE这个就是写论文的地方，它会调用你刚才安装的texlive，请\textbf{不要使用}Texlive自带的TexWork！！，具体用什么，各有所爱，但是既然用我的模板，还是用vscode吧，很简单。
 
 
 \begin{figure}[H]
 	\centering
-	\subfloat[sublime text3]{
-        \includegraphics[width=0.4\textwidth]{figures/sublime.png}
-    }\qquad
-	\subfloat[vscode]{
-        \includegraphics[width=0.4\textwidth]{figures/vscode.png}
-    }\\
+    \includegraphics[width=0.8\textwidth]{figures/vscode.png}
     \caption{我用的IDE}
     \label{fig_ide}
 \end{figure}
 
-这两个IDE真的是特别好用，不要再用TexMake或者TexStudio了，连个自动提示都麻烦，预览也没有，最主要的是太丑了，也不能换主题
+这两个IDE真的是特别好用，不要再用TexMake或者TexStudio了，连个自动提示都麻烦，预览也没有，最主要的是太丑了还有各种bugs，也不能换主题
+
 % subsection 安装ide (end)
+
+\subsection{配置vscode}
+在扩展中搜索latex，安装 LaTex Workshop和LaTex Utilities，第二个插件是为了在vscode下面显示字数。
+
+注意两个快捷键：
+\begin{itemize}
+	\item[1. ] pdf跳转到tex对应位置：\\ctrl和鼠标左键（mac：command和鼠标左键）；
+	\item[2. ] tex跳转到pdf对应位置：\\ctrl和alt 和 J 同时按（mac：command和option和J）；
+\end{itemize}
+
+配置四步走编译可以按照下面的来（\textbf{这里复制不方便，你还在在项目介绍README那里复制吧}）：
+
+\begin{lstlisting}[language = python]
+    
+    "latex-workshop.latex.tools": [
+    
+        {
+            // 编译工具和命令
+            "name": "xelatex",
+            "command": "xelatex",
+            "args": [
+                "-synctex=1",
+                "-interaction=nonstopmode",
+                "-file-line-error",
+                "-pdf",
+                "%DOCFILE%"
+            ]
+        },
+        {
+            "name": "latexmk",
+            "command": "latexmk",
+            "args": []
+        },
+        {
+            "name": "pdflatex",
+            "command": "pdflatex",
+            "args": [
+                "-synctex=1",
+                "-interaction=nonstopmode",
+                "-file-line-error",
+                "%DOCFILE%"
+            ]
+        },
+        {
+            "name": "bibtex",
+            "command": "bibtex",
+            "args": [
+                "%DOCFILE%"
+            ]
+        }
+    ],
+    "latex-workshop.latex.recipes": [
+
+        {
+            "name": "xe->bib->xe->xe",
+            "tools": [
+                "xelatex",
+                "bibtex",
+                "xelatex",
+                "xelatex"
+            ]
+        },
+        {
+            "name": "xelatex",
+            "tools": [
+                "xelatex"
+            ]
+        },
+        // {
+        //     "name": "latexmk",
+        //     "tools": [
+        //         "latexmk"
+        //     ]
+        // },
+    ],
+\end{lstlisting}
+
+配置以后重新打开，点开一个tex文件，vscode会显示这个：
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.4\textwidth]{figures/vscode_4.png}
+    \caption{vscode配置以后：四步走}
+    \label{fig_install_texlive}
+\end{figure}
+
 
 
 
@@ -270,7 +348,7 @@ IDE这个就是写论文的地方，它会调用你刚才安装的texlive，具�
     \end{tabular}
     \label{tbl_font}
 \end{table}
-发现没，中文斜体没有效果的，你可以自定义，这个自己百度吧；而且加粗也windows系统上也是没有效果的，一般都改成了黑体（比如这个模板中成绩页等加粗的地方都是用的黑体），当然你也可以自定义。怎么做，百度吧
+发现没，中文斜体没有效果的，你可以自定义，这个自己百度吧；中文加粗已经解决了该问题，注意这个文件第四行，开启伪加粗（2020.5.18），可以用bfserie或者textbf但是注意，win上bfserie效果好一些，mac上textbf好一些
 
 
 
@@ -448,7 +526,9 @@ matlab代码有专门的库，但是没必要高亮太多，而且中文适配�
 具体怎么用可以百度，我这里告诉你什么可以用，但是具体的，建议百度，更靠谱一些。
 
 
-有参考文献时，编译要经过4步，直接XeLaTeX --> BibTeX --> XeLaTeX --> XeLaTeX，不然很多问题，我用的sublime text3，配合插件LatexTool，直接快快捷键ctrl - B，就可以自动完成4步了，很方便
+有参考文献时，编译要经过4步，直接XeLaTeX --> BibTeX --> XeLaTeX --> XeLaTeX，不然很多问题，vscode配置以后很方便，以下内容放在设置中，重新打开vscode即可
+
+
 
 % subsection 参考文献 (end)
 
