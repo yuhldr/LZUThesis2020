@@ -38,10 +38,11 @@
 为什么选择这个模板？
 
 1. 因为这是i兰大易班（兰朵儿）app的开发者制作的 ~
-2. 因为这个模板经过了多人多平台测试，包括Mac、Windows、Linux三种平台
-3. 因为这是目前与学校要求最为符合的一个LaTex模板
-4. 因为这个项目有最为详尽的文档说明
-5. 在国内[Gitee: LZUThesis2020](https://gitee.com/yuhldr/LZUThesis2020)和国外[Github: LZUThesis2020](https://github.com/yuhlzu/LZUThesis2020)开源网站同步发布，防止被墙
+2. 因为模板包含2007标准（2020届毕业生，大多数学院要求的是这个）和2020标准两个模板
+3. 因为这个模板经过了多人多平台测试，包括Mac、Windows、Linux三种平台
+4. 因为这是目前与学校要求最为符合的一个LaTex模板
+5. 因为这个项目有最为详尽的文档说明
+6. 在国内[Gitee: LZUThesis2020](https://gitee.com/yuhldr/LZUThesis2020)和国外[Github: LZUThesis2020](https://github.com/yuhlzu/LZUThesis2020)开源网站同步发布，防止被墙
 
 根据[这个项目](https://github.com/suchot/LZUThesis2017)进行修改的，mac、linux、windows三系统全部测试通过，linux缺一个字体，看[常见问题：linux环境下编译失败](#3%e3%80%81linux%e7%8e%af%e5%a2%83%e4%b8%8b%e7%bc%96%e8%af%91%e5%a4%b1%e8%b4%a5)，其他出现什么问题，也看下面的[常见问题](#%e4%b8%89%e5%b8%b8%e8%a7%81%e9%97%ae%e9%a2%98)
 
@@ -49,9 +50,11 @@
 
 我强烈建议你用git管理毕业论文，每天写完以后就提交到gitee（速度比github快无数倍）上！！！不然不小心删除了或者中病毒了什么的，哭都没地方哭去
 
+**********
+
 ## 一、使用方法
 
-据说这个网站：[overleaf](https://cn.overleaf.com/)挺好用（我没用，不喜欢在线版的），可以直接直接上传这个模板，在线使用。如果你就这一次用LaTex，以后都不需要了，可以试一下，但是如果你还上研究生要发文章，还是按照下面的本地安装一下吧
+据说这个网站：[overleaf](https://cn.overleaf.com/)挺好用（记得在菜单里把编译方式改成xelatex！！不要动不动就说模板是坏的……），可以直接直接上传这个模板，在线使用。如果你就这一次用LaTex，以后都不需要了，可以试一下，但是如果你还上研究生要发文章，还是按照下面的本地安装一下吧
 
 ### 现状0：以前用的这个模板，现在需要升级
 
@@ -60,10 +63,10 @@
 ```tex
 % \documentclass{LZUThesis}
 % 注意2020.5.19（2.0.0）以后的版本，开启伪加粗将会非常完美！
+% 2007标准请使用 \documentclass[AutoFakeBold]{LZUThesis2007}
+
 \documentclass[AutoFakeBold]{LZUThesis}
 ```
-
-**注意！**
 
 #### 如何使用兰州大学2007老版论文要求
 
@@ -97,16 +100,15 @@
 
 ### 现状1：论文直接用这个模板开始写
 
-**前3步详细请见[template.pdf](template.pdf)**
+包含2007和2020两个模板，前3步详细请见[template.pdf](template.pdf)
 
 1. 安装texlive2020
 
 2. 测试安装是否成功
 
-3. 配置编译器，可见[编译器选择](#%e7%bc%96%e8%af%91%e5%99%a8%e9%80%89%e6%8b%a9)
+3. 配置编译器，可见[编译器选择](#%e7%bc%96%e8%af%91%e5%99%a8%e9%80%89%e6%8b%a9)，不要使用Texlive自带的texwork！！请使用vscode！！vscode！！
 
 4. texlive安装好并且把编译器配置完成后，只要把[paper.zip](paper.zip)下载然后解压就可以了，所有的都在那单独有一份，直接在那里面的`paper.tex`里写论文（很多学院还是要求之前的模板，如果你要用2007的模板，请在里面的`paper2007.tex`里写论文）
-
 
 ### 现状2：以前用的[LZUThesis2017](https://github.com/suchot/LZUThesis2017)
 
@@ -191,7 +193,7 @@
 ## 二、常见问题
 
 你可一定要先安装texlive2020，可参考[现状1：论文直接用这个模板开始写](#%e7%8e%b0%e7%8a%b61%e8%ae%ba%e6%96%87%e7%9b%b4%e6%8e%a5%e7%94%a8%e8%bf%99%e4%b8%aa%e6%a8%a1%e6%9d%bf%e5%bc%80%e5%a7%8b%e5%86%99)
-    
+
 ### 1、编译出来的没有**参考文献**或**目录**，或者直接失败：
 
 不要用pdflatex那个！需要四步走xelatex - bibtex - xelatex - xelatex，具体什么意思，百度吧；
@@ -360,18 +362,98 @@ mac版与windows分开打包，增加说明文件
 
 4. template.tex是用来写论文的，这个文件名字可以修改
 
-
 --------
 
 ### 编译器选择
 
-1. 不喜欢texStudio或者texmaker，用vscode吧，配置很简单，习惯sublime text3的也行
+用vscode吧，配置很简单
 
-    [windows系统 vscode用法](https://zhuanlan.zhihu.com/p/38178015)
+1. 安装vscode：
+   去官网安装：[Vscode](https://code.visualstudio.com/)
+2. 安装插件：
 
-    [mac系统 vscode用法](https://www.jianshu.com/p/c09b3409317f)
+    在vscode左边侧栏插件处输入latex，安装以下两个插件
 
-    [linux系统 vscode用法](https://www.jianshu.com/p/c09b3409317f)
+    LaTex Workshop（latex全功能）
+
+    LaTex Utilities（vscode下面状态栏字数统计）
+
+3. 配置vscode：
+   点左下角螺丝帽，选择设置，找到任何一个`在settings.json中编辑`，点击跳转，另起一行，将下面的内容复制到设置区：
+
+   注意：你复制的内容下面有一个右大括号 `}` ，复制的内容前面有一个英文逗号`,` ; 复制下面的内容以后，如果有红色曲线，说明你配置得有问题，一般是逗号、大括号什么的有问题
+
+   ```json
+
+    "latex-workshop.latex.tools": [
+
+        {
+            // 编译工具和命令
+            "name": "xelatex",
+            "command": "xelatex",
+            "args": [
+                "-synctex=1",
+                "-interaction=nonstopmode",
+                "-file-line-error",
+                "-pdf",
+                "%DOCFILE%"
+            ]
+        },
+        {
+            "name": "latexmk",
+            "command": "latexmk",
+            "args": []
+        },
+        {
+            "name": "pdflatex",
+            "command": "pdflatex",
+            "args": [
+                "-synctex=1",
+                "-interaction=nonstopmode",
+                "-file-line-error",
+                "%DOCFILE%"
+            ]
+        },
+        {
+            "name": "bibtex",
+            "command": "bibtex",
+            "args": [
+                "%DOCFILE%"
+            ]
+        }
+    ],
+    "latex-workshop.latex.recipes": [
+
+        {
+            "name": "xe->bib->xe->xe",
+            "tools": [
+                "xelatex",
+                "bibtex",
+                "xelatex",
+                "xelatex"
+            ]
+        },
+        {
+            "name": "xelatex",
+            "tools": [
+                "xelatex"
+            ]
+        },
+        // {
+        //     "name": "latexmk",
+        //     "tools": [
+        //         "latexmk"
+        //     ]
+        // },
+    ],
+    ```
+
+4. 配置成功以后的界面：
+
+    注意配置以后要打开vscode，再点开一个.tex文件，才会出现下面的样子
+
+    点xe->bib->xe->xe就可以编译，平时只是修改文档，没有引入参考文献和图表公式的引用，只需要ctrl 和s（mac：command 和 s）快捷键就可以编译。
+   ![图](figures/vscode_4.png)
 
 -------
 

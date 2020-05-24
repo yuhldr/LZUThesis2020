@@ -1,5 +1,5 @@
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesClass{LZUThesis2007}[2020/05/19 V2.0.0 Thesis for LZUer By yuhldr Use 2007 standard]
+\ProvidesClass{LZUThesis2007}[2020/05/24 V2.1.1 Thesis for LZUer By yuhldr Use 2007 standard]
 \LoadClass[12pt, a4paper, UTF8, openany,oneside]{ctexbook}
 
 % 部分内容参考了https://github.com/suchot/LZUThesis2017，适配了2020最新的毕业论文要求
@@ -259,7 +259,7 @@
     \cleardoublepage
     \thispagestyle{empty}
     \begin{center}
-        \includegraphics[width=6.27cm]{lzu.png}\\
+        \includegraphics[width=6cm]{lzu2007.png}\\
         \vspace{21.8pt}
 
         {\fontsize{28bp}{0pt}\ziju{1}\bfseries\heiti{毕业论文\\}}% 封面这几个字，应该是加粗（雅黑加粗）
