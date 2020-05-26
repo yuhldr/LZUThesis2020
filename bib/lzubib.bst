@@ -63,7 +63,7 @@ STRINGS { s t }
 FUNCTION {output.nonnull}
 { 's :=
   output.state mid.sentence =
-    { ". " * write$ }
+    { ", " * write$ }
     { output.state after.block =
     { add.period$ write$
 %      newline$
@@ -594,14 +594,15 @@ FUNCTION {format.tr.number}
   if$
 }
 
+
 FUNCTION {format.article.crossref}
 { key empty$
     { journal empty$
-    { "need key or journal for " cite$ * " to crossref " * crossref *
-      warning$
-      ""
-    }
-    { "In {\em " journal * "\/}" * }
+      { "need key or journal for " cite$ * " to crossref " * crossref *
+        warning$
+        ""
+      }
+      { "In {\em " journal * "\/}" * }
       if$
     }
     { "In " key * }
@@ -839,15 +840,12 @@ FUNCTION {article}
   new.block
   crossref missing$
     { 
-      link.open
       %journal emphasize "journal" output.check
-      journal add.blank2
-      "journal" output.check
-      %format.date "year" output.check
+      journal "journal" output.check
+      %format.date output
       %new.block
       year output
       format.vol.num.pages output.year
-      link.shut
     }
     { format.article.crossref output.nonnull
       format.pages output
@@ -1189,15 +1187,15 @@ FUNCTION {init.bib}
 EXECUTE {initialize.longest.label}
 
 ITERATE {longest.label.pass}
-
+%参考文献内容为五号字（英文用Times New Roman体，10.5磅），宋体，行距16磅，段前段后0磅。
 FUNCTION {begin.bib}
 { preamble$ empty$
     'skip$
     { preamble$ write$ newline$ }
   if$
   "\providecommand{\href}[2]{#2}"
-  "\begingroup\zihao{5}\raggedright\begin{thebibliography}{" * longest.label  * 
-  "}\linespread{1}\selectfont" * write$ newline$ 
+  "\begingroup\zihao{5}\begin{thebibliography}{" * longest.label  * 
+  "}\linespread{1}\selectfont\setlength{\baselineskip}{16pt}\setlength{\parskip}{0pt}" * write$ newline$ 
   init.bib
 }
 
