@@ -18,7 +18,7 @@
 % 	      长标题 \title{{第一行}{第二行}}
 %             超长标题\tiitle{{第一行}{...}{第N行}}
 
-\title{{中国分析哲学研究}}
+\title{{中国分析}{哲学研究}}
 
 
 
@@ -27,7 +27,7 @@
 % 	      长标题 \entitle{{First row}{ Second row}}
 %             超长标题\entitle{{First row}{...}{ Next N row}}
 % 注意：  英文标题多行时 需要在开头加个空格 防止摘要标题处英语单词粘连。
-\entitle{{Studies in Analytic Philosophy in China}}
+\entitle{{Studies in Analytic }{Philosophy in China}}
 
 \author{yuhldr}
 \major{理论物理}
@@ -51,9 +51,9 @@
 
 
 %中文摘要
-\ZhAbstract{注意，2020要求英文摘要在前面；这是真的在打广告啊，嗯，做兰大毕业论文latex模板时，顺便介绍一下我写的软件。嗯，好像本科生也不用打广告啦，目前两万多人在用，但是研究生没几个人在用啊，很多在写论文的你们马上就是兰州大学的研究生了吧，试一下i兰大易班？
+\ZhAbstract{注意，2020要求英文摘要在前面；这是真的在打广告啊，嗯，做兰大毕业论文latex模板时，顺便介绍一下我写的软件。嗯，好像本科生也不用打广告啦，目前两万多人在用，但是研究生没几个人在用啊，很多在写论文的你们马上就是兰州大学的研究生了吧，试一下兰朵儿？
 
-不要仅仅把它当做广告，这里面有很多latex的用法说明}{兰朵儿，i兰大易班，yuh}
+不要仅仅把它当做广告，这里面有很多latex的用法说明}{兰朵儿，yuh}
 
 
 %英文摘要
@@ -64,6 +64,7 @@ dialogue in philosophy.
 
 %生成目录
 \tableofcontents
+\thispagestyle{empty}
 
 
 %文章主体
@@ -534,7 +535,19 @@ matlab代码有专门的库，但是没必要高亮太多，而且中文适配�
 
 % section 图标等常用的教程 (end)
 
+\subsection{引用图、表、公式、章节} % (fold)
 
+为什么要引用？不直接写数字？因为图表顺序变化时，引用的地方会自动变化。每次更加新引用，请四步走编译
+
+引用的地方加label，自己写个名字，可以是中文，然后引用的地方如下：
+
+如图\ref{fig_ldr}所示
+
+如公式\eqref{e1e2}所示，会自动带括号
+
+如表\ref{tbl_gs}所示
+
+在\ref{sub:参考文献}中已经提及
 
 
 %论文后部
