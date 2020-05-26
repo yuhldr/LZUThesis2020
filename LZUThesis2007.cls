@@ -264,7 +264,7 @@
 
         {\fontsize{28bp}{0pt}\ziju{1}\bfseries\heiti{毕业论文\\}}% 封面这几个字，应该是加粗（雅黑加粗）
         \vspace{21.8pt}
-        {\zihao{4} \heiti（本\quad 科\quad 生）}
+        {\zihao{4} \heiti（本\quad 科\quad 生）}% 这几个字，应该是雅黑
 
         \vspace{21.8pt}
         \par

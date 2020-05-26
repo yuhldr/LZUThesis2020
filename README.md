@@ -60,7 +60,7 @@
 
 ### 现状0：以前用的这个模板，现在需要升级
 
-请下载[lzubib.bst](bib/lzubib.bst)和[LZUThesis.cls](/LZUThesis.cls)，替换你论文项目中原有的这两个文件。并且开启伪加粗！
+请下载[lzubib.bst](bib/lzubib.bst)、[LZUThesis.cls](/LZUThesis.cls)（2020.5.24版本重新绘制了封面logo图，记得下载并且放到你的figure目录：[lzu2020.png](figures/lzu2020.png)，[lzu2007.png](figures/lzu2007.png)），替换你论文项目中原有的这两个文件。并且开启伪加粗！
 
 ```tex
 % \documentclass{LZUThesis}
