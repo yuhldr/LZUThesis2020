@@ -218,8 +218,12 @@
 \RequirePackage[titles]{tocloft}
 \renewcommand\cftchapdotsep{0.5}                %虚线间隔
 \renewcommand\cftdotsep{0.5}                    %虚线间隔
-\renewcommand{\cftchapafterpnum}{\vspace{6pt}} %章节间隔 ，节前6磅
+% \renewcommand{\cftchapafterpnum}{\vspace{6pt}} %章节间隔 ，节前6磅
 \setlength{\cftbeforesecskip}{6pt}              %章节间隔 ，节前6磅
+
+\setlength{\cftbeforechapskip}{6pt}
+\setlength{\cftbeforesubsecskip}{6pt}
+
 \renewcommand\cftchapfont{\zihao{4}\songti}  
 \renewcommand\cftsecfont{\zihao{-4} \songti}
 \renewcommand\cftsubsecfont{\zihao{-4} \songti}
