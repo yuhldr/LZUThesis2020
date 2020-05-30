@@ -40,6 +40,11 @@
 
 # 兰州大学本科生2020（学士学位）LaTeX模板
 
+2020.5.30做了个毕业答辩模板 LZUBeamer：[Gitee](https://gitee.com/yuhldr/LZUBeamer) 和 [Github](https://github.com/yuhlzu/LZUBeamer)，可以去看看：
+
+![图](figures/ppt.png)
+
+
 为什么选择这个模板？
 
 1. 因为这是i兰大易班（兰朵儿）app的开发者制作的 ~
