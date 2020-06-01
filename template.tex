@@ -4,8 +4,6 @@
 % \documentclass[AutoFakeBold]{LZUThesis}
 \documentclass[AutoFakeBold]{LZUThesis2007}
 
-
-
 \begin{document}
 %=====%
 %
@@ -57,7 +55,7 @@
 
 
 %英文摘要
-\EnAbstract{This essay explores the history of studies in analytical philosophy in China since the beginning of the last century, by dividing into three phases. It shows that, in these phases, analytic philosophy was always at a disadvantage in confronting serious challenges coming from both Chinese traditional philosophy and modern philosophical trends. The authors argue that Chinese philosophers have both done preliminary studies and offered their own analyses of various problems as well as some new applications of analytic philosophy especially in the latest period. Meanwhile, Chinese traditional philosophy was always trying to adjust its cultural mentality in the struggle with analytic philosophy, and accommodated in its own way the rationalistic spirit and scientific method represented in analytic philosophy.}
+\EnAbstract{This essay explores the history of studies in analytical philosophy in China since the beginning of the last century, by dividing into three phases. It shows that, in these phases, analytic philosophy was always at a disadvantage in confronting serious challenges coming from both Chinese traditional philosophy and modern philosophical trends. The authors argue that Chinese philosophers have both done preliminary studies and offered their own analyses of various problems as well as some new applications of analytic philosophy especially in the latest period. Meanwhile, Chinese traditional philosophy was always trying to adjust its cultural mentality in the struggle with analytic philosophy, and accommodated in its own way the rationalistic spirit and scientific method represented in analytic philosophy.\fontspec{Times New Roman} {abcdQR}}
 {analytical philosophy; Chinese philosophers; philosophical analysis;
 dialogue in philosophy.
 }
@@ -351,6 +349,15 @@ IDE这个就是写论文的地方，它会调用你刚才安装的texlive，请\
 \end{table}
 发现没，中文斜体没有效果的，你可以自定义，这个自己百度吧；中文加粗已经解决了该问题，注意这个文件第四行，开启伪加粗（2020.5.18），可以用bfserie或者textbf但是注意，win上bfserie效果好一些，mac上textbf好一些
 
+关于英文新罗马字体的说明：
+在windows上，引用mathptmx包，正文、公式中的英文就会变成新罗马（Times New Roman）字体，但是mac系统上，没有任何效果，还是默认的罗马字体（和Times New Roman很相似，QR两个单词区分明显），所以我在2.1.3以及之后的模板中加入了以下两个命令：
+
+\begin{lstlisting}[language = tex]
+\RequirePackage{mathptmx} %加入这条命令会导致花体，mathcal和mathscr完全相同，正常mathcal会花的轻一些。
+\RequirePackage{fontspec} %这一条在windows可有可无，效果相同，但是mac上必须。
+\end{lstlisting}
+
+但是mathptmx会导致花体，mathcal和mathscr完全相同，正常mathcal会花的轻一些。
 
 
 % subsection 常用的 (end)
@@ -408,7 +415,7 @@ IDE这个就是写论文的地方，它会调用你刚才安装的texlive，请\
 不会输出的符号，请百度，啥都有
 
 \begin{equation}
-\hat{H}=\frac{\epsilon}{2}\hat{\sigma}_{z}-\frac{\Delta}{2}\hat{\sigma}_{x}+\sum_{k}\omega_{k}\hat{b}_{k}^{\dagger}\hat{b}_{k}+\sum_{k}\frac{g_{k}}{2}\hat{\sigma}_{z}(\hat{b}_{k}+\hat{b}_{k}^{\dagger})\label{eq:sbm}
+\hat{HQR}=\frac{\epsilon}{2}\hat{\sigma}_{z}-\frac{\Delta}{2}\hat{\sigma}_{x}+\sum_{k}\omega_{k}\hat{b}_{k}^{\dagger}\hat{b}_{k}+\sum_{k}\frac{g_{k}}{2}\hat{\sigma}_{z}(\hat{b}_{k}+\hat{b}_{k}^{\dagger})\label{eq:sbm}
 \end{equation}
 
 % subsection 复杂公式 (end)
