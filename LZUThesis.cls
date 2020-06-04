@@ -86,6 +86,10 @@
     $\mathring{\text{A}}$
 }
 
+    % \makebox[0pt][l]{$\square$}\raisebox{.15ex}{\hspace{0.1em}$\checkmark$}
+    % \mbox{\ooalign{$\checkmark$\cr\hidewidth$\square$\hidewidth\cr}}
+
+\newcommand{\done}{ \makebox[0pt][l]{$\square$}\raisebox{.15ex}{\hspace{0.1em}$\checkmark$}}
 
 %============================ 我自己用的一些小命令 =========%
 
@@ -318,6 +322,10 @@
 
 
 
+\newtoks \teachertime
+\newtoks \mysignature
+\newtoks \mytime
+
 \newcommand\makestatement{
     \newcommand\fifth{0.2\textwidth}
     \newcommand\middlespace{0.08\textwidth}
@@ -328,43 +336,45 @@
     \parskip 0pt
 
     \begin{center}
-        {\songti\bfseries\zihao{3}{诚信责任书}} % “诚信责任书”这几个字，应该是加粗（宋体加粗）
+        {\bfseries\songti\zihao{3}{诚信责任书}} % “诚信责任书”这几个字，应该是加粗（宋体加粗）
     \end{center}
 
-    本人郑重声明：本人所呈交的毕业论文（设计），是在导师的指导下独立进行研究所取得的成果。毕业论文（设计）中凡引用他人已经发表或未发表的成果、数据、观点等，均已明确注明出处。除文中已经注明引用的内容外，不包含任何其他个人、集体已经发表或未发表的论文。
+    本人郑重声明：本人所呈交的毕业论文（设计），是在导师的指导下独立进行研究所取得的成果。毕业论文（设计）中凡引用他人已经发表或未发表的成果、数据、观点等，均已明确注明出处。除文中已经注明引用的内容外，不包含任何其他个人或集体已经发表或在网上发表的论文。
 
     本声明的法律责任由本人承担。
 
-    \vskip1cm
+
+    \vskip1.5cm
 
     \begin{center}
         \begin{tabular*}{\textwidth}{rm{\fifth}lm{\fifth} cm{\fifth}rp{\fifth}lm{\fifth}}
-            论\hfill 文\hfill 作\hfill 者\hfill 签\hfill 名 ：&\LZUunderline[\fifth]{} & \hspace{\middlespace} & 日\hfill 期：&\LZUunderline[\fifth]{}
+            论\hfill 文\hfill 作\hfill 者\hfill 签\hfill 名 ：&\LZUunderline[\fifth]{\the\mysignature} & \hspace{\middlespace} & 日\hfill 期：&\LZUunderline[\fifth]{\the \mytime}
         \end{tabular*}
     \end{center}
 
     \vskip2.0cm
 
     \begin{center}
-        {\songti\bfseries\zihao{3}{关于毕业论文（设计）使用授权的声明}}% “关于毕业论文（设计）使用授权的声明”这几个字，应该是加粗（宋体加粗）
+        {\bfseries\songti\zihao{3}{关于毕业论文（设计）使用授权的声明}}% “关于毕业论文（设计）使用授权的声明”这几个字，应该是加粗（宋体加粗）
     \end{center}
 
     本人在导师指导下所完成的论文及相关的职务作品，知识产权归属兰州大学。本人完全了解兰州大学有关保存、使用毕业论文（设计）的规定，同意学校保存或向国家有关部门或机构送交论文的纸质版和电子版，允许论文被查阅和借阅；本人授权兰州大学可以将本毕业论文（设计）的全部或部分内容编入有关数据库进行检索，可以采用任何复制手段保存和汇编本毕业论文（设计）。本人离校后发表、使用毕业论文（设计）或与该毕业论文（设计）直接相关的学术论文或成果时，第一署名单位仍然为兰州大学。
 
     本毕业论文（设计）研究内容：
 
-    $\square$ 可以公开
+% 如果不能公开，请把下面这两个置换    \done   $\square$
+    \done 可以公开
 
-    $\square$ 不宜公开，已在学位办公室办理保密申请，解密后适用本授权书。
+    $\square$  不宜公开，已在学位办公室办理保密申请，解密后适用本授权书。
 
     （请在以上选项内选择其中一项打“$\surd$”）
 
     \vskip2cm
     \begin{center}
         \begin{tabular*}{\textwidth}{rlcrl}
-            论文作者签名 ：&\LZUunderline[\fifth]{} & \hspace{\middlespace} &  导师签名 ：&\LZUunderline[\fifth]{} \\
+            论文作者签名 ：&\LZUunderline[\fifth]{\the\mysignature} & \hspace{\middlespace} &  导师签名 ：&\LZUunderline[\fifth]{\the\supervisorsignature} \\
             \quad\\
-            日\qquad \qquad 期：&\LZUunderline[\fifth]{} & \hspace{\middlespace} & 日\qquad 期：&\LZUunderline[\fifth]{}
+            日\qquad \qquad 期：&\LZUunderline[\fifth]{\the \mytime} & \hspace{\middlespace} & 日\qquad 期：&\LZUunderline[\fifth]{\the\teachertime}
         \end{tabular*}
     \end{center}
     \clearpage
@@ -386,31 +396,29 @@
 % \phantomsection
 % \addcontentsline{toc}{chapter}{毕业论文（设计）成绩}
 \begin{center}
-    \zihao{-3}\songti\bfseries  % 成绩这一页整体设置，应该是加粗（宋体加粗）
+    \zihao{-3}\bfseries\songti  % 成绩这一页整体设置，应该是加粗（宋体加粗）
     \begin{tabularx}{\textwidth}{|X|}
         \multicolumn{1}{c}{
-            \zihao{3}\heiti\mdseries 毕业论文（设计）成绩表
+            \zihao{3}\heiti\mdseries {论文（设计）成绩表}
         } \\
-        \multicolumn{1}{c}{} \\
         \hline
+        导师评语\\%
         \centerline{%
-            \songti 
             \begin{minipage}[t][10cm][t]{0.92\textwidth}
-                \setlength\parindent{0pt}
-                \zihao{4}\mdseries \the \supervisorcomment   
-            \end{minipage}
-        }\\
+                \setlength\parindent{\ccwd}
+                \zihao{4} \mdseries \the \supervisorcomment   
+            \end{minipage}}\\
         \zihao{4}{建议成绩}\LZUunderline[80pt]{\the \recommendedgrade}
         \hfill 
         指导教师（签字）\LZUunderline[80pt]{
             \the \supervisorsignature
         }\\
         \hline
-        答辩委员会意见\\
+        答辩小组意见\\
         \centerline{%
             \begin{minipage}[t][2cm][t]{0.92\textwidth}
                 \setlength\parindent{\ccwd}
-                \zihao{-4}\mdseries \the\committeecomment
+                \zihao{-4} \the\committeecomment
             \end{minipage}
         }
         \hfill 答辩委员会负责人（签字）\underline{\hspace{80pt}}\\

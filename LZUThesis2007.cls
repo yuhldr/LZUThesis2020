@@ -86,6 +86,10 @@
     $\mathring{\text{A}}$
 }
 
+    % \makebox[0pt][l]{$\square$}\raisebox{.15ex}{\hspace{0.1em}$\checkmark$}
+    % \mbox{\ooalign{$\checkmark$\cr\hidewidth$\square$\hidewidth\cr}}
+
+\newcommand{\done}{ \makebox[0pt][l]{$\square$}\raisebox{.15ex}{\hspace{0.1em}$\checkmark$}}
 
 %============================ 我自己用的一些小命令 =========%
 
@@ -319,6 +323,9 @@
 }
 
 
+\newtoks \teachertime
+\newtoks \mysignature
+\newtoks \mytime
 
 \newcommand\makestatement{
     \newcommand\fifth{0.2\textwidth}
@@ -342,7 +349,7 @@
 
     \begin{center}
         \begin{tabular*}{\textwidth}{rm{\fifth}lm{\fifth} cm{\fifth}rp{\fifth}lm{\fifth}}
-            论\hfill 文\hfill 作\hfill 者\hfill 签\hfill 名 ：&\LZUunderline[\fifth]{} & \hspace{\middlespace} & 日\hfill 期：&\LZUunderline[\fifth]{}
+            论\hfill 文\hfill 作\hfill 者\hfill 签\hfill 名 ：&\LZUunderline[\fifth]{\the\mysignature} & \hspace{\middlespace} & 日\hfill 期：&\LZUunderline[\fifth]{\the \mytime}
         \end{tabular*}
     \end{center}
 
@@ -356,22 +363,24 @@
 
     本毕业论文（设计）研究内容：
 
-    $\square$ 可以公开
+% 如果不能公开，请把下面这两个置换    \done   $\square$
+    \done 可以公开
 
-    $\square$ 不宜公开，已在学位办公室办理保密申请，解密后适用本授权书。
+    $\square$  不宜公开，已在学位办公室办理保密申请，解密后适用本授权书。
 
     （请在以上选项内选择其中一项打“$\surd$”）
 
     \vskip2cm
     \begin{center}
         \begin{tabular*}{\textwidth}{rlcrl}
-            论文作者签名 ：&\LZUunderline[\fifth]{} & \hspace{\middlespace} &  导师签名 ：&\LZUunderline[\fifth]{} \\
+            论文作者签名 ：&\LZUunderline[\fifth]{\the\mysignature} & \hspace{\middlespace} &  导师签名 ：&\LZUunderline[\fifth]{\the\supervisorsignature} \\
             \quad\\
-            日\qquad \qquad 期：&\LZUunderline[\fifth]{} & \hspace{\middlespace} & 日\qquad 期：&\LZUunderline[\fifth]{}
+            日\qquad \qquad 期：&\LZUunderline[\fifth]{\the \mytime} & \hspace{\middlespace} & 日\qquad 期：&\LZUunderline[\fifth]{\the\teachertime}
         \end{tabular*}
     \end{center}
     \clearpage
 }
+
 
 
 
@@ -616,13 +625,12 @@
             \zihao{3}\heiti\mdseries {论文（设计）成绩表}
         } \\
         \hline
+        导师评语\\%
         \centerline{%
-            \songti 
             \begin{minipage}[t][10cm][t]{0.92\textwidth}
-                \setlength\parindent{0pt}
-                 \the \supervisorcomment   
-            \end{minipage}
-        }\\
+                \setlength\parindent{\ccwd}
+                \zihao{4} \mdseries \the \supervisorcomment   
+            \end{minipage}}\\
         \zihao{4}{建议成绩}\LZUunderline[80pt]{\the \recommendedgrade}
         \hfill 
         指导教师（签字）\LZUunderline[80pt]{

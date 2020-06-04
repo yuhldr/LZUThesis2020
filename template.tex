@@ -41,6 +41,39 @@
 %诚信说明页
 %授权说明书
 %======%
+% 如果超出边界，可以调整签字的宽度，现在是50，如果你不用，把下面的注释就好
+
+% 你的签名
+\mysignature{
+    % \raisebox{-5pt}{
+        \includegraphics[width=40pt]{signature.pdf}
+    % }
+}
+% 你手写的日期
+\mytime{
+    % \raisebox{-5pt}{
+        \includegraphics[width=40pt]{signature.pdf}
+    % }
+}
+% 老师的手写签名
+\supervisorsignature{
+    % \raisebox{-5pt}{
+        \includegraphics[width=40pt]{signature.pdf}
+    % }
+}
+% 老师手写的时间
+\teachertime{
+    % \raisebox{-5pSt}{
+        \includegraphics[width=40pt]{signature.pdf}
+    % }
+}
+% 老师手写的成绩
+\recommendedgrade{
+    % \raisebox{-5pt}{
+        \includegraphics[width=40pt]{signature.pdf}
+    % }
+}
+
 \makestatement
 
 
@@ -590,13 +623,6 @@ matlab代码有专门的库，但是没必要高亮太多，而且中文适配�
 % 下面这些注释掉可以去掉成绩、评语什么的
 \supervisorcomment{导师评价你人很好}
 
-\recommendedgrade{80}
-
-\supervisorsignature{
-    \raisebox{-10pt}{
-        \includegraphics[width=60pt]{signature.pdf}
-    }
-}
 
 \committeecomment{优秀}
 
