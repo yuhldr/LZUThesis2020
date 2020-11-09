@@ -1,5 +1,6 @@
 <!-- START doctoc generated TOC please keep comment here to allow auto update -->
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+更多LaTex模板资源可以来：[latexstudio](https://www.latexstudio.net)，资源和一些教程确实不错
 
 
 - [兰州大学本科生2020（学士学位）LaTeX模板](#%E5%85%B0%E5%B7%9E%E5%A4%A7%E5%AD%A6%E6%9C%AC%E7%A7%91%E7%94%9F2020%E5%AD%A6%E5%A3%AB%E5%AD%A6%E4%BD%8Dlatex%E6%A8%A1%E6%9D%BF)
