@@ -3,6 +3,7 @@ paper-mac(linux)
 paper-windows
 paper
 ~$*
+paper.zip
 
 ## Core latex/pdflatex auxiliary files:
 *.aux
@@ -218,3 +219,4 @@ TSWLatexianTemp*
 
 # expex forward references with \gathertags
 *-tags.tex
+/paper.zip
