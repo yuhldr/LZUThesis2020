@@ -2,7 +2,7 @@
 % !TEX encoding = UTF-8 Unicode
 
 % \documentclass[AutoFakeBold]{LZUThesis}
-\documentclass[AutoFakeBold]{LZUThesis2007}
+\documentclass[AutoFakeBold]{LZUThesis}
 
 \begin{document}
 %=====%
@@ -37,31 +37,32 @@
 
 \maketitle
 
-%======%
-%诚信说明页
-%授权说明书
-%======%
-% 如果超出边界，可以调整签字的宽度，现在是50，如果你不用，把下面的注释就好
+%==============================%
+% ↓ ↓ ↓ 诚信说明页 授权说明书
+%==============================%
 
-% 你的签名
+% 1. 可以调整签字的宽度，现在是40
+% 2. 去掉raisebox的相关注释(注意上下大括号对应)，可以改变-5那个数字调整签名和横线的上下位置
+
+% 你的签名，signature.pdf 改为你的签名文件名，
 \mysignature{
     % \raisebox{-5pt}{
         \includegraphics[width=40pt]{signature.pdf}
     % }
 }
-% 你手写的日期
+% 你手写的日期，signature.pdf 改为你的手写的日期文件名
 \mytime{
     % \raisebox{-5pt}{
         \includegraphics[width=40pt]{signature.pdf}
     % }
 }
-% 老师的手写签名
+% 老师的手写签名，signature.pdf 改为老师的手写签名文件名
 \supervisorsignature{
     % \raisebox{-5pt}{
         \includegraphics[width=40pt]{signature.pdf}
     % }
 }
-% 老师手写的时间
+% 老师手写的时间，signature.pdf 改为老师的手写的日期文件名
 \teachertime{
     % \raisebox{-5pSt}{
         \includegraphics[width=40pt]{signature.pdf}
@@ -76,13 +77,33 @@
 
 \makestatement
 
+%==============================%
+% ↑ ↑ ↑ 诚信说明页 授权说明书
+%==============================%
+
+
+%=====%
+%论文（设计）成绩：注意2007的模板要求，成绩页在最后，2021要求成绩页在摘要前面
+%=====%
+
+% 下面这些注释掉可以去掉成绩、评语什么的
+\supervisorcomment{导师评价你人很好}
+
+
+\committeecomment{优秀}
+
+\finalgrade{100}
+% 上面这些注释掉可以去掉成绩、评语什么的
+
+\Grade %这一句才是成绩页，上面是填写
+
 
 \frontmatter
 
 
 
 %中文摘要
-\ZhAbstract{注意，2020要求英文摘要在前面；这是真的在打广告啊，嗯，做兰大毕业论文latex模板时，顺便介绍一下我写的软件。嗯，好像本科生也不用打广告啦，目前两万多人在用，但是研究生没几个人在用啊，很多在写论文的你们马上就是兰州大学的研究生了吧，试一下兰朵儿？
+\ZhAbstract{注意，2021要求英文摘要在前面；这是真的在打广告啊，嗯，做兰大毕业论文latex模板时，顺便介绍一下我写的软件。嗯，好像本科生也不用打广告啦，目前两万多人在用，但是研究生没几个人在用啊，很多在写论文的你们马上就是兰州大学的研究生了吧，试一下兰朵儿？
 
 不要仅仅把它当做广告，这里面有很多latex的用法说明}{兰朵儿，yuh}
 
@@ -101,18 +122,20 @@ dialogue in philosophy.
 %文章主体
 \mainmatter
 
-\chapter{绪论}
+\chapter{绪 \qquad 论}
 
-其实我推荐绪论写在正文里！！作为第一章
+% ！学校要求的规范，绪论是单独的，不是第一章，但是老师们都是让作为第一章，这里我把它放在了论文里，如果你要让在外面，只需要把上面的 \mainmatter 这一句话放在“绪论内容后面，正文第一章前面”即可，也就是 \chapter{latex部分用法简介} 这一句话上面
 
-    这里是绪论，也可以说是引言，在LZUThesis2020.clc里面改，引言写什么呢，先凑字数，
+这里是绪论，也可以说是引言，在LZUThesis.clc里面改，引言写什么呢，先凑字数，
 
-    是真的在打广告啊，嗯，做兰大毕业论文LaTex模板时，顺便介绍一下我写的软件：i兰大易班，兰大专属的app，可以看课表，充值校园卡（微信、支付宝都可以），查成绩（可以算绩点），还可以……，好多好多好多
+是真的在打广告啊，嗯，做兰大毕业论文LaTex模板时，顺便介绍一下我写的软件：兰朵儿，兰大专属的app，可以看课表，充值校园卡（微信、支付宝都可以），查成绩（可以算绩点），还可以……，好多好多好多
 
-    注意啊，段落在latex里面是要空一行的，不要简单一个回车
+华为、小米、OPPO、Vivo应用市场搜索“兰朵儿”即可安装使用，研究生也可以用的！保研的同学帮忙宣传一下哈
 
-    \section{二级标题}
-    绪论其实也可以有二级标题，要不然，论文要求：“包括毕业论文（设计）的研究目的、意义、范围、研究设想、方法、实验设计、选题依据等；还包括毕业论文（设计）研究领域的历史回顾，文献追溯，理论分析等内容”全部写成一堆不成？
+注意啊，段落在latex里面是要空一行的，不要简单一个回车，编译过程中警告内容无需管
+
+\section{二级标题}
+绪论其实也可以有二级标题，要不然，论文要求：“包括毕业论文（设计）的研究目的、意义、范围、研究设想、方法、实验设计、选题依据等；还包括毕业论文（设计）研究领域的历史回顾，文献追溯，理论分析等内容”全部写成一堆不成？
 
 
 
@@ -130,16 +153,16 @@ dialogue in philosophy.
 需要安装texlive，外加一个IDE
 
 \subsection{texlive下载安装}
-最近出2020了，可以用兰大的镜像下载应该在用校园网时快一些，额，你还是用清华的镜像吧，我刚才找了一下，兰大镜像这会儿竟然挂了。。。
+已经出2020了，2021也快了，一般四月份，别更新，我不一定会去适配2021texlive，可以用兰大的镜像下载应该在用校园网时快一些，额，你还是用清华的镜像吧，我刚才找了一下，兰大镜像这会儿竟然挂了。。。
 
 下载地址\footnote{这个地址会自动更新比如2020版出了以后你下载的就是2020了}： 点下面的字跳转浏览器下载了，方便吧
 
 \begin{itemize}
 	\item \href{https://mirrors.tuna.tsinghua.edu.cn/CTAN/systems/texlive/Images/texlive.iso}{TexLive最新版 \quad Windows版}
-	\item \href{http://tug.org/cgi-bin/mactex-download/MacTeX.pkg}{TexLive最新版 \quad Mac版}
+	\item \href{http://tug.org/cgi-bin/mactex-download/MacTeX.pkg}{TexLive最新版 \quad Mac版（mactex）}
 \end{itemize}
 
-上面的文件直接双击安装一路next就行，但是texlive这是个啥？
+上面的文件直接双击安装一路next就行，如果是mac电脑并且配置了brew，直接brew install mactex即可，无需下载安装。但是texlive这是个啥？
 
 用过python吧，texlive就相当于你下载的python安装包，但是你总不能在终端里写代码吧，一般用pycharm，这个就是IDE，所以你需要再安装一个IDE。
 
@@ -172,12 +195,17 @@ dialogue in philosophy.
 \subsection{安装IDE（vscode）} % (fold)
 \label{sub:安装ide}
 
-在这之前，请测试texlive是否安装成功！！！在命令行输入tex，显示类似如下结果，注意必须包含“TeX Live 2020”字样
+在这之前，请测试texlive是否安装成功！！！
+
+1. 在命令行（windows即cmd或者powershell，mac即终端，linux，额，不知道命令行用什么linux……）输入xelatex，显示类似如下结果：
 
 \begin{lstlisting}[language=bash]
     This is TeX, Version 3.14159265 (TeX Live 2020) (preloaded format=tex)
     **
 \end{lstlisting}
+
+\textbf{注意必须包含“TeX Live 2020”字样！！！别用CTEX或者MiKTeX，我都快被这群人逼疯了……，不用texlive（mactex），也不四步走进行编译，然后就说模板有问题……}
+windows和mac上已经测试通过，linux缺失一些字体，自行安装，但是我劝你别折腾。。。，以后有空在玩linux，你写论文，现在是工作环境。
 
 
 如果确实安装了，但是没有显示，请根据各自系统自行百度配环境变量，此处不再详细介绍
@@ -193,7 +221,7 @@ IDE这个就是写论文的地方，它会调用你刚才安装的texlive，请\
     \label{fig_ide}
 \end{figure}
 
-这两个IDE真的是特别好用，不要再用TexMake或者TexStudio了，连个自动提示都麻烦，预览也没有，最主要的是太丑了还有各种bugs，也不能换主题
+这两个IDE真的是特别好用，不要再用TexMake、TexStudio、sublime text3了，连个自动提示都麻烦，预览也没有，最主要的是太丑了还有各种bugs，也不能换主题
 
 % subsection 安装ide (end)
 
@@ -519,7 +547,7 @@ width=0.3\textwidth
 	\subfloat[我的]{
         \includegraphics[width=0.3\textwidth]{figures/ldr4.jpg}
     }\\	
-    \caption{i兰大易班截图}
+    \caption{兰朵儿截图}
     \label{fig_ldr}
 \end{figure}
 
@@ -532,7 +560,7 @@ width=0.3\textwidth
 
 java代码
 \begin{lstlisting}[language = java]
-    System.out.print("i兰大易班")
+    System.out.print("兰朵儿")
     // 试一下中文注释
 \end{lstlisting}
 
@@ -545,13 +573,13 @@ tex代码
 
 python代码
 \begin{lstlisting}[language = python]
-    print("i兰大易班")
+    print("兰朵儿")
     # 注释
 \end{lstlisting}
 
 matlab代码有专门的库，但是没必要高亮太多，而且中文适配有问题，直接按照下面这个就可以
 \begin{lstlisting}[language = matlab]
-    display("i兰大易班")
+    display("兰朵儿")
     % 注释
 \end{lstlisting}
 
@@ -613,23 +641,10 @@ matlab代码有专门的库，但是没必要高亮太多，而且中文适配�
 
 \Thanks
 
-这里是致谢页，你可以在这里致谢你的舍友，老师，朋友，或者我。
+这里是致谢页，你可以在这里致谢你的舍友，老师，朋友，或者我
 
+（我是谁？兰朵儿开发者：余航，致谢我，查重时一定会重复的，哈哈，开个玩笑，本科生论文不在查重范围，而且“毕业论文(设计)检测内容主要为毕业论文(设计)的主体部分”）。
 
-%=====%
-%论文（设计）成绩：注意2007的模板要求，成绩页在最后，2020要求成绩页在摘要前面
-%=====%
-
-% 下面这些注释掉可以去掉成绩、评语什么的
-\supervisorcomment{导师评价你人很好}
-
-
-\committeecomment{优秀}
-
-\finalgrade{100}
-% 上面这些注释掉可以去掉成绩、评语什么的
-
-\Grade %这一句才是成绩页，上面是填写
 
 
 \end{document}

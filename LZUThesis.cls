@@ -1,8 +1,8 @@
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesClass{LZUThesis}[2020/06/01 V2.1.3 Thesis for LZUer By yuhldr]
+\ProvidesClass{LZUThesis}[2021/02/25 V3.0.0 Thesis for LZUer By yuhldr]
 \LoadClass[12pt, a4paper, UTF8, openany,oneside]{ctexbook}
 
-% 部分内容参考了https://github.com/suchot/LZUThesis2017，适配了2020最新的毕业论文要求
+% 部分内容参考了https://github.com/suchot/LZUThesis2017，适配了2021最新的毕业论文要求：http://jwc.lzu.edu.cn/lzupage/2021/02/25/N20210225145827.html
 
 %============================ 一些章节的配置文件 =========%
 %%
@@ -47,11 +47,11 @@
 \@ifclasslater{ctexbook}{2011/03/13}
 {%
     \ctexset{
-        contentsname={目\quad 录}
+        contentsname={目\qquad 录}
     }
 }
 {%
-    \def\CTEX@contentsname{目\quad 录}
+    \def\CTEX@contentsname{目\qquad 录}
 }%
 
 \RequirePackage{textcomp}
@@ -273,7 +273,7 @@
         \includegraphics[width=6cm]{lzu2020.png}\\
         \vspace*{21.8pt}
 
-        {\zihao{1}\heiti{本科生毕业论文（设计）\\}}% 封面这几个字，应该是雅黑
+        {\zihao{1}\songti{本科生毕业论文\\}}% 封面这几个字，规范中未提及，此处按照宋体
         \vspace{21.8pt}
         \par
         \zihao{4}
@@ -396,36 +396,36 @@
 % \phantomsection
 % \addcontentsline{toc}{chapter}{毕业论文（设计）成绩}
 \begin{center}
-    \zihao{-3}\bfseries\songti  % 成绩这一页整体设置，应该是加粗（宋体加粗）
+    \zihao{-3}\songti  % 成绩这一页整体设置，应该是加粗（宋体加粗）
     \begin{tabularx}{\textwidth}{|X|}
         \multicolumn{1}{c}{
-            \zihao{3}\heiti\mdseries {论文（设计）成绩表}
+            \zihao{3} \bfseries{毕业论文（设计）成绩表}
         } \\
         \hline
         导师评语\\%
         \centerline{%
             \begin{minipage}[t][10cm][t]{0.92\textwidth}
                 \setlength\parindent{\ccwd}
-                \zihao{4} \mdseries \the \supervisorcomment   
+                \zihao{4}  \the \supervisorcomment   
             \end{minipage}}\\
-        \zihao{4}{建议成绩}\LZUunderline[80pt]{\the \recommendedgrade}
+        \zihao{4}\bfseries{建议成绩}\LZUunderline[80pt]{\the \recommendedgrade}
         \hfill 
-        指导教师（签字）\LZUunderline[80pt]{
+        \bfseries{指导教师（签字）}\LZUunderline[80pt]{
             \the \supervisorsignature
         }\\
         \hline
-        答辩小组意见\\
+        \bfseries{答辩小组意见}\\
         \centerline{%
             \begin{minipage}[t][2cm][t]{0.92\textwidth}
                 \setlength\parindent{\ccwd}
                 \zihao{-4} \the\committeecomment
             \end{minipage}
         }
-        \hfill 答辩委员会负责人（签字）\underline{\hspace{80pt}}\\
+        \hfill \bfseries{答辩委员会负责人（签字）}\underline{\hspace{80pt}}\\
         \hline
         \\[2.3cm]
-        成绩\LZUunderline[80pt]{\the \finalgrade}\hfill 学院（盖章）\underline{\hspace{80pt}}\\
-        \hfill{\zihao{-4}年\hspace{20pt}月\hspace{20pt}日}\\
+        \bfseries{成绩}\LZUunderline[80pt]{\the \finalgrade}\hfill \bfseries{学院（盖章）}\underline{\hspace{80pt}}\\
+        \hfill{\zihao{-4}\bfseries{年}\hspace{20pt}\bfseries{月}\hspace{20pt}\bfseries{日}}\\
         \hline
     \end{tabularx}
 \end{center}
@@ -491,7 +491,8 @@
         \linespread{1}
         \selectfont
         \setlength{\parskip}{18pt}
-        \zihao{3}\fontspec{Arial}\bfseries Abstract %Linux没有这个字体，需要自己安装，或者自定义命令
+        %Linux没有这个字体，需要自己安装，或者自定义命令
+        \zihao{3}\fontspec{Arial}\bfseries Abstract
     \end{center}%
     \setlength{\parskip}{0pt}
     \setlength{\baselineskip}{20pt} %行距20磅
