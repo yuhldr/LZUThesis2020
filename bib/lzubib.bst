@@ -840,7 +840,7 @@ FUNCTION {article}
   new.block
   crossref missing$
     { 
-      %journal emphasize "journal" output.check
+      journal emphasize "journal" output.check
       journal "journal" output.check
       %format.date output
       %new.block
