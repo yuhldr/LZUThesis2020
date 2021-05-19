@@ -197,7 +197,8 @@
     \rhead{\zihao{-5}\@title}
     % Footers
     \fancyfoot{} % clear all footer fields
-    \cfoot[C]{\thepage}
+    % 页码。页脚居中排，字体为宋体，五号。封面、目录不编排页码，中英文摘要页用罗马数字单独连续编号，引言、正文用阿拉伯数字连续编号，附录可不编排页码
+    \cfoot[C]{\zihao{5}\thepage}
     \renewcommand\headrule{ \kern 0.8pt \hrule width \hsize height 0.3pt}
 }
 
