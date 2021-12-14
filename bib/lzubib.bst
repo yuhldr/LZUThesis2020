@@ -14,6 +14,7 @@ ENTRY
     journal
     key
     lang
+    language % 在bib文件中设置语言，来切换中英文作者大于三人时的 “等”和"et.al"，使用zotero导出bib时可以自动生成
     month
     note
     number
@@ -305,7 +306,17 @@ FUNCTION {format.names}
               "," *
               t "others" =
                 {
-                  " " * bbl.etal *
+                  language empty$
+                  {                    
+                    " " * bbl.etal *
+                  }
+                  {                  
+                    language "中文;" = 
+                    {" " * bbl.cn.etal *}
+                    {" " * bbl.etal *}
+                    if$
+                  }
+                  if$
                 }
                 { " " * t * }
               if$
@@ -977,7 +988,7 @@ FUNCTION {online}
   format.title "[DB/OL]" * "title" output.check
   howpublished new.block.checka
   howpublished output
-  url output
+  format.url output % 这里url没有格式化
   format.date output
   new.block
   note output
