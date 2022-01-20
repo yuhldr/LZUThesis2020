@@ -1,4 +1,5 @@
 % BibTeX standard bibliography style `lzubib.bst' derived from `bnubib.bst'
+% 2022.1.20 对齐、url、期刊
 % 2020.5.9 修复作者问题
 % 2017/9/16
 ENTRY
