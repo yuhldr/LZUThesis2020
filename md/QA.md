@@ -135,6 +135,10 @@ mac、linux、windows三系统全部测试通过，linux缺一个字体，看 [�
 
   你仔细看[template.pdf](template.pdf)和[template.tex](template.tex)吧，里面都有
 
+- 使参考文献右上标
+
+  把引用的命令`\cite{..}`更改为`\upcite{..}`即可。
+
 - 其他的
 
   > 百度错误的提示，基本上都能找到原因

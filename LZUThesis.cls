@@ -91,6 +91,9 @@
 
 \newcommand{\done}{ \makebox[0pt][l]{$\square$}\raisebox{.15ex}{\hspace{0.1em}$\checkmark$}}
 
+% 右上角的参考文献  \upcite{}
+\newcommand{\upcite}[1]{\textsuperscript{\textsuperscript{\cite{#1}}}}
+
 %============================ 我自己用的一些小命令 =========%
 
 \RequirePackage{textcomp}%摄氏度
