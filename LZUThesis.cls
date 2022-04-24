@@ -267,6 +267,11 @@
 %\RequirePackage{pgffor}
 \RequirePackage{forloop}
 \RequirePackage{xstring}
+
+%设置要使用的方正小标宋简体
+\setCJKfamilyfont{MyCJKfzxbs}[Path=fonts/]{FZXiaoBiaoSong-B05S}
+\newcommand{\fzxbs}{\CJKfamily{MyCJKfzxbs}}  
+
 \renewcommand\maketitle{%
     \cleardoublepage
     \thispagestyle{empty}
@@ -274,7 +279,7 @@
         \includegraphics[width=6cm]{lzu2020.png}\\
         \vspace*{21.8pt}
 
-        {\zihao{1}\songti{本科毕业论文\\}}% 封面这几个字，规范中未提及，此处按照宋体
+        {\zihao{1}\fzxbs{本科毕业论文\\}}% 封面这几个字，规范中未提及，此处根据提供word模板样式，使用方正小标宋简体
         \vspace{21.8pt}
         \par
         \zihao{4}
@@ -340,7 +345,7 @@
         {\bfseries\songti\zihao{3}{诚信责任书}} % “诚信责任书”这几个字，应该是加粗（宋体加粗）
     \end{center}
 
-    本人郑重声明：本人所呈交的毕业论文（设计），是在导师的指导下独立进行研究所取得的成果。毕业论文（设计）中凡引用他人已经发表或未发表的成果、数据、观点等，均已明确注明出处。除文中已经注明引用的内容外，不包含任何其他个人或集体已经发表或在网上发表的论文。
+    本人郑重声明：本人所呈交的毕业论文（设计），是在导师的指导下独立进行研究所取得的成果。毕业论文（设计）中凡引用他人已经发表或未发表的成果、数据、观点等，均已明确注明出处。除文中已经注明引用的内容外，不包含任何其他个人、集体已经发表或未发表的论文。
 
     本声明的法律责任由本人承担。
 
@@ -393,14 +398,17 @@
 \newtoks \finalgrade
 \newcommand{\Grade}{
 \clearpage
-\thispagestyle{empty}
+\thispagestyle{mainmatterstyle}
 % \phantomsection
 % \addcontentsline{toc}{chapter}{毕业论文（设计）成绩}
 \begin{center}
     \zihao{-3}\songti  % 成绩这一页整体设置，应该是加粗（宋体加粗）
     \begin{tabularx}{\textwidth}{|X|}
         \multicolumn{1}{c}{
-            \zihao{3} \bfseries{毕业论文（设计）成绩表}
+            \zihao{3} \fzxbs{毕业论文成绩表}
+        } \\
+        \multicolumn{1}{c}{
+            \zihao{-4}
         } \\
         \hline
         导师评语\\%
@@ -439,7 +447,7 @@
 %
 %=======abstract
 
-% 2.中英文关键词。毕业论文（设计）中应列出3～8个关键词，关键词与摘要之间空1行，置于摘要之后。中文关键词字体为宋体，小四号，加粗置顶格；英文关键词所述含义与中文关键词须一致。“关键词”为“Key words”，字体为Times New Roman，小四号，加粗，置顶格。
+% 2.中英文关键词。毕业论文（设计）中应列出3～8个关键词，关键词与摘要之间空1行，置于摘要之后。中文关键词字体为宋体，小四号，加粗置顶格；英文关键词所述含义与中文关键词须一致。“关键词”为“Keywords”，字体为Times New Roman，小四号，加粗，置顶格。
 
 % 中文摘要以300-400字为宜。毕业论文（设计）题目字体为宋体，二号，加粗，段前24磅，段后18磅；“中文摘要”居中，字体为黑体，三号；摘要正文字体为宋体，小四号。行间距为固定值20磅。
 \newcommand{\ZhAbstract}[2]{%
@@ -501,7 +509,7 @@
     \vspace{11pt}
     \par #1\\%
     \vbox{}\\
-    {\bfseries Key Words:} #2
+    {\bfseries Keywords:} #2
 }
 
 
