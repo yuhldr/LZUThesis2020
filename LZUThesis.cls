@@ -238,6 +238,14 @@
 \setlength\cftbeforetoctitleskip{24pt}
 \setlength\cftaftertoctitleskip{18pt}
 
+% 图目录、表目录标题字体为宋体，四号
+\renewcommand\cftfignumwidth{1em}  % 转行时标题缩进一字
+\renewcommand\cftfigfont{\zihao{4} \songti}
+\renewcommand{\listfigurename}{图\ 目\ 录}
+
+\renewcommand\cfttabnumwidth{1em}  % 转行时标题缩进一字
+\renewcommand\cfttabfont{\zihao{4} \songti}
+\renewcommand{\listtablename}{表\ 目\ 录}
 
 %%=======information
 %（一）封面

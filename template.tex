@@ -113,9 +113,26 @@ dialogue in philosophy.
 }
 
 %生成目录
+\addtocontents{toc}{\protect\thispagestyle{empty}}
 \tableofcontents
+
+%生成图表目录（图表不多的话可以给下部分注释掉）
+%
+\begingroup
+\pagenumbering{gobble}
+\renewcommand{\addvspace}[1]{}
+\newcommand{\loflabel}{图} 
+\renewcommand{\numberline}[1]{\loflabel~#1\hspace*{1em}}
+\listoffigures
 \thispagestyle{empty}
 
+\newcommand{\lotlabel}{表}
+\renewcommand{\numberline}[1]{\lotlabel~#1\hspace*{1em}}
+\listoftables
+\thispagestyle{empty}
+\clearpage
+\endgroup
+%
 
 %文章主体
 \mainmatter
