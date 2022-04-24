@@ -101,6 +101,7 @@
 %尾注
 %=======footnote
 \RequirePackage[perpage, bottom]{footmisc}
+\usepackage{footnote}
 
 %%=======page
 %页面边距
