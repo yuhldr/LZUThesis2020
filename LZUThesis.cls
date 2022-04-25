@@ -164,6 +164,11 @@
 % 连续参考文献横杠连接
 \RequirePackage{cite}
 
+% 修复宋体字在overleaf中无法加粗的问题
+% 参考：https://www.freesion.com/article/1621320426/
+\setCJKfamilyfont{zhsong}[Path={fonts/}, AutoFakeBold = {2.17}]{SimSun}
+\renewcommand{\songti}{\CJKfamily{zhsong}}
+
 
 %=======head and foot
 %页眉页脚
