@@ -1,46 +1,19 @@
-<!-- START doctoc generated TOC please keep comment here to allow auto update -->
-<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
 更多LaTex模板资源可以来：[latexstudio](https://www.latexstudio.net)，资源和一些教程确实不错
-
-- [兰州大学本科生2021（学士学位）LaTeX模板](#%E5%85%B0%E5%B7%9E%E5%A4%A7%E5%AD%A6%E6%9C%AC%E7%A7%91%E7%94%9F2021%E5%AD%A6%E5%A3%AB%E5%AD%A6%E4%BD%8Dlatex%E6%A8%A1%E6%9D%BF)
-  - [一、使用方法](#%E4%B8%80%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95)
-  - [二、常见问题](#%E4%BA%8C%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98)
-    - [-1. 英文字体略有不同（花体太花）](#-1-%E8%8B%B1%E6%96%87%E5%AD%97%E4%BD%93%E7%95%A5%E6%9C%89%E4%B8%8D%E5%90%8C%E8%8A%B1%E4%BD%93%E5%A4%AA%E8%8A%B1)
-    - [0. 封面“兰州大学教务处”几个字跑到了第二页，或者不在最下面（偏上）](#0-%E5%B0%81%E9%9D%A2%E5%85%B0%E5%B7%9E%E5%A4%A7%E5%AD%A6%E6%95%99%E5%8A%A1%E5%A4%84%E5%87%A0%E4%B8%AA%E5%AD%97%E8%B7%91%E5%88%B0%E4%BA%86%E7%AC%AC%E4%BA%8C%E9%A1%B5%E6%88%96%E8%80%85%E4%B8%8D%E5%9C%A8%E6%9C%80%E4%B8%8B%E9%9D%A2%E5%81%8F%E4%B8%8A)
-    - [1、编译出来的没有**参考文献**或**目录**，或者直接失败：](#1%E7%BC%96%E8%AF%91%E5%87%BA%E6%9D%A5%E7%9A%84%E6%B2%A1%E6%9C%89%E5%8F%82%E8%80%83%E6%96%87%E7%8C%AE%E6%88%96%E7%9B%AE%E5%BD%95%E6%88%96%E8%80%85%E7%9B%B4%E6%8E%A5%E5%A4%B1%E8%B4%A5)
-    - [2、正文第一章，编号却是第二章？](#2%E6%AD%A3%E6%96%87%E7%AC%AC%E4%B8%80%E7%AB%A0%E7%BC%96%E5%8F%B7%E5%8D%B4%E6%98%AF%E7%AC%AC%E4%BA%8C%E7%AB%A0)
-    - [3、linux环境下编译失败](#3linux%E7%8E%AF%E5%A2%83%E4%B8%8B%E7%BC%96%E8%AF%91%E5%A4%B1%E8%B4%A5)
-    - [5、编译的和预期有差别，你把缓存的文件清理一下，重新四步走进行编译](#5%E7%BC%96%E8%AF%91%E7%9A%84%E5%92%8C%E9%A2%84%E6%9C%9F%E6%9C%89%E5%B7%AE%E5%88%AB%E4%BD%A0%E6%8A%8A%E7%BC%93%E5%AD%98%E7%9A%84%E6%96%87%E4%BB%B6%E6%B8%85%E7%90%86%E4%B8%80%E4%B8%8B%E9%87%8D%E6%96%B0%E5%9B%9B%E6%AD%A5%E8%B5%B0%E8%BF%9B%E8%A1%8C%E7%BC%96%E8%AF%91)
-    - [6、表格居中、换页、换行、图片并列排等，怎么用](#6%E8%A1%A8%E6%A0%BC%E5%B1%85%E4%B8%AD%E6%8D%A2%E9%A1%B5%E6%8D%A2%E8%A1%8C%E5%9B%BE%E7%89%87%E5%B9%B6%E5%88%97%E6%8E%92%E7%AD%89%E6%80%8E%E4%B9%88%E7%94%A8)
-    - [7、其他的](#7%E5%85%B6%E4%BB%96%E7%9A%84)
-    - [8、目录有页码，但是要求中不需要](#8%E7%9B%AE%E5%BD%95%E6%9C%89%E9%A1%B5%E7%A0%81%E4%BD%86%E6%98%AF%E8%A6%81%E6%B1%82%E4%B8%AD%E4%B8%8D%E9%9C%80%E8%A6%81)
-    - [9、摘要的标题换行有点迷醉，而且小写的化学式都被大些了](#9%E6%91%98%E8%A6%81%E7%9A%84%E6%A0%87%E9%A2%98%E6%8D%A2%E8%A1%8C%E6%9C%89%E7%82%B9%E8%BF%B7%E9%86%89%E8%80%8C%E4%B8%94%E5%B0%8F%E5%86%99%E7%9A%84%E5%8C%96%E5%AD%A6%E5%BC%8F%E9%83%BD%E8%A2%AB%E5%A4%A7%E4%BA%9B%E4%BA%86)
-  - [三、更新日志](#%E4%B8%89%E6%9B%B4%E6%96%B0%E6%97%A5%E5%BF%97)
-    - [2021.02.25](#20210225)
-    - [2020.06.01](#20200601)
-    - [2020.5.29](#2020529)
-    - [2020.5.24](#2020524)
-    - [2020.5.19](#2020519)
-    - [2020.5.10](#2020510)
-    - [2020.4.13](#2020413)
-    - [2020.4.10](#2020410)
-    - [2020.4.7](#202047)
-    - [2020.4.4](#202044)
-  - [四、其他](#%E5%9B%9B%E5%85%B6%E4%BB%96)
-    - [2021版相比2007版，学校的要求有哪些变化](#2021%E7%89%88%E7%9B%B8%E6%AF%942007%E7%89%88%E5%AD%A6%E6%A0%A1%E7%9A%84%E8%A6%81%E6%B1%82%E6%9C%89%E5%93%AA%E4%BA%9B%E5%8F%98%E5%8C%96)
-    - [项目主要文件](#%E9%A1%B9%E7%9B%AE%E4%B8%BB%E8%A6%81%E6%96%87%E4%BB%B6)
-    - [编译器选择](#%E7%BC%96%E8%AF%91%E5%99%A8%E9%80%89%E6%8B%A9)
-    - [高级操作](#%E9%AB%98%E7%BA%A7%E6%93%8D%E4%BD%9C)
-
-<!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
 # 兰州大学本科生2021（学士学位）LaTeX模板
 
 2021正式开始使用新版毕业论文规范，[详情点我](http://jwc.lzu.edu.cn/lzupage/2021/02/25/N20210225145827.html)，此模板已经全面适配
 
-2020.5.30做了个毕业答辩模板 LZUBeamer：[Gitee](https://gitee.com/yuhldr/LZUBeamer) 和 [Github](https://github.com/yuhlzu/LZUBeamer)，可以去看看：
+- 2022.5.6 转博士答辩，又做了个模板，感觉更好一些，清爽！
+    - [Gitee](https://gitee.com/yuhldr/LZUBeamer) 和 [Github](https://github.com/yuhlzu/LZUBeamer)
+    - 预览第1页|预览第4页
+        :-:|:-:
+        ![第1页](./figures/ppt1_.jpg)|![第4页](./figures/ppt4_.jpg)
 
-![图](figures/ppt.png)
+
+- 2020.5.30做了个毕业答辩模板 LZUBeamer：[Gitee](https://gitee.com/yuhldr/LZUBeamer) 和 [Github](https://github.com/yuhlzu/LZUBeamer)，可以去看看：
+
+    - ![图](figures/ppt.png)
 
 
 为什么选择这个模板？
@@ -62,12 +35,12 @@
 
 ## 一、使用方法
 
-据说这个网站：[overleaf](https://cn.overleaf.com/)挺好用（记得在菜单里把编译方式改成xelatex！！不要动不动就说模板是坏的……），可以直接直接上传这个模板，在线使用。如果你就这一次用LaTex，以后都不需要了，可以试一下，但是如果你还上研究生要发文章，还是按照下面的本地安装一下吧
+据说这个网站：[overleaf](https://cn.overleaf.com/) 挺好用（记得在菜单里把编译方式改成xelatex！！不要动不动就说模板是坏的……），可以直接直接上传这个模板，在线使用。如果你就这一次用LaTex，以后都不需要了，可以试一下，但是如果你还上研究生要发文章，还是按照下面的本地安装一下吧
 
 
 全面适配2021新版要求，前3步详细请见[template.pdf](template.pdf)
 
-1. 安装texlive2020
+1. 安装texlive
 
 2. 测试安装是否成功
 
@@ -80,7 +53,14 @@
 
 ## 二、常见问题
 
-你可一定要先安装texlive2020，可参考[一、使用方法](#%E4%B8%80%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95)
+你可一定要先安装texlive，可参考[一、使用方法](#%E4%B8%80%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95)
+
+### -2. “摘要”前面的标题也想手动换行
+
+中文摘要前的标题，看这里，如图，修改这个文件 [LZUThesis.cls](LZUThesis.cls) 把 `\@title` 改为你想要的文字，
+
+![中文摘要前标题](figures/title_zy_zh.png)
+
 
 ### -1. 英文字体略有不同（花体太花）
 
@@ -207,6 +187,11 @@ V2.1.3以及以后的版本，为了让英文字体完全与Times New Roman字�
 -----
 
 ## 三、更新日志
+
+### 2022.05.6
+
+摘要前中文标题修改说明
+
 
 ### 2022.01.20
 
