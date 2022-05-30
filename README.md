@@ -83,6 +83,40 @@
 
 你可一定要先安装texlive，可参考[一、使用方法](#%E4%B8%80%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95)
 
+### -3. 参考文献多位中文作者
+
+一般情况下是这样处理的
+
+```tex
+[1] Partl H, Hyna I, 兰朵儿, et al. 一份不太简短的 latex2ε 介绍 [J]. 测试期刊, 2016, 360(6403):444--446.
+```
+
+这里的 `et al.` 看起来，不太对，对于中文应该是 `等.`
+
+已经适配，可以这样处理
+
+```bib
+@Article{partl2021,
+  author = {Partl, Hubert and Hyna, Irene  and 兰朵儿 and Schlegl, Elisabeth},
+  title  = {一个中文等测试},
+  year   = {2021},
+  language = {中文},
+  journal = {测试期刊},
+  volume={3},
+  number={6},
+  pages={10--20},
+}
+```
+
+注意，其中加了一条
+
+```tex
+language = {中文},
+```
+
+感谢 [versemonger](https://gitee.com/versemonger)的代码提供
+
+
 ### -2. “摘要”前面的标题也想手动换行
 
 中文摘要前的标题，看这里，如图，修改这个文件 [LZUThesis.cls](LZUThesis.cls) 把 `\@title` 改为你想要的文字，

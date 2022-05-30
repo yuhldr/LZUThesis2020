@@ -167,7 +167,7 @@
 
 %=======head and foot
 %页眉页脚
-%1.页眉。“兰州大学本科生毕业论文（设计）”字居左排，毕业论文（设计）题目居右排，字体为宋体，小五号；页眉与正文之间用下划线分隔。
+%1.页眉。“兰州大学本科毕业论文（设计）”字居左排，毕业论文（设计）题目居右排，字体为宋体，小五号；页眉与正文之间用下划线分隔。
 %2.页码。页脚居中排，字体为宋体，五号。封面、目录不编排页码，中英文摘要页用罗马数字单独连续编号，引言、正文用阿拉伯数字连续编号，附录可不编排页码。
 %=======head and foot
 \RequirePackage{fancyhdr}  % Needed to define custom headers/footers
@@ -193,7 +193,7 @@
 
 \fancypagestyle{mainmatterstyle}{
     \fancyhf{}
-    \lhead{\zihao{-5}兰州大学本科生毕业论文}%
+    \lhead{\zihao{-5}兰州大学本科毕业论文}%
     \rhead{\zihao{-5}\@title}
     % Footers
     \fancyfoot{} % clear all footer fields
@@ -274,7 +274,7 @@
         \includegraphics[width=6cm]{lzu2020.png}\\
         \vspace*{21.8pt}
 
-        {\zihao{1}\songti{本科生毕业论文\\}}% 封面这几个字，规范中未提及，此处按照宋体
+        {\zihao{1}\songti{本科毕业论文\\}}% 封面这几个字，规范中未提及，此处按照宋体
         \vspace{21.8pt}
         \par
         \zihao{4}
@@ -309,7 +309,7 @@
             {\LZUunderline[180pt]{ \songti \zihao{3}  \the\advisor}} \\[0.40cm]
             {\songti \zihao{3}{学\qquad 院}} &
             {\LZUunderline[180pt]{ \songti  \zihao{3} \the\college}} \\[0.40cm]
-            {\songti \zihao{3} {专\qquad 业}} &
+            {\songti \zihao{3} {专\hfill 业}} &
             {\LZUunderline[180pt]{ \songti  \zihao{3} \the\major}}\\[0.40cm]
             {\songti \zihao{3}{年\qquad 级}} &
             {\LZUunderline[180pt]{ \songti \zihao{3}  \the\grade}}\\[0.40cm]
@@ -419,7 +419,7 @@
         \centerline{%
             \begin{minipage}[t][2cm][t]{0.92\textwidth}
                 \setlength\parindent{\ccwd}
-                \zihao{-4} \the\committeecomment
+                \zihao{4} \the\committeecomment
             \end{minipage}
         }
         \hfill \bfseries{答辩委员会负责人（签字）}\underline{\hspace{80pt}}\\
@@ -485,7 +485,7 @@
             \linespread{1}
             \selectfont
             \centering
-            \zihao{2} \bfseries \noindent \expandafter\MakeUppercase\expandafter{\the\entitle\ \the\entitletra}%
+            \zihao{2} \bfseries \noindent \expandafter\expandafter{\the\entitle\ \the\entitletra}%
         \end{minipage}
     \end{center}%
     \begin{center}%

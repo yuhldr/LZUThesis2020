@@ -312,7 +312,7 @@ FUNCTION {format.names}
                     " " * bbl.etal *
                   }
                   {                  
-                    language "中文;" = 
+                    language "中文" = 
                     {" " * bbl.cn.etal *}
                     {" " * bbl.etal *}
                     if$
