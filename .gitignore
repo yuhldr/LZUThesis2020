@@ -4,6 +4,7 @@ paper-windows
 paper
 ~$*
 paper.zip
+test*
 
 ## Core latex/pdflatex auxiliary files:
 *.aux
