@@ -1,0 +1,287 @@
+% !TEX TS-program = xelatex
+% !TEX encoding = UTF-8 Unicode
+
+% \documentclass[AutoFakeBold]{LZUThesis}
+\documentclass[AutoFakeBold]{LZUThesis-PgD&PhD}
+
+
+\begin{document}
+%=====%
+%
+%封皮页填写内容
+%
+%=====%
+
+
+
+\schoolcode{10730}
+\secret{公开}
+\cid{23333}
+
+
+% 标题样式 使用 \title{{}}; 使用时必须保证至少两个外侧括号
+%  如： 短标题 \title{{第一行}},
+% 	      长标题 \title{{第一行}{第二行}}
+%             超长标题\tiitle{{第一行}{...}{第N行}}
+\title{{中文}{标题}}
+
+% 标题样式 使用 \entitle{{}}; 使用时必须保证至少两个外侧括号
+%  如： 短标题 \entitle{{First row}},
+% 	      长标题 \entitle{{First row}{ Second row}}
+%             超长标题\entitle{{First row}{...}{ Next N row}}
+% 注意：  英文标题多行时 需要在开头加个空格 防止摘要标题处英语单词粘连。
+\entitle{{ English}{ Title}}
+
+\author{作者姓名}
+\major{一级专业·学科专业}
+\research{研究方向}
+\education{教育类型}
+\advisor{指导教师}
+\codvisor{} %合作导师，可为空，但不可没有这一栏
+\elapse{2020 年 7 月\quad 至 \quad 2021 年 3 月}
+\defense{2021 年 5 月}
+
+\maketitle
+
+%======%
+%诚信说明页
+%授权说明书
+%======%
+% 如果超出边界，可以调整签字的宽度，现在是50，如果你不用，把下面的注释就好
+
+% 你的签名
+\mysignature{
+    % \raisebox{-5pt}{
+        % \includegraphics[width=40pt]{signature.pdf}
+    % }
+}
+% 你手写的日期
+\mytime{
+    % \raisebox{-5pt}{
+        % \includegraphics[width=40pt]{signature.pdf}
+    % }
+}
+% 老师的手写签名
+\supervisorsignature{
+    % \raisebox{-5pt}{
+        % \includegraphics[width=40pt]{signature.pdf}
+    % }
+}
+% 老师手写的时间
+\teachertime{
+    % \raisebox{-5pSt}{
+        % \includegraphics[width=40pt]{signature.pdf}
+    % }
+}
+% 老师手写的成绩
+\recommendedgrade{
+    % \raisebox{-5pt}{
+        % \includegraphics[width=40pt]{signature.pdf}
+    % }
+}
+
+\makestatement
+
+
+\frontmatter
+
+
+
+%中文摘要
+\ZhAbstract{空白页 空白页 空白页 空白页 空白页 空白页 空白页 空白页 空白页 空白页 空白页 空白页 空白页 空白页 空白页 空白页 空白页 空白页 空白页 空白页 空白页 空白页 空白页 空白页 空白页 空白页 空白页 空白页 空白页 空白页 空白页 空白页 空白页 空白页 空白页 空白页 空白页 空白页 空白页 空白页 空白页 空白页 空白页 空白页 空白页 空白页 空白页 空白页 空白页 空白页 空白页 空白页 空白页 空白页 空白页 空白页 空白页 空白页 空白页 空白页 空白页 空白页 空白页 空白页 空白页 空白页 空白页 空白页 空白页 空白页 空白页 空白页 空白页 空白页 空白页 空白页 空白页 空白页 空白页 空白页 空白页 空白页 空白页 空白页 空白页}{关键词1，关键词2}
+
+
+%英文摘要
+\EnAbstract{example example example example example example example example example example example example example example example example example example example example example example example example example example example example example example example example example example example example example example example example example example example example example example example example example example example example example example example example example example example example example example example example example example example example example example example example example example example example example example example example example example example example example .
+% \fontspec{Times New Roman} {Times New Roman}
+}{key-word-1,key-word-2}
+
+%生成目录
+\tableofcontents
+\thispagestyle{empty}
+
+
+%文章主体
+\mainmatter
+
+\chapter{注意事项}
+
+\section{编译方式}
+
+{\bfseries 编译方式:} XeLaTeX -->BibTeX --> XeLaTeX-->XeLaTeX
+
+如果你和我一样使用Atom编辑器，在配置好latex环境后，选择 文件--> 设置 --> 拓展 --> latex --> 设置 --> Engine，修改为XeLatex即可。
+
+\section{插入图片}
+
+\begin{figure}[hbt!]
+  \includegraphics[width=0.95\textwidth]{example-image-a}
+  \centering
+  \caption{示例图片A}
+  \label{fig:obj_dect}
+\end{figure}
+
+尽管对论文图片的大小没有具体的规定，但还是建议插入可以横向占满可写宽度的图片比较好看，一个示例如上图：
+
+% \begin{verbatim}
+% \begin{figure}[hbt!]
+%   \includegraphics[width=0.95\textwidth]{example-image-a}
+%   \centering
+%   \caption{示例图片A}
+%   \label{fig:example-a}
+% \end{figure}
+% \end{verbatim}
+
+
+
+\section{公式}
+
+\subsection{一般公式}
+
+一般公式手敲即可。
+
+% \begin{verbatim}
+% \begin{equation}\label{eq:sip}
+%   a_1 + b_2 = 3
+% \end{equation}
+% \end{verbatim}
+
+
+\begin{equation}\label{eq:sip}
+  a_1 + b_2 = 3
+\end{equation}
+
+
+\subsection{多行公式}
+
+多行公式，对于不想要标号的部分，可以使用nonumber进行标注：
+
+% \begin{verbatim}
+% \begin{gather}\label{eq:add}
+% 1+1=2 \\
+% 2+2=4 \\
+% 3+3=6 \nonumber
+% \end{gather}
+% \end{verbatim}
+
+\begin{gather}\label{eq:add}
+1+1=2 \\
+2+2=4 \\
+3+3=6 \nonumber
+\end{gather}
+
+\subsection{多情况公式}
+带括号的多种情况的公式，其中X为数学粗体。
+
+% \begin{verbatim}
+% \begin{equation}\label{eq:multi}
+%   \mathbf{X}=
+%     \begin{cases}
+%       k_n \quad & n \ = \ 1 \\
+%       \mathbf{X}_n \ = \mathbf{X}_{n-1}\ +\ (k_n-1)\times S_{n-1};
+%       \quad & n \geq \ 1\\
+%     \end{cases}
+% \end{equation}
+% \end{verbatim}
+
+\begin{equation}\label{eq:multi}
+  \mathbf{X}=
+    \begin{cases}
+      k_n \quad & n \ = \ 1 \\
+      \mathbf{X}_n \ = \mathbf{X}_{n-1}\ +\ (k_n-1)\times S_{n-1};
+      \quad & n \geq \ 1\\
+    \end{cases}
+\end{equation}
+
+\section{表格}
+
+三线表格式：
+
+% \begin{verbatim}
+% \begin{table}[hbt!]\label{tbl:mole}
+%   \centering
+%   \begin{tabular*}{0.9\textwidth}{@{\extracolsep{\fill}}cccccc}
+%     \toprule
+%         参数& m & n & \tabincell{c}{太长了\\换行一下\\原子数}  & 内径 & 长度\\
+%     \midrule
+%     数值 & 15 & 15  & 2880 & 2.3014nm & 9.95nm \\
+%     \bottomrule
+%   \end{tabular*}
+%   \caption{table example}
+% \end{table}
+% \end{verbatim}
+
+\begin{table}[hbt!]\label{tbl:mole}
+  \centering
+  \begin{tabular*}{0.9\textwidth}{@{\extracolsep{\fill}}cccccc}
+    \toprule
+        参数& m & n & \tabincell{c}{太长了\\换行一下\\原子数}  & 内径 & 长度\\
+    \midrule
+    数值 & 15 & 15  & 2880 & 2.3014nm & 9.95nm \\
+    \bottomrule
+  \end{tabular*}
+  \caption{table example}
+\end{table}
+
+
+\section{引用}
+
+\subsection{论文引用}
+
+原本科模板\cite{partl2016}，但是现在需要上标模式\upcite{partl2016,tenne1992polyhedral,tussyadiah2015hotels}
+
+\section{图表引用}
+
+% \begin{verbatim}
+% 如\hyperref[tbl:mole]{表 1-1}所示。
+% \end{verbatim}
+
+使用label和hyperref进行引用，引用时用图标的意义命名，尽量少用类似tbl:3-1这样，而是eq:sum-up这样有意义的，如\hyperref[tbl:mole]{表 1-1}所示。
+
+\section{其他}
+
+使用\textbackslash blank 来空行，\textbackslash blackpage 来空白页。
+空行用在在校成果罗列，空白页用来补充双页打印留白。
+
+无blank
+
+\blank
+
+间隔blank
+\blankpage
+
+
+
+
+%论文后部
+\backmatter
+
+
+%=======%
+%引入参考文献文件
+%=======%
+\bibdatabase{bib/database}%bib文件名称 仅修改bib/ 后部分
+\printbib
+% \nocite{*} %显示数据库中有的，但是正文没有引用的文献
+
+
+
+\Achievements
+一、发表论文
+
+1.Article here sd
+
+\blank
+
+二、参与课题
+
+
+
+
+\Thanks
+
+这里是致谢页。
+
+
+
+\end{document}
