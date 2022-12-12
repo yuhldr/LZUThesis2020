@@ -268,11 +268,6 @@
 %\RequirePackage{pgffor}
 \RequirePackage{forloop}
 \RequirePackage{xstring}
-
-%设置要使用的方正小标宋简体
-\setCJKfamilyfont{MyCJKfzxbs}[Path=fonts/]{FZXiaoBiaoSong-B05S}
-\newcommand{\fzxbs}{\CJKfamily{MyCJKfzxbs}}  
-
 \renewcommand\maketitle{%
     \cleardoublepage
     \thispagestyle{empty}
@@ -280,7 +275,7 @@
         \includegraphics[width=6cm]{lzu2020.png}\\
         \vspace*{21.8pt}
 
-        {\zihao{1}\fzxbs{本科毕业论文\\}}% 封面这几个字，规范中未提及，此处根据提供word模板样式，使用方正小标宋简体
+        {\zihao{1}\songti{本科毕业论文\\}}% 封面这几个字，规范中未提及，此处按照宋体
         \vspace{21.8pt}
         \par
         \zihao{4}
@@ -406,7 +401,7 @@
     \zihao{-3}\songti  % 成绩这一页整体设置，应该是加粗（宋体加粗）
     \begin{tabularx}{\textwidth}{|X|}
         \multicolumn{1}{c}{
-            \zihao{3} \fzxbs{毕业论文成绩表}
+            \zihao{3} \bfseries{毕业论文成绩表}
         } \\
         \multicolumn{1}{c}{
             \zihao{-4}
