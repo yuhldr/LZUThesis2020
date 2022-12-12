@@ -126,13 +126,10 @@ dialogue in philosophy.
 
 这里是绪论，也可以说是引言，在LZUThesis.clc里面改，引言写什么呢，先凑字数，
 
-是真的在打广告啊，嗯，做兰大毕业论文LaTex模板时，顺便介绍一下我写的软件：兰朵儿，兰大专属的app，可以看课表，充值校园卡（微信、支付宝都可以），查成绩（可以算绩点），还可以……，好多好多好多
-
-华为、小米、OPPO、Vivo应用市场搜索“兰朵儿”即可安装使用，研究生也可以用的！保研的同学帮忙宣传一下哈
-
 注意啊，段落在latex里面是要空一行的，不要简单一个回车，编译过程中警告内容无需管
 
 \section{二级标题}
+
 绪论其实也可以有二级标题，要不然，论文要求：“包括毕业论文（设计）的研究目的、意义、范围、研究设想、方法、实验设计、选题依据等；还包括毕业论文（设计）研究领域的历史回顾，文献追溯，理论分析等内容”全部写成一堆不成？
 
 
@@ -148,167 +145,8 @@ dialogue in philosophy.
 上面这些问题，后面都会一点点介绍
 
 \section{用latex需要安装什么}
-需要安装texlive，外加一个IDE
 
-\subsection{texlive下载安装}
-已经出2020了，2021也快了，一般四月份，别更新，我不一定会去适配2021texlive，可以用兰大的镜像下载应该在用校园网时快一些，额，你还是用清华的镜像吧，我刚才找了一下，兰大镜像这会儿竟然挂了。。。
-
-下载地址\footnote{这个地址会自动更新比如2020版出了以后你下载的就是2020了}： 点下面的字跳转浏览器下载了，方便吧
-
-\begin{itemize}
-	\item \href{https://mirrors.tuna.tsinghua.edu.cn/CTAN/systems/texlive/Images/texlive.iso}{TexLive最新版 \quad Windows版}
-	\item \href{http://tug.org/cgi-bin/mactex-download/MacTeX.pkg}{TexLive最新版 \quad Mac版（mactex）}
-\end{itemize}
-
-上面的文件直接双击安装一路next就行，如果是mac电脑并且配置了brew，直接brew install mactex即可，无需下载安装。但是texlive这是个啥？
-
-用过python吧，texlive就相当于你下载的python安装包，但是你总不能在终端里写代码吧，一般用pycharm，这个就是IDE，所以你需要再安装一个IDE。
-
-
-为什么没linux版？用的人不多，真心不想给。。。其实安装文件就是windows的那个版本
-
-\subsubsection{linux系统图形界面安装texlive} % (fold)
-\label{ssub:linux图形界面安装方式}
-
-\begin{itemize}
-	\item[1. ] 安装per组件： sudo apt-get install perl-tk
-	\item[2. ] 加载该ISO文件：sudo mount -o loop texlive2019.iso /mnt （换掉文件路径即可）\footnote{注意：使用该命令会出现错误提示，mount: /dev/loop1 is write-protected, mounting read-only.不必管它}
-	\item[3. ]启动图形化安装界面： cd /mnt \& sudo ./install-tl -gui
-\end{itemize}
-
-注意倒数第二项，改成 是，创建符号链接，下面那个图是网上随便找的，都差不多
-
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=0.7\textwidth]{figures/install_texlive.png}
-    \caption{启动图形化安装界面}
-    \label{fig_install_texlive}
-\end{figure}
-
-
-
-% subsubsection linux图形界面安装方式 (end)
-
-
-\subsection{安装IDE（vscode）} % (fold)
-\label{sub:安装ide}
-
-在这之前，请测试texlive是否安装成功！！！
-
-1. 在命令行（windows即cmd或者powershell，mac即终端，linux，额，不知道命令行用什么linux……）输入xelatex，显示类似如下结果：
-
-\begin{lstlisting}[language=bash]
-    This is TeX, Version 3.14159265 (TeX Live 2020) (preloaded format=tex)
-    **
-\end{lstlisting}
-
-\textbf{注意必须包含“TeX Live 2020”字样！！！别用CTEX或者MiKTeX，我都快被这群人逼疯了……，不用texlive（mactex），也不四步走进行编译，然后就说模板有问题……}
-windows和mac上已经测试通过，linux缺失一些字体，自行安装，但是我劝你别折腾。。。，以后有空在玩linux，你写论文，现在是工作环境。
-
-
-如果确实安装了，但是没有显示，请根据各自系统自行百度配环境变量，此处不再详细介绍
-
-
-IDE这个就是写论文的地方，它会调用你刚才安装的texlive，请\textbf{不要使用}Texlive自带的TexWork！！，具体用什么，各有所爱，但是既然用我的模板，还是用vscode吧，很简单。
-
-
-\begin{figure}[H]
-	\centering
-    \includegraphics[width=0.8\textwidth]{figures/vscode.png}
-    \caption{我用的IDE}
-    \label{fig_ide}
-\end{figure}
-
-这两个IDE真的是特别好用，不要再用TexMake、TexStudio、sublime text3了，连个自动提示都麻烦，预览也没有，最主要的是太丑了还有各种bugs，也不能换主题
-
-% subsection 安装ide (end)
-
-\subsection{配置vscode}
-在扩展中搜索latex，安装 LaTex Workshop和LaTex Utilities，第二个插件是为了在vscode下面显示字数。
-
-注意两个快捷键：
-\begin{itemize}
-	\item[1. ] pdf跳转到tex对应位置：\\ctrl和鼠标左键（mac：command和鼠标左键）；
-	\item[2. ] tex跳转到pdf对应位置：\\ctrl和alt 和 J 同时按（mac：command和option和J）；
-\end{itemize}
-
-配置四步走编译可以按照下面的来（\textbf{这里复制不方便，你还在在项目介绍README那里复制吧}）：
-
-\begin{lstlisting}[language = python]
-    
-    "latex-workshop.latex.tools": [
-    
-        {
-            // 编译工具和命令
-            "name": "xelatex",
-            "command": "xelatex",
-            "args": [
-                "-synctex=1",
-                "-interaction=nonstopmode",
-                "-file-line-error",
-                "-pdf",
-                "%DOCFILE%"
-            ]
-        },
-        {
-            "name": "latexmk",
-            "command": "latexmk",
-            "args": []
-        },
-        {
-            "name": "pdflatex",
-            "command": "pdflatex",
-            "args": [
-                "-synctex=1",
-                "-interaction=nonstopmode",
-                "-file-line-error",
-                "%DOCFILE%"
-            ]
-        },
-        {
-            "name": "bibtex",
-            "command": "bibtex",
-            "args": [
-                "%DOCFILE%"
-            ]
-        }
-    ],
-    "latex-workshop.latex.recipes": [
-
-        {
-            "name": "xe->bib->xe->xe",
-            "tools": [
-                "xelatex",
-                "bibtex",
-                "xelatex",
-                "xelatex"
-            ]
-        },
-        {
-            "name": "xelatex",
-            "tools": [
-                "xelatex"
-            ]
-        },
-        // {
-        //     "name": "latexmk",
-        //     "tools": [
-        //         "latexmk"
-        //     ]
-        // },
-    ],
-\end{lstlisting}
-
-配置以后重新打开，点开一个tex文件，vscode会显示这个：
-
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=0.4\textwidth]{figures/vscode_4.png}
-    \caption{vscode配置以后：四步走}
-    \label{fig_install_texlive}
-\end{figure}
-
-
+需要安装texlive，外加一个IDE，具体看 README.md
 
 
 \section{常用的一些东西} % (fold)
@@ -421,6 +259,33 @@ IDE这个就是写论文的地方，它会调用你刚才安装的texlive，请\
 
 % subsection 常用的 (end)
 
+
+\subsection{图，并列排} % (fold)
+\label{sub:图_并列排}
+
+\begin{figure}[H]
+	\centering
+	\subfloat[111]{
+        \includegraphics[width=0.3\textwidth]{figures/lzu2007.png}
+    }
+	\subfloat[2222]{
+        \includegraphics[width=0.3\textwidth]{figures/lzu2020.png}
+    }
+    \caption{3333}
+    \label{fig_ldr}
+\end{figure}
+
+
+这一句代表这个图片宽度为一行文本宽度的$\frac{3}{10}$
+\begin{lstlisting}[language = tex]
+width=0.3\textwidth
+\end{lstlisting}
+
+
+
+% subsection 图_并列排 (end)
+
+
 \subsection{公式} % (fold)
 \label{sub:公式}
 所有的符号都要用美元符号包裹\$，需要用到某一个但是不知道，直接百度，基本上都有
@@ -524,33 +389,6 @@ IDE这个就是写论文的地方，它会调用你刚才安装的texlive，请\
 % subsection 矩阵乘法 (end)
 
 
-\subsection{图，并列排} % (fold)
-\label{sub:图_并列排}
-
-这一句代表这个图片宽度为一行文本宽度的$\frac{3}{10}$
-\begin{lstlisting}[language = tex]
-width=0.3\textwidth
-\end{lstlisting}
-
-
-
-\begin{figure}[H]
-	\centering
-	\subfloat[首页]{
-        \includegraphics[width=0.3\textwidth]{figures/ldr1.jpg}
-    }
-	\subfloat[课表]{
-        \includegraphics[width=0.3\textwidth]{figures/ldr2.jpg}
-    }
-	\subfloat[我的]{
-        \includegraphics[width=0.3\textwidth]{figures/ldr4.jpg}
-    }\\	
-    \caption{兰朵儿截图}
-    \label{fig_ldr}
-\end{figure}
-
-% subsection 图_并列排 (end)
-
 
 \subsection{附页代码} % (fold)
 \label{sub:附页代码}
@@ -595,7 +433,7 @@ matlab代码有专门的库，但是没必要高亮太多，而且中文适配�
 
 有参考文献时，编译要经过4步，直接XeLaTeX --> BibTeX --> XeLaTeX --> XeLaTeX，不然很多问题，vscode配置以后很方便，以下内容放在设置中，重新打开vscode即可
 
-修改后可以参考文献自动生成中文等字符\cite{partl2021}，引用网络资源时链接格式规范化\cite{intelnewsroomIntelUnveils12th2021,wilsonHistoryDevelopmentParallel1994}。
+修改后可以参考文献自动生成中文等字符\cite{partl2021}\cite{partl2022}\cite{partl2022-2}，引用网络资源时链接格式规范化\cite{intelnewsroomIntelUnveils12th2021,wilsonHistoryDevelopmentParallel1994}。
 
 \subsubsection{中英文参考文献说明} % (fold)
 
