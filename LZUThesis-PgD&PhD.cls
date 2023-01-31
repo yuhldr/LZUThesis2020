@@ -197,7 +197,7 @@
 \RequirePackage{longtable}
 % 连续参考文献横杠连接
 \RequirePackage{cite}
-\newcommand{\upcite}[1]{\textsuperscript{\textsuperscript{\cite{#1}}}}
+\newcommand{\upcite}[1]{\textsuperscript{\cite{#1}}}
 
 %=======head and foot
 %页眉页脚
