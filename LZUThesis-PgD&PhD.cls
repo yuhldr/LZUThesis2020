@@ -631,14 +631,14 @@
 %参考文献
 %=======%
 %著录项目和著录格式遵照《信息与文献参考文献著录规则》（GB/T 7714－2015）的规定执行。
-\usepackage{gbt7714}
+% \usepackage{gbt7714}
 \newtoks\bibdatabase
 \RequirePackage{ }
 \newcommand{\printbib}{
     \zihao{5}
-    % \bibliographystyle{bib/lzubib}
+    \bibliographystyle{bib/lzubib}
     % \bibliographystyle{gbt7714-author-year}
-    \bibliographystyle{gbt7714-numerical}
+    % \bibliographystyle{gbt7714-numerical}
     \cleardoublepage
     \phantomsection
     \addcontentsline{toc}{chapter}{参考文献}
