@@ -588,16 +588,11 @@
 %---------------------------
 %程序伪代码实现
 %---------------------------
-% \RequirePackage{algorithm}
-% \RequirePackage{algorithmic}
-% \floatname{algorithm}{算法}
-
-\usepackage{algorithm}
-\usepackage{algorithmicx}
-\usepackage{algpseudocode}
-\floatname{algorithm}{算法}
-\renewcommand{\algorithmicrequire}{\bfseries{输入:}}
-\renewcommand{\algorithmicensure}{\bfseries{输出:}}
+\RequirePackage{algorithm}
+\RequirePackage{algpseudocode}
+\floatname{algorithm}{算法}  
+\renewcommand{\algorithmicrequire}{\bfseries{输入:}}  
+\renewcommand{\algorithmicensure}{\bfseries{输出:}}  
 
 
 %改变图表的编号格式

@@ -240,6 +240,20 @@
 
 \section{其他}
 
+
+伪代码
+
+\begin{algorithm}[H]
+    \caption{PMHSS 算法\label{Alg:PMHSS}}
+    \begin{algorithmic}[1]
+      \State 给定一个初值 $ x^{(0)} \in C^{n} $  和常数 $\alpha>0$
+      \For{$k = 1,2, \ldots $ 直到序列 $\{x^{(k)}\}_{k=0}^{\infty}$ 收敛}
+      \State 解方程: $(\alpha V+W)x^{(k+\frac{1}{2})}=(\alpha V-i T)x^{(k)}+b $
+      \State 解方程: $(\alpha V+T)x^{(k+1)}=(\alpha V+i W)x^{(k+\frac{1}{2})}-i b$
+      \EndFor
+    \end{algorithmic}
+\end{algorithm}
+
 使用\textbackslash blank 来空行，\textbackslash blackpage 来空白页。
 空行用在在校成果罗列，空白页用来补充双页打印留白。
 
