@@ -9,7 +9,6 @@ on:
 
 env:
   TAG_NAME: "自动打包"
-  SOFTWARE_NAME: "LZUThesis"
 
 
 jobs:
@@ -18,16 +17,8 @@ jobs:
     steps:
     - uses: actions/checkout@v3
 
-
-    - name: 清理
-      run: make clear
-
-
-    - name: 构建本科生模板
-      run: make bks
-
-    - name: 构建研究生模板
-      run: make yjs
+    - name: build
+      run: make all
 
     - name: Create Release and Upload Release Asset
       uses: softprops/action-gh-release@v1
@@ -36,4 +27,4 @@ jobs:
         prerelease: true
         draft: false
         files: |
-          disk/*.zip
+          disk/*
