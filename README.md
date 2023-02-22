@@ -16,6 +16,7 @@
 
 ## 使用方法
 
+- 写完论文一定要再回来看看，在这期间模板是不是有所改变！
 - [环境配置点我](md/START.md)
 - 本科生直接在 [template.tex](template.tex) 里写
 - 研究生直接在 [template-PgD&PhD.tex](template-PgD&PhD.tex) 里写
