@@ -5,6 +5,7 @@ paper
 ~$*
 paper.zip
 test*
+disk
 
 ## Core latex/pdflatex auxiliary files:
 *.aux
