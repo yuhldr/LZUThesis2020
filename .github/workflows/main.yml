@@ -24,7 +24,6 @@ jobs:
       uses: softprops/action-gh-release@v1
       with:
         tag_name: ${{ env.TAG_NAME }}
-        body: \`本科生` 请下载 `bks_` 开头的文件；`研究生` 请下载 `yjs_` 开头的文件；下载以后，解压，直接在 `template.tex` 文件里写
         prerelease: true
         draft: false
         files: |
