@@ -24,6 +24,7 @@ jobs:
       uses: softprops/action-gh-release@v1
       with:
         tag_name: ${{ env.TAG_NAME }}
+        body: \- 本科生模板请下载 `bks_` 开头的文件\n\- 研究生模板请下载 `yjs_` 开头的文件
         prerelease: true
         draft: false
         files: |
