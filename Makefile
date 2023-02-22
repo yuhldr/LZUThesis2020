@@ -3,35 +3,38 @@ FILE_DATE = `date +%Y-%m-%d`
 
 clear:
 	rm -rf disk
+	rm -rf build
 
 
 bks:
-	rm -rf disk/bks disk/本科生模板-*
-	mkdir -p disk/bks
+	rm -rf build/bks disk/本科生模板-*
+	mkdir -p disk
+	mkdir -p build/bks
 
-	cp -r bib disk/bks/
-	cp -r figures disk/bks/
+	cp -r bib build/bks/
+	cp -r figures build/bks/
 
-	cp template.tex disk/bks/
-	cp LZUThesis.cls disk/bks/
+	cp template.tex build/bks/
+	cp LZUThesis.cls build/bks/
 
-	zip -r disk/本科生模板-${VERSION}-${FILE_DATE}.zip disk/bks/
+	zip -r disk/本科生模板-${VERSION}-${FILE_DATE}.zip build/bks/
 
 	ls -l disk/
 
 
 yjs:
-	rm -rf disk/yjs disk/研究生模板-*
-	mkdir -p disk/yjs 
+	rm -rf build/yjs disk/研究生模板-*
+	mkdir -p disk
+	mkdir -p build/yjs 
 
-	cp -r bib disk/yjs/
-	rm disk/yjs/bib/lzubib.bst
-	cp -r figures disk/yjs/
+	cp -r bib build/yjs/
+	rm build/yjs/bib/lzubib.bst
+	cp -r figures build/yjs/
 
-	cp template-PgD\&PhD.tex disk/yjs/
-	cp LZUThesis-PgD\&PhD.cls disk/yjs/
+	cp template-PgD\&PhD.tex build/yjs/template.tex
+	cp LZUThesis-PgD\&PhD.cls build/yjs/
 
-	zip -r disk/研究生模板-${VERSION}-${FILE_DATE}.zip disk/yjs/
+	zip -r disk/研究生模板-${VERSION}-${FILE_DATE}.zip build/yjs/
 
 	ls -l disk/
 

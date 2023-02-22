@@ -18,8 +18,7 @@
 
 - 写完论文一定要再回来看看，在这期间模板是不是有所改变！
 - [环境配置点我](md/START.md)
-- 本科生直接在 [template.tex](template.tex) 里写
-- 研究生直接在 [template-PgD&PhD.tex](template-PgD&PhD.tex) 里写
+- 在[这里](https://github.com/yuhldr/LZUThesis2020/releases/tag/自动打包)相应的压缩包，解压以后 [template.tex](template.tex) 里写
 - 遇到问题先看  [常见问题](md/QA.md)
 
 --------
