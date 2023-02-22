@@ -17,6 +17,7 @@ bks:
 
 	zip -r disk/本科生模板-${VERSION}-${FILE_DATE}.zip disk/bks/
 
+	ls -l disk/
 
 
 yjs:
@@ -31,6 +32,8 @@ yjs:
 	cp LZUThesis-PgD\&PhD.cls disk/yjs/
 
 	zip -r disk/研究生模板-${VERSION}-${FILE_DATE}.zip disk/yjs/
+
+	ls -l disk/
 
 
 all: clear yjs bks
