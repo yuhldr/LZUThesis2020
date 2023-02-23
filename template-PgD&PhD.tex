@@ -193,6 +193,22 @@
     \end{cases}
 \end{equation}
 
+\subsection{公式加粗、斜体、字体}
+
+公式、字母加粗、字体问题
+
+\begin{itemize}
+  \item [1. 正文] AHEMoS$\alpha \beta$
+  \item[2. 公式]  $AHEMoS \alpha \beta$
+  \item[3. mathbf] $\mathbf{AHEMoS\alpha \beta}$
+  \item [4. boldsymbol] $\boldsymbol{AHEMoS\alpha \beta}$
+  % \item [5. bm] $\bm{AHEMoS\alpha \beta}$
+\end{itemize}
+
+这个加粗、斜体、英文字体（含正文和公式内字体），有不同的处理方式，在 .cls 模板文件文件搜索 bm 查看详细说明
+
+
+
 \section{表格}
 
 三线表格式：
@@ -239,17 +255,6 @@
 使用label和hyperref进行引用，引用时用图标的意义命名，尽量少用类似tbl:3-1这样，而是eq:sum-up这样有意义的，如\hyperref[tbl:mole]{表 1-1}所示。
 
 \section{其他}
-
-公式加粗 $\mathbf{W}$
-
-公式斜体加粗
-\begin{itemize}
-  \item $\bm{W}$：最推荐
-  \item $\boldsymbol{W}$：推荐
-  \item \textbf{\textit{W}} ：不推荐
-\end{itemize}
-
-
 
 
 伪代码
