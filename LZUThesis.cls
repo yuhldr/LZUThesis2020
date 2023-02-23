@@ -142,14 +142,41 @@
 %颜色宏包
 %字体宏包
 %=======package
-\RequirePackage{amsmath,amsfonts,amssymb,mathrsfs,bm}
+\RequirePackage{amsmath,amsfonts,amssymb,mathrsfs}
 \RequirePackage{graphicx}
 \graphicspath{{figures/}{figure/}{pictures/}
       {picture/}{pic/}{pics/}{image/}{images/}}
 \RequirePackage[svgnames]{xcolor}
 
-% 下面这个会导致花体，mathcal和mathscr完全相同，正常mathcal会花的轻一些
-\RequirePackage{mathptmx}% %Times New Roman字体（windows上这句会把正文和公式英文字体都变成Times New Roman，但是mac上这句话不起作用，必须加上下面的，正文字体才会变）
+
+% start ------------ 英文字体（含公式、正文）、加粗、斜体  -------------- start
+
+% 方案一
+
+% \RequirePackage{mathptmx, bm}
+% \RequirePackage{bm, mathptmx}
+
+% mathptmx 可以让英文字体（包含公式和正文）为：Times New Roman
+% 但是 mathptmx 会导致花体，mathcal和mathscr完全相同，正常mathcal会花的轻一些
+% 而且 mathptmx 还会导致boldsymbol 加粗失效
+% bm 可以让 boldsymbol 加粗再生效
+% 但是需要注意的是，bm 放在前面和后面完全不一样
+% bm 放在前面会导致 加粗只是 “描粗” 了的感觉
+% bm 放在后面会导致 加粗以后字形变宽，希腊字母相比加粗前有些变形
+
+
+% 方案二
+
+\RequirePackage{mathptmx, newtxmath}
+
+% 如果觉得上面的不合适，也可以使用 newtxmath，效果略有不同
+% 但是问题是，如果只 newtxmath 的话，正文英文字体是不对的，所以也需要 mathptmx
+
+% 最后注意，newtxmath 与 bm 有冲突
+% 使用方法详见 `template.tex` 搜索 `boldsymbol`
+
+% end ------------ 英文字体（含公式、正文）、加粗、斜体  -------------- end
+
 \RequirePackage{fontspec} %用电脑上自带的字体
 
 \RequirePackage{float}%控制图片位置 参数H
