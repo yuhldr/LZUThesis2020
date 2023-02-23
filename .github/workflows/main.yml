@@ -13,7 +13,7 @@ env:
 
 jobs:
   build-ldr-linux:
-    runs-on: ubuntu-22.04
+    runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v3
 
@@ -26,5 +26,6 @@ jobs:
         tag_name: ${{ env.TAG_NAME }}
         prerelease: true
         draft: false
+        body_path: md/auto_body.md
         files: |
           disk/*

@@ -56,15 +56,13 @@ This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded forma
 
 3. 配置vscode：
 
-   点左下角螺丝帽，选择设置，找到任何一个 `在settings.json中编辑`，点击跳转，另起一行，将下面的内容复制到设置区：
+   打开json配置，快捷键 `ctrl shift P`，输入 `user setting json`，如图选择第一个
+   ![打开json配置](images/setting-p.png)
 
-   注意：你要粘贴的地方，下面有一个右大括号 `}` ，前面有一个英文逗号`,` 或者 `{`; 
-   
-   > 如果有红色曲线，说明你配置得有问题，一般是逗号、大括号什么的有问题
+   将下面的内容复制到设置区：
 
    ```json
     "latex-workshop.latex.tools": [
-
         {
             // 编译工具和命令
             "name": "xelatex",
@@ -78,21 +76,6 @@ This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded forma
             ]
         },
         {
-            "name": "latexmk",
-            "command": "latexmk",
-            "args": []
-        },
-        {
-            "name": "pdflatex",
-            "command": "pdflatex",
-            "args": [
-                "-synctex=1",
-                "-interaction=nonstopmode",
-                "-file-line-error",
-                "%DOCFILE%"
-            ]
-        },
-        {
             "name": "bibtex",
             "command": "bibtex",
             "args": [
@@ -101,7 +84,6 @@ This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded forma
         }
     ],
     "latex-workshop.latex.recipes": [
-
         {
             "name": "xe->bib->xe->xe",
             "tools": [
@@ -117,20 +99,27 @@ This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded forma
                 "xelatex"
             ]
         },
-        // {
-        //     "name": "latexmk",
-        //     "tools": [
-        //         "latexmk"
-        //     ]
-        // },
     ],
     ```
+   
+   > 如果有红色曲线，说明你配置得有问题，一般是逗号、大括号什么的有问题
+
+   注意：你要粘贴的地方，下面有一个右大括号 `}` ，前面有一个英文逗号`,` 或者 `{`; 
+
+    整个文件类似如下：
+
+    ![Alt text](images/setting-json.png)
 
 4. 配置成功以后的界面：
 
-    注意配置以后要打开 `vscode`，再点开一个 `.tex` 文件，左侧才会出现 `Tex` 选项
+    - 注意配置以后要打开 `vscode`，再点开一个 `.tex` 文件，左侧才会出现 `Tex` 选项，类似如图（我的配置比较多，你们的应该就两个）
 
-    点 `xe->bib->xe->xe` 就可以编译，平时只是修改文档，没有引入参考文献和图表公式的引用，只需要ctrl 和 s（mac：command 和 s）快捷键就可以编译。
+        ![Alt text](images/setting-ui-latex.png)
+
+    - 点 `xe->bib->xe->xe` 就可以编译，平时只是修改文档，没有引入参考文献和图表公式的引用，只需要ctrl 和 s（mac：command 和 s）快捷键就可以编译。
+
+    - 打开tex文件，点右上角这个类似 “窗户搜索” 的按钮，可以一边 `tex` 一边 `pdf`
+        ![Alt text](images/latex-pre.png)
 
     - 鼠标光标在 `.tex` 文件里，快捷键`ctrl-J`，右边pdf会指出当前位置
     - 鼠标左键双击 `pdf` 会显示对应左边 `.tex` 哪里
