@@ -96,8 +96,8 @@
   \thispagestyle{empty}
 
   % 图表目录标题
-  \CTEXoptions[listfigurename={插\quad 图\quad 目\quad 录}]
-  \CTEXoptions[listtablename={表\quad 格\quad 目\quad 录}]
+  \CTEXoptions[listfigurename={图\quad 目\quad 录}]
+  \CTEXoptions[listtablename={表\quad 目\quad 录}]
 
   % 插图目录
   \clearpage
