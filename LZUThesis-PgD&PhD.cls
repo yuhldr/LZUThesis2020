@@ -1,5 +1,5 @@
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesClass{LZUThesis-PgD&PhD}[2020/05/10 V0.1.0 Thesis for LZUer PgD&PhD By Patrick Use 2021 standard]
+\ProvidesClass{LZUThesis-PgD&PhD}[2023/03/21 V3.3.0 Thesis for LZUer PgD&PhD By Patrick Use 2021 standard]
 \LoadClass[12pt, a4paper, UTF8, openany,oneside]{ctexbook}
 
 % 兰州大学研究生学位论文写作参考规范 https://ge.lzu.edu.cn/xueweishouyu/guizhangzhidu/lunwenguanli/2020/1223/158947.html
