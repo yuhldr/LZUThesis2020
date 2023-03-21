@@ -89,27 +89,6 @@
 \newcommand{\figlabel}{图}
 \newcommand{\tbllabel}{表}
 
-% 自定义目录
-\newcommand{\customcontent}{
-  % 常规目录
-  \tableofcontents
-  \thispagestyle{empty}
-
-  % 图表目录标题
-  \CTEXoptions[listfigurename={图\quad 目\quad 录}]
-  \CTEXoptions[listtablename={表\quad 目\quad 录}]
-
-  % 插图目录
-  \clearpage
-  \renewcommand{\numberline}[1]{\figlabel~##1\hspace*{1em}}
-  \listoffigures
-
-  % 表格目录
-  \clearpage
-  \renewcommand{\numberline}[1]{\tbllabel~##1\hspace*{1em}}
-  \listoftables
-}
-
 
 % 表格文字居中，其实就是相当于表格合并
 % 用法 \tabincell{c}{物理//量//单位}
@@ -228,10 +207,31 @@
 \RequirePackage{cite}
 \newcommand{\upcite}[1]{\textsuperscript{\cite{#1}}}
 
+
+% 学位论文页码的摘要页和目录页用罗马数字单独编连续码，正文和后置部分用阿拉伯数字、新罗马数字体编连续码，页码排在页脚居中位置。
+% 自定义目录
+\newcommand{\customcontent}{
+  % 常规目录
+    \tableofcontents
+
+    % 图表目录标题
+    \CTEXoptions[listfigurename={图\quad 目\quad 录}]
+    \CTEXoptions[listtablename={表\quad 目\quad 录}]
+
+    % 插图目录
+    \clearpage
+    \renewcommand{\numberline}[1]{\figlabel~##1\hspace*{1em}}
+    \listoffigures
+
+    % 表格目录
+    \clearpage
+    \renewcommand{\numberline}[1]{\tbllabel~##1\hspace*{1em}}
+    \listoftables
+}
+
 %=======head and foot
 %页眉页脚
-%1.页眉。“兰州大学本科生毕业论文（设计）”字居左排，毕业论文（设计）题目居右排，字体为宋体，小五号；页眉与正文之间用下划线分隔。
-%2.页码。页脚居中排，字体为宋体，五号。封面、目录不编排页码，中英文摘要页用罗马数字单独连续编号，引言、正文用阿拉伯数字连续编号，附录可不编排页码。
+% 页眉、页脚文字均采用小五号宋体，左侧页眉为“兰州大学博（硕）士学位论文”，右侧为学位论文题目名称；页眉下横线可为单横线也可用上粗下细文武线。
 %=======head and foot
 \RequirePackage{fancyhdr}  % Needed to define custom headers/footers
 \RequirePackage{lastpage}  % Number of pages in the document
