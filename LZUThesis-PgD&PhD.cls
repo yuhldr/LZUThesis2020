@@ -17,7 +17,7 @@
 %\CTEXsetup[format+={\sffamily\bfseries\small}]{chapter}
 \def\CTEX@chapter@nameformat{\bfseries\heiti\zihao{3}} % 应该是加粗（黑体加粗）
 \def\CTEX@chapter@titleformat{\bfseries\heiti\zihao{3}} % 应该是加粗（黑体加粗）
-\def\CTEX@chapter@beforeskip{0pt}
+\def\CTEX@chapter@beforeskip{24pt}
 \def\CTEX@chapter@afterskip{18pt}
 %\def\CTEX@chapter@titleformat{\bfseries\heiti\fontspec{Times New Roman}\zihao{3}}
 %
@@ -48,6 +48,7 @@
 \@ifclasslater{ctexbook}{2011/03/13}
 {%
     \ctexset{
+        chapter/fixskip = true,
         contentsname={目\quad 录}
     }
 }
