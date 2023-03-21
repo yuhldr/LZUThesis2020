@@ -6,11 +6,14 @@
 
 ## 特点
 
-- 本科生版，全面适配 [2021兰大最新标准]((http://jwc.lzu.edu.cn/lzupage/2021/02/25/N20210225145827.html))
-- 研究生版，直接 [这里](https://github.com/JChrysanthemum/LZUThesis2020-PgD-PhD.git) 复制过来的，遇到问题再改
-- 经过了多人多平台测试，包括Mac、Windows、Linux三种平台
-- 目前与学校要求最为符合的一个LaTex模板，但是难免疏漏，可以 [issues](issues)
-- 在国内 [Gitee: LZUThesis](https://gitee.com/yuhldr/LZUThesis2020) 和国外 [Github: LZUThesis2020](https://github.com/yuhlzu/LZUThesis2020) 开源网站同步发布，防止被墙
+- 已经适配最新要求
+- 包含 “研究生” 和 “本科生” 两个模板
+- 有问题 issue 必回复
+- 有贡献 Pull requests，必认真审查合并
+- 注释、文档 很详细，小白上手可使用
+- Linux、Mac、Windows 都能使用，有问题看文档
+
+![预览v3.3.0](md/images/预览.png)
 
 **********
 
