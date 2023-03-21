@@ -84,12 +84,6 @@
 % 增加空白页，类似word的换页符，方便打印装订
 \newcommand{\blankpage}{\afterpage{\null\newpage}}
 
-
-% 图表目录编号头
-\newcommand{\figlabel}{图}
-\newcommand{\tbllabel}{表}
-
-
 % 表格文字居中，其实就是相当于表格合并
 % 用法 \tabincell{c}{物理//量//单位}
 \newcommand{\tabincell}[2]{ \begin{tabular}{ #1 } #2 \end{tabular}}
@@ -209,6 +203,13 @@
 
 
 % 学位论文页码的摘要页和目录页用罗马数字单独编连续码，正文和后置部分用阿拉伯数字、新罗马数字体编连续码，页码排在页脚居中位置。
+
+
+
+% 图表目录编号头
+\newcommand{\figlabel}{图}
+\newcommand{\tbllabel}{表}
+
 % 自定义目录
 \newcommand{\customcontent}{
   % 常规目录

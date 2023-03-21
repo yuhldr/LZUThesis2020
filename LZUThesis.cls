@@ -48,11 +48,11 @@
 {%
     \ctexset{
         chapter/fixskip = true,
-        contentsname={目\qquad 录}
+        contentsname={目\quad 录}
     }
 }
 {%
-    \def\CTEX@contentsname{目\qquad 录}
+    \def\CTEX@contentsname{目\quad 录}
 }%
 
 \RequirePackage{textcomp}
@@ -68,7 +68,7 @@
 
 
 %============================ 我自己用的一些小命令 =========%
-
+%
 % 针对那些使用mendeley这一类软件的，直接复制（导出）过来的参考文献，可以在参考文献处点击跳转到文献所在网址
 \providecommand \doibase [0]{http://dx.doi.org/}%
 
