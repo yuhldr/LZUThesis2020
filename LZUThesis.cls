@@ -68,7 +68,34 @@
 
 
 %============================ 我自己用的一些小命令 =========%
-% 
+
+% 3.图或表的目录。图和表应有序号，序号与名称之间空1个字符间隙，并与正文保持一致。“图/表目录”三个字字体为黑体，三号，居中；标题字体为宋体，四号，如“图1.1本科生总体数据分析”。标题文字居左，页码居右，之间用连续点连接。
+% 图表目录编号头
+\newcommand{\figlabel}{图}
+\newcommand{\tbllabel}{表}
+
+% 自定义目录
+\newcommand{\customcontent}{
+  % 常规目录
+  \tableofcontents
+  \thispagestyle{empty}
+
+  % 图表目录标题
+  \CTEXoptions[listfigurename={图\quad 目\quad 录}]
+  \CTEXoptions[listtablename={表\quad 目\quad 录}]
+
+  % 插图目录
+  \clearpage
+  \renewcommand{\numberline}[1]{\figlabel~##1\hspace*{1em}}
+  \listoffigures
+
+  % 表格目录
+  \clearpage
+  \renewcommand{\numberline}[1]{\tbllabel~##1\hspace*{1em}}
+  \listoftables
+}
+
+
 % 针对那些使用mendeley这一类软件的，直接复制（导出）过来的参考文献，可以在参考文献处点击跳转到文献所在网址
 \providecommand \doibase [0]{http://dx.doi.org/}%
 
