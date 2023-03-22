@@ -8,8 +8,8 @@
 
 - 已经适配最新要求
 - 包含 “研究生” 和 “本科生” 两个模板
-- 有问题 issue 必回复
-- 有贡献 Pull requests，必认真审查合并
+- 有问题 [github - issue](https://github.com/yuhldr/LZUThesis2020/issues?q=) 必回复
+- 有贡献 [github - Pull requests](https://github.com/yuhldr/LZUThesis2020/pulls?q=)，必认真审查合并
 - 注释、文档 很详细，小白上手可使用
 - Linux、Mac、Windows 都能使用，有问题看文档
 
