@@ -257,8 +257,8 @@
 
 \fancypagestyle{mainmatterstyle}{
     \fancyhf{}
-    \lhead{\songti\zihao{5}兰州大学硕士学位论文}% % todo
-    \rhead{\songti\zihao{5}\@title}
+    \lhead{\songti\zihao{-5}兰州大学硕士学位论文}% % todo
+    \rhead{\songti\zihao{-5}\@title}
     % Footers
     \fancyfoot{} % clear all footer fields
     \cfoot[C]{\thepage}
