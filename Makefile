@@ -1,4 +1,4 @@
-VERSION = 3.3.0
+VERSION = 3.3.1
 FILE_DATE = `date +%Y-%m-%d`
 
 clear:
@@ -17,7 +17,7 @@ bks:
 	cp template.tex build/bks/
 	cp LZUThesis.cls build/bks/
 
-	zip -r disk/bks_${VERSION}_${FILE_DATE}.zip build/bks/
+	cd build && mv bks bks_${VERSION}_${FILE_DATE} && zip -r ../disk/bks.zip bks_${VERSION}_${FILE_DATE}
 
 	ls -l disk/
 
@@ -34,7 +34,7 @@ yjs:
 	cp template-PgD\&PhD.tex build/yjs/template.tex
 	cp LZUThesis-PgD\&PhD.cls build/yjs/
 
-	zip -r disk/yjs_${VERSION}_${FILE_DATE}.zip build/yjs/
+	cd build && mv yjs yjs_${VERSION}_${FILE_DATE} && zip -r ../disk/yjs.zip yjs_${VERSION}_${FILE_DATE}
 
 	ls -l disk/
 
