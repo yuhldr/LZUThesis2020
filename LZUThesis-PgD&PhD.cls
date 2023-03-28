@@ -1,5 +1,5 @@
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesClass{LZUThesis-PgD&PhD}[2023/03/21 V3.3.0 Thesis for LZUer PgD&PhD By Patrick Use 2021 standard]
+\ProvidesClass{LZUThesis-PgD&PhD}[2023/03/21 V3.4.0 Thesis for LZUer PgD&PhD By yuhldr Use 2023 standard]
 \LoadClass[12pt, a4paper, UTF8, openany,oneside]{ctexbook}
 
 % 兰州大学研究生学位论文写作参考规范 https://ge.lzu.edu.cn/xueweishouyu/guizhangzhidu/lunwenguanli/2020/1223/158947.html
@@ -48,6 +48,7 @@
 \@ifclasslater{ctexbook}{2011/03/13}
 {%
     \ctexset{
+        % 给的word示例，正文章节前面，空间小，你如果追求一致，可以尝试取消下面的注释
         % chapter/fixskip = true,
         contentsname={目\quad 录}
     }
@@ -257,7 +258,7 @@
 
 \fancypagestyle{mainmatterstyle}{
     \fancyhf{}
-    \lhead{\songti\zihao{-5}兰州大学硕士学位论文}% % todo
+    \lhead{\songti\zihao{-5}兰州大学\the\yjsType 学位论文}% % todo
     \rhead{\songti\zihao{-5}\@title}
     % Footers
     \fancyfoot{} % clear all footer fields
@@ -280,8 +281,10 @@
 
 % “目录”两字间空1个汉字符间隙，三号字，黑体，加粗，居中，单倍行距，段前24磅，段后18磅。
 % 目录下方为章、节、条、款及其起始页码，章、节、条、款层次代号可以用阿拉伯数字或汉字。目录中一般只出现三级标题，
-% 一级标题为宋体，四号字, 行距20磅, 段前6磅，段后0磅，两端对齐,页码右对齐，
-% 二级、三级标题为宋体，小四号字,行距20磅, 段前6磅，段后0磅，两端对齐,页码右对齐,左缩进2个汉字符，序号与标题名间空1个字符宽度。
+% 标题：黑体三号加粗居中，两字中间空一字符距离，单倍行距，段前24磅，段后18磅
+% 一级标题：宋体四号,行距20磅，两端对齐，页码右对齐， 段前6磅，段后0磅
+% 二级标题：宋体小四号，行距20磅，段前6磅，段后0磅，两端对齐，页码右对齐，左缩进2字符，序号与题名间空一个字符宽度
+% 三级标题：宋体小四号，行距20磅，段前6磅，段后0磅，两端对齐，页码右对齐，左缩进3字符，序号与题名间空一个字符宽度
 
 
 \usepackage[font=small]{caption}
@@ -294,12 +297,16 @@
 % \setlength{\cftbeforechapskip}{6pt}
 \setlength{\cftbeforesubsecskip}{6pt}
 
+\renewcommand{\cftchapleader}{\cftdotfill{\cftdotsep}} % 设置章节前后的点点
+\renewcommand{\cftchappagefont}{\zihao{4}\songti\selectfont} % 设置页码字体
+
 \renewcommand\cftchapfont{\zihao{4}\songti}
 \renewcommand\cftsecfont{\zihao{-4} \songti}
 \renewcommand\cftsubsecfont{\zihao{-4} \songti}
 \setlength\cftbeforetoctitleskip{24pt}
 \setlength\cftaftertoctitleskip{18pt}
 
+\setlength{\cftsubsecindent}{3em}
 
 %%=======information
 %（一）封面
@@ -307,6 +314,8 @@
 % 2.学生姓名、指导教师、学院、专业、年级字体为宋体，三号。
 %
 %%=======information
+\newtoks\yjsType
+\newtoks\yjsZsZy
 \newtoks\schoolcode
 \newtoks\secret
 \newtoks\cid
@@ -342,21 +351,21 @@
     \cleardoublepage
     \thispagestyle{empty}
     \begin{flushleft}
-      {\zihao{5}\bfseries\songti 学校代码：\the\schoolcode}
+      {\zihao{5}\heiti 学校代码：\the\schoolcode}
       \hspace{260pt}
-      {\zihao{5}\bfseries\songti 密级：\the\secret}
+      {\zihao{5}\heiti 密级：\the\secret}
 
-      {\zihao{5}\bfseries\songti \quad 分类号：\the\cid}
+      {\zihao{5}\heiti \quad 分类号：\the\cid}
     \end{flushleft}
 
     \begin{center}
 
-        \includegraphics[width=6cm]{lzu2007.png}\\
+        \includegraphics[width=6.75cm,height=1.61cm]{lzu2007.png}\\
         \vspace{21.8pt}
 
-        {\fontsize{22bp}{0pt}\ziju{1}\bfseries\songti{硕士学位论文\\}}
+        {\fontsize{22bp}{0pt}\ziju{1}\bfseries\songti{\the\yjsType 学位论文\\}}
         \vspace{20.8pt}
-        {\zihao{3} \songti（\quad 专\quad 业\quad 学\quad 位\quad）}
+        {\zihao{3} \songti（\the\yjsZsZy）}
 
         \vspace{20.8pt}
         \par
@@ -376,7 +385,7 @@
                     & {\StrFindGroup{\@title}{\value{title_str_number}}[\mygroup]\LZUunderline[320pt]{ \bfseries\songti \zihao{3}\mygroup}}\\[0.40cm]%
                 }%
             }%
-            \bfseries\songti  \zihao{4} 论文题目（英文）% “论文题目（英文）”这几个字，应该是加粗（宋体加粗）
+            \bfseries\songti  \zihao{4} 论文题目（外文）% “论文题目（英文）”这几个字，应该是加粗（宋体加粗）
             \forloop{title_str_number}{1}{\value{title_str_number}<6}{%
                 \StrFindGroup{\the\entitle}{\value{title_str_number}}[\mygroup]%
                 \IfStrEq{\mygroup}{}{}{%
@@ -390,7 +399,7 @@
             {\LZUunderline[320pt]{ \bfseries\songti \zihao{-3}\the\major}} \\[0.40cm]
             {\bfseries\songti \zihao{4}{研\hfill 究\hfill 方\hfill 向}} &
             {\LZUunderline[320pt]{ \bfseries\songti \zihao{-3}  \the\research}} \\[0.40cm]
-            {\bfseries\songti \zihao{4}{学\hfill 位\hfill 级\hfill 别}} &
+            {\bfseries\songti \zihao{4}{教\hfill 育\hfill 类\hfill 型}} &
             {\LZUunderline[320pt]{ \bfseries\songti \zihao{-3}  \the\education}} \\[0.40cm]
             {\bfseries\songti \zihao{4}{指\hfill 导\hfill 教\hfill 师}} &
             {\LZUunderline[320pt]{ \bfseries\songti \zihao{-3}  \the\advisor}} \\[0.40cm]
@@ -403,7 +412,7 @@
         \end{tabular}
         \par
         \vspace{20pt}
-        {\zihao{5}\songti 校址: 甘肃省兰州市城关区天水南路 222 号}% “兰州大学教务处”这几个字，应该是雅黑
+        {\zihao{5}\heiti 校址: 甘肃省兰州市城关区天水南路 222 号}% “兰州大学教务处”这几个字，应该是雅黑
 
     \end{center}
     \clearpage
@@ -500,7 +509,7 @@
     \end{center}%
     \begin{center}%
         \linespread{1}
-        \setlength{\parskip}{18pt}
+        \setlength{\parskip}{24pt}
         \zihao{3}\bfseries\heiti   中文摘要
     \end{center}%
     %行距20磅 http://blog.sina.com.cn/s/blog_5e16f1770100ly96.html
@@ -524,7 +533,7 @@
 \newcommand{\EnAbstract}[2]{%
     \clearpage
     \phantomsection
-    \addcontentsline{toc}{chapter}{英文摘要}
+    \addcontentsline{toc}{chapter}{Abstract}
     \thispagestyle{frontmatterstyle}
     \begin{center}%
         \setlength{\parskip}{24pt}
@@ -561,7 +570,7 @@
     \hypersetup{
         pdftitle = {\@title},
         pdfauthor = {\@author},
-        pdfsubject = {兰州大学硕士学位论文}
+        pdfsubject = {兰州大学\the\yjsType 学位论文}
     }
 }
 
@@ -665,14 +674,18 @@
 %参考文献
 %=======%
 %著录项目和著录格式遵照《信息与文献参考文献著录规则》（GB/T 7714－2015）的规定执行。
-\usepackage{gbt7714}
+% \usepackage{gbt7714}
 \newtoks\bibdatabase
 \RequirePackage{ }
 \newcommand{\printbib}{
     \zihao{5}
-    % \bibliographystyle{bib/lzubib}
+    % 这三种自己选择，因为
+    % 2020官网这里，要求gbt7714：https://ge.lzu.edu.cn/xueweishouyu/guizhangzhidu/lunwenguanli/2020/1223/158947.html
+    % \bibliographystyle{gbt7714-numerical}
     % \bibliographystyle{gbt7714-author-year}
-    \bibliographystyle{gbt7714-numerical}
+    % 2023官网这里要求：https://ge.lzu.edu.cn/xiazaizhuanqu/xuewei/2023/0328/210732.html
+    % 要求，只是示例没写要求，但是英文参考文献作者没大写（大写太丑了）
+    \bibliographystyle{bib/lzubib}
     \cleardoublepage
     \phantomsection
     \addcontentsline{toc}{chapter}{参考文献}

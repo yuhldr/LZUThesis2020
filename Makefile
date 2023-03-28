@@ -1,4 +1,4 @@
-VERSION = 3.3.1
+VERSION = 3.4.1
 FILE_DATE = `date +%Y-%m-%d`
 
 clear:
@@ -28,7 +28,6 @@ yjs:
 	mkdir -p build/yjs 
 
 	cp -r bib build/yjs/
-	rm build/yjs/bib/lzubib.bst
 	cp -r figures build/yjs/
 
 	cp template-PgD\&PhD.tex build/yjs/template.tex
