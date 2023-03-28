@@ -35,9 +35,43 @@ mac、linux、windows三系统全部测试通过，linux缺一个字体，看 [l
 
 - 我用的vscode点一下就删除了，好吧最多点两下，删错了，如果之前用了git的话，可以恢复
 
-## pdf与预期不符
+## chapter间距问题
 
-你以为是，但是pdf显示出来的有差别
+- [讨论1](https://github.com/yuhldr/LZUThesis2020/issues/7)
+- [讨论2](https://gitee.com/yuhldr/LZUThesis2020/issues/I6QZKG
+)
+
+## 字体
+
+### 与word细微差别
+
+- [见讨论](https://gitee.com/yuhldr/LZUThesis2020/issues/I6QJCA)
+
+### 字母加粗
+
+- [见讨论](https://github.com/yuhldr/LZUThesis2020/issues/15)
+
+
+### 英文字体略有不同（花体太花）
+
+V2.1.3以及以后的版本，为了让英文字体完全与Times New Roman字体相同，使用了mathptmx和fontspec包，但是这么做会导致花体，mathcal和mathscr完全相同（正常mathcal会花的轻一些）。
+
+在windows上，引用mathptmx包，正文、公式中的英文就会变成新罗马（Times New Roman）字体，但是mac系统上，没有任何效果，还是默认的罗马字体（和Times New Roman很相似，QR两个单词区分明显，之前的字体整体偏细），所以我在2.1.3以及之后的模板中加入了以下两个命令：
+
+```tex
+\RequirePackage{mathptmx} %加入这条命令会导致花体，mathcal和mathscr完全相同，正常mathcal会花的轻一些。
+\RequirePackage{fontspec} %这一条在windows可有可无，效果相同，但是mac上必须。
+```
+
+
+## 文献
+
+### 研究生论文参考文献丑
+
+- [见讨论：最后几句](https://github.com/yuhldr/LZUThesis2020/issues/15)
+- [官方参考文献要求的是GBT7714](https://ge.lzu.edu.cn/xueweishouyu/guizhangzhidu/lunwenguanli/2020/1223/158947.html)
+- [GBT7714](http://www.cessp.org.cn/a258.html)
+
 
 ### 参考文献标题中英文变成小写了
 
@@ -116,17 +150,6 @@ language = {中文},
 % \expandafter\MakeUppercase\expandafter{\the\entitle\the\entitletra}  这一部分替换成你自己想要的标题
 ```
 
-
-### 英文字体略有不同（花体太花）
-
-V2.1.3以及以后的版本，为了让英文字体完全与Times New Roman字体相同，使用了mathptmx和fontspec包，但是这么做会导致花体，mathcal和mathscr完全相同（正常mathcal会花的轻一些）。
-
-在windows上，引用mathptmx包，正文、公式中的英文就会变成新罗马（Times New Roman）字体，但是mac系统上，没有任何效果，还是默认的罗马字体（和Times New Roman很相似，QR两个单词区分明显，之前的字体整体偏细），所以我在2.1.3以及之后的模板中加入了以下两个命令：
-
-```tex
-\RequirePackage{mathptmx} %加入这条命令会导致花体，mathcal和mathscr完全相同，正常mathcal会花的轻一些。
-\RequirePackage{fontspec} %这一条在windows可有可无，效果相同，但是mac上必须。
-```
 
 ### 封面文字位置
 
