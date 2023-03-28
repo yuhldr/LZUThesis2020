@@ -48,7 +48,7 @@
 \@ifclasslater{ctexbook}{2011/03/13}
 {%
     \ctexset{
-        chapter/fixskip = true,
+        % chapter/fixskip = true,
         contentsname={目\quad 录}
     }
 }
