@@ -13,6 +13,7 @@ bks:
 
 	cp -r bib build/bks/
 	cp -r figures build/bks/
+	rm build/bks/figures/*.psd
 
 	cp template.tex build/bks/
 	cp LZUThesis.cls build/bks/
@@ -29,6 +30,7 @@ yjs:
 
 	cp -r bib build/yjs/
 	cp -r figures build/yjs/
+	rm build/yjs/figures/*.psd
 
 	cp template-PgD\&PhD.tex build/yjs/template.tex
 	cp LZUThesis-PgD\&PhD.cls build/yjs/

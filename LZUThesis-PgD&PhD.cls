@@ -360,7 +360,7 @@
 
     \begin{center}
 
-        \includegraphics[width=6.75cm,height=1.61cm]{lzu2007.png}\\
+        \includegraphics[width=6.75cm]{lzu2007.png}\\
         \vspace{21.8pt}
 
         {\fontsize{22bp}{0pt}\ziju{1}\bfseries\songti{\the\yjsType 学位论文\\}}
