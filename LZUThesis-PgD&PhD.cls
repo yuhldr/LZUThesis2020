@@ -33,17 +33,18 @@
 %% the subsection title format
 %% 三级标题黑体，小四号，单倍行距，段前12磅，段后6磅。
 %% 首行缩进2个汉字符 2020年新规定
+% 2023恢复2017规定：三级标题：黑体小四号顶左，单倍行距，段前12磅，段后6磅
 \def\CTEX@subsection@format{\heiti\zihao{-4}}
-\def\CTEX@subsection@indent{2\ccwd}
+% \def\CTEX@subsection@indent{2\ccwd}
 \def\CTEX@subsection@beforeskip{12pt}
 \def\CTEX@subsection@afterskip{6pt}
 %%
-%% the subsubsection title format
+%% 四级没要求，可以自己改
 %%
-\def\CTEX@subsubsection@format{\heiti\zihao{-4}}
-\def\CTEX@subsubsection@indent{2\ccwd}
-\def\CTEX@subsubsection@beforeskip{2ex \@plus 1ex \@minus .2ex}
-\def\CTEX@subsubsection@afterskip{1.0ex \@plus .2ex}
+% \def\CTEX@subsubsection@format{\heiti\zihao{-4}}
+% \def\CTEX@subsubsection@indent{2\ccwd}
+% \def\CTEX@subsubsection@beforeskip{2ex \@plus 1ex \@minus .2ex}
+% \def\CTEX@subsubsection@afterskip{1.0ex \@plus .2ex}
 
 \@ifclasslater{ctexbook}{2011/03/13}
 {%
