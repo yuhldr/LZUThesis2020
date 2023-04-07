@@ -41,7 +41,7 @@
 %%
 %% 四级没要求，可以自己改
 %%
-% \def\CTEX@subsubsection@format{\heiti\zihao{-4}}
+\def\CTEX@subsubsection@format{\heiti\zihao{-4}}
 % \def\CTEX@subsubsection@indent{2\ccwd}
 % \def\CTEX@subsubsection@beforeskip{2ex \@plus 1ex \@minus .2ex}
 % \def\CTEX@subsubsection@afterskip{1.0ex \@plus .2ex}
