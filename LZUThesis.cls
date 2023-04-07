@@ -106,8 +106,9 @@
 %%=======page
 %页面边距
 %页边距为上2.5cm，下2.5cm，左2.5cm，右2cm，页眉边距为1.5cm，页脚边距为1.5cm。行间距为固定值20磅。
+% https://github.com/yuhldr/LZUThesis2020/issues/21
 %%=======page
-\RequirePackage[top=2.5cm, bottom=2.5cm,outer=2cm, inner=2.5cm, headheight=1.5cm, footskip=1.5cm, heightrounded]{geometry}
+\RequirePackage[top=2.5cm, bottom=2.5cm,outer=2cm, inner=2.5cm, headheight=1cm, footskip=1cm, heightrounded]{geometry}
 
 
 %=======package
