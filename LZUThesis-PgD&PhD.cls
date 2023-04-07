@@ -115,8 +115,9 @@
 %%=======page
 %页面边距
 %论文页边距一般要求：上边距3cm、下边距2.54cm,左右边距3.17cm,页眉页脚2.0cm。
+% https://github.com/yuhldr/LZUThesis2020/issues/21
 %%=======page
-\RequirePackage[top=3cm, bottom=2.54cm,outer=3.17cm, inner=3.17cm, headheight=2.0cm, footskip=2.0cm, heightrounded]{geometry}
+\RequirePackage[top=3cm, bottom=2.54cm,outer=3.17cm, inner=3.17cm, headheight=1cm, footskip=0.54cm heightrounded]{geometry}
 
 
 %=======package
