@@ -278,7 +278,7 @@
 % 二级标题字体为宋体，四号；
 % 三级标题字体为宋体，小四号。
 
-\usepackage[font=small]{caption}
+\RequirePackage[font=small]{caption}
 
 \RequirePackage[titles]{tocloft}
 \renewcommand\cftchapdotsep{0.5}                %虚线间隔
@@ -634,7 +634,7 @@
 %\AtBeginDocument{\addtocontents{toc}{\protect\thispagestyle{frontmatterstyle}}}
 
 %item style
-\usepackage{enumitem}
+\RequirePackage{enumitem}
 \setenumerate[1]{itemsep=0pt,partopsep=0pt,parsep=\parskip,topsep=5pt}
 \setitemize[1]{itemsep=0pt,partopsep=0pt,parsep=\parskip,topsep=0pt}
 \setdescription{itemsep=0pt,partopsep=0pt,parsep=\parskip,topsep=5pt}
@@ -687,7 +687,7 @@
 \renewcommand{\algorithmicrequire}{\bfseries{输入:}}  
 \renewcommand{\algorithmicensure}{\bfseries{输出:}}  
 
-  
+
 %改变图表的编号格式
 
 % 图：图名置于图的下方，五号字，宋体，居中（英文用Times New Roman体10.5磅），单倍行距，段前6磅，段后12磅，图序与图名之间空1个汉字符。
@@ -708,7 +708,6 @@
 %参考文献
 %=======%
 \newtoks\bibdatabase
-\RequirePackage{ }
 \newcommand{\printbib}{
     \zihao{5}
     \bibliographystyle{bib/lzubib}
