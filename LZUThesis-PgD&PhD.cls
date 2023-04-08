@@ -189,7 +189,7 @@
 % end ------------ 英文字体（含公式、正文）、加粗、斜体  -------------- end
 
 
-\usepackage{fontspec} %用电脑上自带的字体
+\RequirePackage{fontspec} %用电脑上自带的字体
 
 \RequirePackage{float}%控制图片位置 参数H
 \RequirePackage[T1]{fontenc}
@@ -289,7 +289,7 @@
 % 三级标题：宋体小四号，行距20磅，段前6磅，段后0磅，两端对齐，页码右对齐，左缩进3字符，序号与题名间空一个字符宽度
 
 
-\usepackage[font=small]{caption}
+\RequirePackage[font=small]{caption}
 
 \RequirePackage[titles]{tocloft}
 \renewcommand\cftchapdotsep{0.5}                %虚线间隔
@@ -591,7 +591,7 @@
 %\AtBeginDocument{\addtocontents{toc}{\protect\thispagestyle{frontmatterstyle}}}
 
 %item style
-\usepackage{enumitem}
+\RequirePackage{enumitem}
 \setenumerate[1]{itemsep=0pt,partopsep=0pt,parsep=\parskip,topsep=5pt,leftmargin=20pt,label=(\arabic*)}
 \setitemize[1]{itemsep=0pt,partopsep=0pt,parsep=\parskip,topsep=0pt}
 \setdescription{itemsep=0pt,partopsep=0pt,parsep=\parskip,topsep=5pt}
@@ -676,9 +676,8 @@
 %参考文献
 %=======%
 %著录项目和著录格式遵照《信息与文献参考文献著录规则》（GB/T 7714－2015）的规定执行。
-% \usepackage{gbt7714}
+% \RequirePackage{gbt7714}
 \newtoks\bibdatabase
-\RequirePackage{ }
 \newcommand{\printbib}{
     \zihao{5}
     % 这三种自己选择，因为
