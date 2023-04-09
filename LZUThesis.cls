@@ -2,7 +2,10 @@
 \ProvidesClass{LZUThesis}[2023/03/21 V3.3.0 Thesis for LZUer By yuhldr]
 \LoadClass[12pt, a4paper, UTF8, openany,oneside]{ctexbook}
 
-% 部分内容参考了https://github.com/suchot/LZUThesis2017，适配了2021最新的毕业论文要求：http://jwc.lzu.edu.cn/lzupage/2021/02/25/N20210225145827.html
+% 部分内容参考了https://github.com/suchot/LZUThesis2017，
+% - 适配了2021最新的毕业论文要求：http://jwc.lzu.edu.cn/lzupage/2021/02/25/N20210225145827.html
+% - 适配了2022最新的毕业论文要求：http://jwc.lzu.edu.cn/lzupage/2023/03/06/N20230306160525.html
+% - 2023同2022
 
 %============================ 一些章节的配置文件 =========%
 %%
@@ -333,7 +336,7 @@
         \includegraphics[width=6cm]{lzu2020.png}\\
         \vspace*{21.8pt}
 
-        {\zihao{1}\songti{本科毕业论文\\}}% 封面这几个字，规范中未提及，此处按照宋体
+        {\zihao{1}\bfseries\songti{本科毕业论文\\}}% 封面这几个字，规范中未提及，此处按照宋体
         \vspace{21.8pt}
         \par
         \zihao{4}
@@ -399,7 +402,7 @@
         {\bfseries\songti\zihao{3}{诚信责任书}} % “诚信责任书”这几个字，应该是加粗（宋体加粗）
     \end{center}
 
-    本人郑重声明：本人所呈交的毕业论文（设计），是在导师的指导下独立进行研究所取得的成果。毕业论文（设计）中凡引用他人已经发表或未发表的成果、数据、观点等，均已明确注明出处。除文中已经注明引用的内容外，不包含任何其他个人或集体已经发表或在网上发表的论文。
+    本人郑重声明：本人所呈交的毕业论文（设计），是在导师的指导下独立进行研究所取得的成果。毕业论文（设计）中凡引用他人已经发表或未发表的成果、数据、观点等，均已明确注明出处。除文中已经注明引用的内容外，不包含任何其他个人、集体已经发表或未发表的论文。
 
     本声明的法律责任由本人承担。
 
@@ -461,6 +464,7 @@
         \multicolumn{1}{c}{
             \zihao{3} \bfseries{毕业论文（设计）成绩表}
         } \\
+        \multicolumn{1}{c}{} \\
         \hline
         导师评语\\%
         \centerline{%
@@ -474,7 +478,7 @@
             \the \supervisorsignature
         }\\
         \hline
-        \bfseries{答辩小组意见}\\
+        \bfseries{答辩委员会意见}\\
         \centerline{%
             \begin{minipage}[t][2cm][t]{0.92\textwidth}
                 \setlength\parindent{\ccwd}
