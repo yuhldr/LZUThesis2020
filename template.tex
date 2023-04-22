@@ -464,9 +464,17 @@ matlab代码有专门的库，但是没必要高亮太多，而且中文适配�
 \subsection{参考文献} % (fold)
 \label{sub:参考文献}
 
-这个，百度学术、谷歌学术等网站都可以导出bibtex格式的参考文献（知网不行，网上有个人写了个转换器，但是windows用不了，就不放了，尽量用谷歌学术把那个文献找出来吧），直接放在bib/database.bib文件里、知网需要用其他东西转换，但是我建议用mendeley这个软件管理文献，然后可以导出bibtex格式的，甚至可以直接复制引用，很方便\cite{partl2016, tenne1992polyhedral, tussyadiah2015hotels}。
+这个，百度学术、谷歌学术等网站都可以导出bibtex格式的参考文献（知网不行，网上有个人写了个转换器，但是windows用不了，就不放了，尽量用谷歌学术把那个文献找出来吧），直接放在bib/database.bib文件里、知网需要用其他东西转换，但是我建议用mendeley这个软件管理文献，然后可以导出bibtex格式的，甚至可以直接复制引用，很方便\cite{partl2016, tenne1992polyhedral, tussyadiah2015hotels}。测试不同情况：
 
-有些人希望多个参考文献同时引用时用[1-3]而不是[1,2,3]，所以我加了个包cite。（2020-5-18）
+\begin{itemize}
+    \item 原本科模板\cite{partl2016}
+    \item 中文“等”测试\cite{partl2021}
+    \item 大写字母测试\cite{partl2022-2}
+    \item 中文空格测试\cite{partl2022}
+    \item 连续显示\cite{partl2016,partl2021,partl2022-2}
+    \item 右上角\upcite{partl2016,partl2021,partl2022-2}
+\end{itemize}
+
 
 具体怎么用可以百度，我这里告诉你什么可以用，但是具体的，建议百度，更靠谱一些。
 
