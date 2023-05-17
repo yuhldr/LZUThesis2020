@@ -227,12 +227,10 @@
     \CTEXoptions[listtablename={表\quad 目\quad 录}]
 
     % 插图目录
-    \clearpage
     \renewcommand{\numberline}[1]{\figlabel~##1\hspace*{1em}}
     \listoffigures
 
     % 表格目录
-    \clearpage
     \renewcommand{\numberline}[1]{\tbllabel~##1\hspace*{1em}}
     \listoftables
 }
