@@ -207,27 +207,41 @@
 \newcommand{\figlabel}{图}
 \newcommand{\tbllabel}{表}
 
+
 % 自定义目录
 \newcommand{\customcontent}{
-  % 常规目录
+
+    \clearpage
+{                                
+    \pagestyle{empty}           
+    \fancypagestyle{plain}
+    {
+        \fancyhf{}
+        \renewcommand{\headrulewidth}{0pt}
+        \renewcommand{\footrulewidth}{0pt}
+    }
+    \addtocontents{toc}{\protect\thispagestyle{empty}}
     \tableofcontents
     \thispagestyle{empty}
 
-    % 图表目录标题
-    \CTEXoptions[listfigurename={图\quad 目\quad 录}]
-    \CTEXoptions[listtablename={表\quad 目\quad 录}]
 
-    % 插图目录
-    \clearpage
-    \renewcommand{\numberline}[1]{\figlabel~##1\hspace*{1em}}
-    \listoffigures
-    \thispagestyle{empty}
+% 图表目录标题
+\CTEXoptions[listfigurename={图\quad 目\quad 录}]
+\CTEXoptions[listtablename={表\quad 目\quad 录}]
 
-    % 表格目录
-    \clearpage
-    \renewcommand{\numberline}[1]{\tbllabel~##1\hspace*{1em}}
-    \listoftables
-    \thispagestyle{empty}
+% 插图目录
+\clearpage
+\renewcommand{\numberline}[1]{\figlabel~##1\hspace*{1em}}
+\listoffigures
+\thispagestyle{empty}
+
+% 表格目录
+\clearpage
+\renewcommand{\numberline}[1]{\tbllabel~##1\hspace*{1em}}
+\listoftables
+\thispagestyle{empty}
+}
+
 }
 
 
@@ -273,7 +287,6 @@
 \fancypagestyle{plain}{
     \thispagestyle{mainmatterstyle}
 }
-\AtBeginDocument{\addtocontents{toc}{\protect\thispagestyle{frontmatterstyle}}}
 
 
 %=======format
@@ -637,9 +650,6 @@
 \crefformat{subsection}{#2#1小节#3}
 \crefformat{subsubsection}{#2#1小节#3}
 
-
-
-%\AtBeginDocument{\addtocontents{toc}{\protect\thispagestyle{frontmatterstyle}}}
 
 %item style
 \RequirePackage{enumitem}
