@@ -63,33 +63,33 @@
 
 % 你的签名
 \mysignature{
-    % \raisebox{-5pt}{
-        % \includegraphics[width=40pt]{signature.pdf}
-    % }
+  % \raisebox{-5pt}{
+  % \includegraphics[width=40pt]{signature.pdf}
+  % }
 }
 % 你手写的日期
 \mytime{
-    % \raisebox{-5pt}{
-        % \includegraphics[width=40pt]{signature.pdf}
-    % }
+  % \raisebox{-5pt}{
+  % \includegraphics[width=40pt]{signature.pdf}
+  % }
 }
 % 老师的手写签名
 \supervisorsignature{
-    % \raisebox{-5pt}{
-        % \includegraphics[width=40pt]{signature.pdf}
-    % }
+  % \raisebox{-5pt}{
+  % \includegraphics[width=40pt]{signature.pdf}
+  % }
 }
 % 老师手写的时间
 \teachertime{
-    % \raisebox{-5pSt}{
-        % \includegraphics[width=40pt]{signature.pdf}
-    % }
+  % \raisebox{-5pSt}{
+  % \includegraphics[width=40pt]{signature.pdf}
+  % }
 }
 % 老师手写的成绩
 \recommendedgrade{
-    % \raisebox{-5pt}{
-        % \includegraphics[width=40pt]{signature.pdf}
-    % }
+  % \raisebox{-5pt}{
+  % \includegraphics[width=40pt]{signature.pdf}
+  % }
 }
 
 \makestatement
@@ -105,7 +105,7 @@
 
 %英文摘要
 \EnAbstract{example example example example example example example example example example example example example example example example example example example example example example example example example example example example example example example example example example example example example example example example example example example example example example example example example example example example example example example example example example example example example example example example example example example example example example example example example example example example example example example example example example example example example .
-% \fontspec{Times New Roman} {Times New Roman}
+  % \fontspec{Times New Roman} {Times New Roman}
 }{key-word-1,key-word-2}
 
 %生成目录
@@ -130,7 +130,7 @@
 
 \section{编译方式}
 
-{\bfseries 编译方式:} XeLaTeX -->BibTeX --> XeLaTeX-->XeLaTeX
+ {\bfseries 编译方式:} XeLaTeX -->BibTeX --> XeLaTeX-->XeLaTeX
 
 如果你和我一样使用Atom编辑器，在配置好latex环境后，选择 文件--> 设置 --> 拓展 --> latex --> 设置 --> Engine，修改为XeLatex即可。
 
@@ -145,15 +145,15 @@
 
 
 \begin{figure}[H]
-	\centering
-	\subfloat[111]{
-        \includegraphics[width=0.3\textwidth]{figures/lzu2007.png}
-    }
-	\subfloat[2222]{
-        \includegraphics[width=0.3\textwidth]{figures/lzu2020.png}
-    }
-    \caption{两个图：多点字多点字多点字多点字多点字多点字多点字多点字多点字多点字多点字多点字多点字多点字多点字多点字多点字多点字多点字多点字多点字多点字多点字多点字多点字多点字多点字多点字多点字多点字多点字多点字多点字多点字多点字多点字多点字多点字多点字多点字多点字多点字多点字多点字多点字}
-    \label{fig_ldr}
+  \centering
+  \subfloat[111]{
+    \includegraphics[width=0.3\textwidth]{figures/lzu2007.png}
+  }
+  \subfloat[2222]{
+    \includegraphics[width=0.3\textwidth]{figures/lzu2020.png}
+  }
+  \caption{两个图：多点字多点字多点字多点字多点字多点字多点字多点字多点字多点字多点字多点字多点字多点字多点字多点字多点字多点字多点字多点字多点字多点字多点字多点字多点字多点字多点字多点字多点字多点字多点字多点字多点字多点字多点字多点字多点字多点字多点字多点字多点字多点字多点字多点字多点字}
+  \label{fig_ldr}
 \end{figure}
 
 尽管对论文图片的大小没有具体的规定，但还是建议插入可以横向占满可写宽度的图片比较好看，一个示例如上图：
@@ -201,9 +201,9 @@
 % \end{verbatim}
 
 \begin{gather}\label{eq:add}
-1+1=2 \\
-2+2=4 \\
-3+3=6 \nonumber
+  1+1=2 \\
+  2+2=4 \\
+  3+3=6 \nonumber
 \end{gather}
 
 \subsection{多情况公式}
@@ -222,11 +222,11 @@
 
 \begin{equation}\label{eq:multi}
   \mathbf{X}=
-    \begin{cases}
-      k_n \quad & n \ = \ 1 \\
-      \mathbf{X}_n \ = \mathbf{X}_{n-1}\ +\ (k_n-1)\times S_{n-1};
-      \quad & n \geq \ 1\\
-    \end{cases}
+  \begin{cases}
+    k_n \quad & n \ = \ 1  \\
+    \mathbf{X}_n \ = \mathbf{X}_{n-1}\ +\ (k_n-1)\times S_{n-1};
+    \quad     & n \geq \ 1 \\
+  \end{cases}
 \end{equation}
 
 \subsection{公式加粗、斜体、字体}
@@ -239,7 +239,7 @@
   \item[3.] mathbf \qquad $\mathbf{AHEMoS\alpha \beta}$
   \item[4.] boldsymbol $\boldsymbol{AHEMoS\alpha \beta}$
   \item[5.] mathbb \qquad $\mathbb{AHEMoS\alpha \beta}$
-  % \item [5. bm] $\bm{AHEMoS\alpha \beta}$
+    % \item [5. bm] $\bm{AHEMoS\alpha \beta}$
 \end{itemize}
 
 这个加粗、斜体、英文字体（含正文和公式内字体），有不同的处理方式，在 .cls 模板文件文件搜索 bm 查看详细说明
@@ -247,11 +247,11 @@
 \subsection{一些特殊符号}
 
 \begin{itemize}
-    \item 普朗克常量 hslash ：$\hslash$
-    \item 普朗克常量 hbar ：$\hbar$
-    \item 花体 mathscr ：$\mathscr{ABCFR}$
-    \item 花体 mathcal ：$\mathcal{ABCFR}$
-    \item Fraktur字母 ：$\mathfrak{ABCFR}$
+  \item 普朗克常量 hslash ：$\hslash$
+  \item 普朗克常量 hbar ：$\hbar$
+  \item 花体 mathscr ：$\mathscr{ABCFR}$
+  \item 花体 mathcal ：$\mathcal{ABCFR}$
+  \item Fraktur字母 ：$\mathfrak{ABCFR}$
 \end{itemize}
 
 
@@ -279,7 +279,7 @@
   \centering
   \begin{tabular*}{0.9\textwidth}{@{\extracolsep{\fill}}cccccc}
     \toprule
-        参数& m & n & \tabincell{c}{太长了\\换行一下\\原子数}  & 内径 & 长度\\
+    参数& m & n & \tabincell{c}{太长了\\换行一下\\原子数}  & 内径 & 长度\\
     \midrule
     数值 & 15 & 15  & 2880 & 2.3014nm & 9.95nm \\
     \bottomrule
@@ -318,14 +318,14 @@
 伪代码
 
 \begin{algorithm}[H]
-    \caption{PMHSS 算法\label{Alg:PMHSS}}
-    \begin{algorithmic}[1]
-      \State 给定一个初值 $ x^{(0)} \in C^{n} $  和常数 $\alpha>0$
-      \For{$k = 1,2, \ldots $ 直到序列 $\{x^{(k)}\}_{k=0}^{\infty}$ 收敛}
-      \State 解方程: $(\alpha V+W)x^{(k+\frac{1}{2})}=(\alpha V-i T)x^{(k)}+b $
-      \State 解方程: $(\alpha V+T)x^{(k+1)}=(\alpha V+i W)x^{(k+\frac{1}{2})}-i b$
-      \EndFor
-    \end{algorithmic}
+  \caption{PMHSS 算法\label{Alg:PMHSS}}
+  \begin{algorithmic}[1]
+    \State 给定一个初值 $ x^{(0)} \in C^{n} $  和常数 $\alpha>0$
+    \For{$k = 1,2, \ldots $ 直到序列 $\{x^{(k)}\}_{k=0}^{\infty}$ 收敛}
+    \State 解方程: $(\alpha V+W)x^{(k+\frac{1}{2})}=(\alpha V-i T)x^{(k)}+b $
+    \State 解方程: $(\alpha V+T)x^{(k+1)}=(\alpha V+i W)x^{(k+\frac{1}{2})}-i b$
+    \EndFor
+  \end{algorithmic}
 \end{algorithm}
 
 使用\textbackslash blank 来空行，\textbackslash blackpage 来空白页。

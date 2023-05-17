@@ -90,8 +90,8 @@
     $\mathring{\text{A}}$
 }
 
-    % \makebox[0pt][l]{$\square$}\raisebox{.15ex}{\hspace{0.1em}$\checkmark$}
-    % \mbox{\ooalign{$\checkmark$\cr\hidewidth$\square$\hidewidth\cr}}
+% \makebox[0pt][l]{$\square$}\raisebox{.15ex}{\hspace{0.1em}$\checkmark$}
+% \mbox{\ooalign{$\checkmark$\cr\hidewidth$\square$\hidewidth\cr}}
 
 \newcommand{\done}{ \makebox[0pt][l]{$\square$}\raisebox{.15ex}{\hspace{0.1em}$\checkmark$}}
 
@@ -120,24 +120,24 @@
 \RequirePackage{listings}
 
 \lstset{
- breaklines=true, %对过长的代码自动换行
- columns=fixed,       
- numbers=left,                                        % 在左侧显示行号
- numberstyle=\tiny\color{gray},                       % 设定行号格式
- frame=none,                                          % 不显示背景边框
- backgroundcolor=\color[RGB]{245,245,244},            % 设定背景颜色
- keywordstyle=\color[RGB]{40,40,255},                 % 设定关键字颜色
- numberstyle=\footnotesize\color{darkgray},           
- commentstyle=\it\color[RGB]{0,96,96},                % 设置代码注释的格式
- stringstyle=\rmfamily\slshape\color[RGB]{128,0,0},   % 设置字符串格式
- showstringspaces=false,                              % 不显示字符串中的空格
- language=tex,   
- alsolanguage=[ANSI]C, %可以添加很多个alsolanguage,如alsolanguage=matlab,alsolanguage=VHDL等
- alsolanguage=python,
- alsolanguage=java,
- alsolanguage=XML,
- alsolanguage=c++,
- alsolanguage=matlab,
+    breaklines=true, %对过长的代码自动换行
+    columns=fixed,
+    numbers=left,                                        % 在左侧显示行号
+    numberstyle=\tiny\color{gray},                       % 设定行号格式
+    frame=none,                                          % 不显示背景边框
+    backgroundcolor=\color[RGB]{245,245,244},            % 设定背景颜色
+    keywordstyle=\color[RGB]{40,40,255},                 % 设定关键字颜色
+    numberstyle=\footnotesize\color{darkgray},
+    commentstyle=\it\color[RGB]{0,96,96},                % 设置代码注释的格式
+    stringstyle=\rmfamily\slshape\color[RGB]{128,0,0},   % 设置字符串格式
+    showstringspaces=false,                              % 不显示字符串中的空格
+    language=tex,
+    alsolanguage=[ANSI]C, %可以添加很多个alsolanguage,如alsolanguage=matlab,alsolanguage=VHDL等
+    alsolanguage=python,
+    alsolanguage=java,
+    alsolanguage=XML,
+    alsolanguage=c++,
+    alsolanguage=matlab,
 }
 
 
@@ -154,7 +154,7 @@
 
 \RequirePackage{graphicx}
 \graphicspath{{figures/}{figure/}{pictures/}
-      {picture/}{pic/}{pics/}{image/}{images/}}
+        {picture/}{pic/}{pics/}{image/}{images/}}
 \RequirePackage[svgnames]{xcolor}
 
 
@@ -212,35 +212,35 @@
 \newcommand{\customcontent}{
 
     \clearpage
-{                                
-    \pagestyle{empty}           
-    \fancypagestyle{plain}
     {
-        \fancyhf{}
-        \renewcommand{\headrulewidth}{0pt}
-        \renewcommand{\footrulewidth}{0pt}
+        \pagestyle{empty}
+        \fancypagestyle{plain}
+        {
+            \fancyhf{}
+            \renewcommand{\headrulewidth}{0pt}
+            \renewcommand{\footrulewidth}{0pt}
+        }
+        \addtocontents{toc}{\protect\thispagestyle{empty}}
+        \tableofcontents
+        \thispagestyle{empty}
+
+
+        % 图表目录标题
+        \CTEXoptions[listfigurename={图\quad 目\quad 录}]
+        \CTEXoptions[listtablename={表\quad 目\quad 录}]
+
+        % 插图目录
+        \clearpage
+        \renewcommand{\numberline}[1]{\figlabel~##1\hspace*{1em}}
+        \listoffigures
+        \thispagestyle{empty}
+
+        % 表格目录
+        \clearpage
+        \renewcommand{\numberline}[1]{\tbllabel~##1\hspace*{1em}}
+        \listoftables
+        \thispagestyle{empty}
     }
-    \addtocontents{toc}{\protect\thispagestyle{empty}}
-    \tableofcontents
-    \thispagestyle{empty}
-
-
-% 图表目录标题
-\CTEXoptions[listfigurename={图\quad 目\quad 录}]
-\CTEXoptions[listtablename={表\quad 目\quad 录}]
-
-% 插图目录
-\clearpage
-\renewcommand{\numberline}[1]{\figlabel~##1\hspace*{1em}}
-\listoffigures
-\thispagestyle{empty}
-
-% 表格目录
-\clearpage
-\renewcommand{\numberline}[1]{\tbllabel~##1\hspace*{1em}}
-\listoftables
-\thispagestyle{empty}
-}
 
 }
 
@@ -304,7 +304,7 @@
 \renewcommand\cftchapdotsep{0.5}                %虚线间隔
 \renewcommand\cftdotsep{0.5}                    %虚线间隔
 % \renewcommand{\cftchapafterpnum}{\vspace{6pt}} %章节间隔 ，节前6磅
-\setlength{\cftbeforesecskip}{6pt}  
+\setlength{\cftbeforesecskip}{6pt}
 %             %章节间隔 ，节前6磅
 
 \setlength{\cftbeforechapskip}{6pt}
@@ -367,14 +367,14 @@
             \forloop{title_str_number}{1}{\value{title_str_number}<6}{%
                 \StrFindGroup{\@title}{\value{title_str_number}}[\mygroup]%
                 \IfStrEq{\mygroup}{}{}{%
-                    & {\StrFindGroup{\@title}{\value{title_str_number}}[\mygroup]\LZUunderline[320pt]{ \songti \zihao{3}\mygroup}}\\[0.40cm]%
+             & {\StrFindGroup{\@title}{\value{title_str_number}}[\mygroup]\LZUunderline[320pt]{ \songti \zihao{3}\mygroup}} \\[0.40cm]%
                 }%
             }%
             \songti\bfseries  \zihao{3} 论文题目（英文）% “论文题目（英文）”这几个字，应该是加粗（宋体加粗）
             \forloop{title_str_number}{1}{\value{title_str_number}<6}{%
                 \StrFindGroup{\the\entitle}{\value{title_str_number}}[\mygroup]%
                 \IfStrEq{\mygroup}{}{}{%
-                    & {\StrFindGroup{\the\entitle}{\value{title_str_number}}[\mygroup]\LZUunderline[320pt]{\zihao{3}\mygroup}}\\[0.40cm]%
+             & {\StrFindGroup{\the\entitle}{\value{title_str_number}}[\mygroup]\LZUunderline[320pt]{\zihao{3}\mygroup}}     \\[0.40cm]%
                 }%
             }%
         \end{tabular}
@@ -382,16 +382,16 @@
         \vspace*{60pt}
 
         \begin{tabular}{cc}
-            {\songti \zihao{3}{学生姓名}} &
-            {\LZUunderline[180pt]{ \songti \zihao{3}\@author}}\\[0.40cm]
-            {\songti \zihao{3}{指导教师}} &
+            {\songti \zihao{3}{学生姓名}}       &
+            {\LZUunderline[180pt]{ \songti \zihao{3}\@author}}       \\[0.40cm]
+            {\songti \zihao{3}{指导教师}}       &
             {\LZUunderline[180pt]{ \songti \zihao{3}  \the\advisor}} \\[0.40cm]
-            {\songti \zihao{3}{学\qquad 院}} &
+            {\songti \zihao{3}{学\qquad 院}}  &
             {\LZUunderline[180pt]{ \songti  \zihao{3} \the\college}} \\[0.40cm]
             {\songti \zihao{3} {专\hfill 业}} &
-            {\LZUunderline[180pt]{ \songti  \zihao{3} \the\major}}\\[0.40cm]
-            {\songti \zihao{3}{年\qquad 级}} &
-            {\LZUunderline[180pt]{ \songti \zihao{3}  \the\grade}}\\[0.40cm]
+            {\LZUunderline[180pt]{ \songti  \zihao{3} \the\major}}   \\[0.40cm]
+            {\songti \zihao{3}{年\qquad 级}}  &
+            {\LZUunderline[180pt]{ \songti \zihao{3}  \the\grade}}   \\[0.40cm]
         \end{tabular}
         \par
         \vspace{40pt}
@@ -411,7 +411,7 @@
     \newcommand\middlespace{0.08\textwidth}
 
     \thispagestyle{empty}
-%\cleardoublepage
+    %\cleardoublepage
     \baselineskip 22.5pt
     \parskip 0pt
 
@@ -442,7 +442,7 @@
 
     本毕业论文（设计）研究内容：
 
-% 如果不能公开，请把下面这两个置换    \done   $\square$
+    % 如果不能公开，请把下面这两个置换    \done   $\square$
     \done 可以公开
 
     $\square$  不宜公开，已在学位办公室办理保密申请，解密后适用本授权书。
@@ -471,45 +471,45 @@
 \newtoks \committeecomment
 \newtoks \finalgrade
 \newcommand{\Grade}{
-\clearpage
-\thispagestyle{empty}
-% \phantomsection
-% \addcontentsline{toc}{chapter}{毕业论文（设计）成绩}
-\begin{center}
-    \zihao{-3}\songti  % 成绩这一页整体设置，应该是加粗（宋体加粗）
-    \begin{tabularx}{\textwidth}{|X|}
-        \multicolumn{1}{c}{
-            \zihao{3} \bfseries{毕业论文（设计）成绩表}
-        } \\
-        \multicolumn{1}{c}{} \\
-        \hline
-        导师评语\\%
-        \centerline{%
+    \clearpage
+    \thispagestyle{empty}
+    % \phantomsection
+    % \addcontentsline{toc}{chapter}{毕业论文（设计）成绩}
+    \begin{center}
+        \zihao{-3}\songti  % 成绩这一页整体设置，应该是加粗（宋体加粗）
+        \begin{tabularx}{\textwidth}{|X|}
+            \multicolumn{1}{c}{
+                \zihao{3} \bfseries{毕业论文（设计）成绩表}
+            }                                                                                                   \\
+            \multicolumn{1}{c}{}                                                                                \\
+            \hline
+            导师评语                                                                                                \\%
+            \centerline{%
             \begin{minipage}[t][10cm][t]{0.92\textwidth}
-                \setlength\parindent{\ccwd}
-                \zihao{4}  \the \supervisorcomment   
-            \end{minipage}}\\
-        \zihao{4}\bfseries{建议成绩}\LZUunderline[80pt]{\the \recommendedgrade}
-        \hfill 
-        \bfseries{指导教师（签字）}\LZUunderline[80pt]{
-            \the \supervisorsignature
-        }\\
-        \hline
-        \bfseries{答辩委员会意见}\\
-        \centerline{%
-            \begin{minipage}[t][2cm][t]{0.92\textwidth}
-                \setlength\parindent{\ccwd}
-                \zihao{4} \the\committeecomment
-            \end{minipage}
-        }
-        \hfill \bfseries{答辩委员会负责人（签字）}\underline{\hspace{80pt}}\\
-        \hline
-        \\[2.3cm]
-        \bfseries{成绩}\LZUunderline[80pt]{\the \finalgrade}\hfill \bfseries{学院（盖章）}\underline{\hspace{80pt}}\\
-        \hfill{\zihao{-4}\bfseries{年}\hspace{20pt}\bfseries{月}\hspace{20pt}\bfseries{日}}\\
-        \hline
-    \end{tabularx}
-\end{center}
+                    \setlength\parindent{\ccwd}
+                    \zihao{4}  \the \supervisorcomment
+                \end{minipage}}                                                         \\
+            \zihao{4}\bfseries{建议成绩}\LZUunderline[80pt]{\the \recommendedgrade}
+            \hfill
+            \bfseries{指导教师（签字）}\LZUunderline[80pt]{
+                \the \supervisorsignature
+            }                                                                                                   \\
+            \hline
+            \bfseries{答辩委员会意见}                                                                                  \\
+            \centerline{%
+                \begin{minipage}[t][2cm][t]{0.92\textwidth}
+                    \setlength\parindent{\ccwd}
+                    \zihao{4} \the\committeecomment
+                \end{minipage}
+            }
+            \hfill \bfseries{答辩委员会负责人（签字）}\underline{\hspace{80pt}}                                             \\
+            \hline
+            \\[2.3cm]
+            \bfseries{成绩}\LZUunderline[80pt]{\the \finalgrade}\hfill \bfseries{学院（盖章）}\underline{\hspace{80pt}} \\
+            \hfill{\zihao{-4}\bfseries{年}\hspace{20pt}\bfseries{月}\hspace{20pt}\bfseries{日}}                    \\
+            \hline
+        \end{tabularx}
+    \end{center}
 }
 
 
@@ -523,65 +523,65 @@
 
 % 中文摘要以300-400字为宜。毕业论文（设计）题目字体为宋体，二号，加粗，段前24磅，段后18磅；“中文摘要”居中，字体为黑体，三号；摘要正文字体为宋体，小四号。行间距为固定值20磅。
 \newcommand{\ZhAbstract}[2]{%
-    \clearpage
-    \phantomsection
-    \addcontentsline{toc}{chapter}{中文摘要}
-    \thispagestyle{frontmatterstyle}
-    \begin{center}%
-        \setlength{\parskip}{24pt}
-        \begin{minipage}{0.8\textwidth}
-            \linespread{1.3889}
-            \centering
-            % 中文摘要标题，应该是加粗（宋体加粗）
-            \zihao{2}\bfseries\songti \noindent\@title\the\titlextra 
-        \end{minipage}
-    \end{center}%
-    \begin{center}%
-        \linespread{1}
-        \setlength{\parskip}{18pt}
-        \zihao{3}\heiti  中文摘要  
-    \end{center}%
-    %行距20磅 http://blog.sina.com.cn/s/blog_5e16f1770100ly96.html
-    \setlength{\baselineskip}{20pt} 
-    \selectfont
-    \setlength{\parskip}{0pt}
-    \vspace{10pt}
-    \par #1\\%
-    \vbox{}\\
-    % 关键词这几个字，应该是加粗（宋体加粗）
-    {\songti\bfseries 关键词：} #2
+\clearpage
+\phantomsection
+\addcontentsline{toc}{chapter}{中文摘要}
+\thispagestyle{frontmatterstyle}
+\begin{center}%
+    \setlength{\parskip}{24pt}
+    \begin{minipage}{0.8\textwidth}
+        \linespread{1.3889}
+        \centering
+        % 中文摘要标题，应该是加粗（宋体加粗）
+        \zihao{2}\bfseries\songti \noindent\@title\the\titlextra
+    \end{minipage}
+\end{center}%
+\begin{center}%
+    \linespread{1}
+    \setlength{\parskip}{18pt}
+    \zihao{3}\heiti  中文摘要
+\end{center}%
+%行距20磅 http://blog.sina.com.cn/s/blog_5e16f1770100ly96.html
+\setlength{\baselineskip}{20pt}
+\selectfont
+\setlength{\parskip}{0pt}
+\vspace{10pt}
+\par #1\\%
+\vbox{}\\
+% 关键词这几个字，应该是加粗（宋体加粗）
+{\songti\bfseries 关键词：} #2
 }
 
 % 英文摘要实际单词在300个左右，应与中文摘要内容一致。毕业论文（设计）英文题目字体为Times New Roman，二号，段前24磅，段后18磅；“英文摘要”为“Abstract”，字体为Arial，三号，加粗居中；英文摘要正文每段开头空4个字符间隙，字体为Times New Roman，小四号。行间距为固定值20磅。
 
 \newcommand{\EnAbstract}[2]{%
-    \clearpage
-    \phantomsection
-    \addcontentsline{toc}{chapter}{英文摘要}
-    \thispagestyle{frontmatterstyle}
-    \begin{center}%
-        \setlength{\parskip}{24pt}
-        \begin{minipage}{0.8\textwidth}
-            \linespread{1}
-            \selectfont
-            \centering
-            \zihao{2} \bfseries \noindent \expandafter\expandafter{\the\entitle\ \the\entitletra}%
-        \end{minipage}
-    \end{center}%
-    \begin{center}%
+\clearpage
+\phantomsection
+\addcontentsline{toc}{chapter}{英文摘要}
+\thispagestyle{frontmatterstyle}
+\begin{center}%
+    \setlength{\parskip}{24pt}
+    \begin{minipage}{0.8\textwidth}
         \linespread{1}
         \selectfont
-        \setlength{\parskip}{18pt}
-        %Linux没有这个字体，需要自己安装，或者自定义命令
-        \zihao{3}\fontspec{Arial}\bfseries Abstract
-    \end{center}%
-    \setlength{\parskip}{0pt}
-    \setlength{\baselineskip}{20pt} %行距20磅
+        \centering
+        \zihao{2} \bfseries \noindent \expandafter\expandafter{\the\entitle\ \the\entitletra}%
+    \end{minipage}
+\end{center}%
+\begin{center}%
+    \linespread{1}
     \selectfont
-    \vspace{11pt}
-    \par #1\\%
-    \vbox{}\\
-    {\bfseries Keywords:} #2
+    \setlength{\parskip}{18pt}
+    %Linux没有这个字体，需要自己安装，或者自定义命令
+    \zihao{3}\fontspec{Arial}\bfseries Abstract
+\end{center}%
+\setlength{\parskip}{0pt}
+\setlength{\baselineskip}{20pt} %行距20磅
+\selectfont
+\vspace{11pt}
+\par #1\\%
+\vbox{}\\
+{\bfseries Keywords:} #2
 }
 
 
@@ -593,7 +593,7 @@
 
 % 附录中的插图、表格、公式、参考文献等的序号需与正文区分，另行编制，如编为“图1”、“表1”、“式（1）”、“文献[1]”等。“附录”两字间空2个汉字间隙，三号字，黑体，加粗，居中，单倍行距，段前24磅，段后18磅。附录的内容为宋体，五号（英文用Times New Roman体，10.5磅），行间距为固定值20磅。
 \newcommand{\Appendix}{%
-    \cleardoublepage 
+    \cleardoublepage
     \phantomsection
     \setcounter{section}{0}
     \setcounter{chapter}{1}
@@ -607,7 +607,7 @@
 % “致谢”两字间空2个字符间隙，字体为黑体，三号字，加粗居中。单倍行距，段前24磅，段后18磅。正文部分首行缩进两个汉字符，小四号字，仿宋，行距20磅。
 
 \newcommand{\Thanks}{%
-    \cleardoublepage 
+    \cleardoublepage
     \phantomsection
     \addcontentsline{toc}{chapter}{\texorpdfstring{致\qquad 谢}{致谢}}
     \chapter*{\texorpdfstring{致\qquad 谢}{致谢}}
@@ -616,7 +616,7 @@
 
 
 \newcommand{\Intro}{%
-    \cleardoublepage 
+    \cleardoublepage
     \phantomsection
     \addcontentsline{toc}{chapter}{\texorpdfstring{绪 \quad 论}{绪论}}
     \chapter*{\texorpdfstring{绪 \quad 论}{绪论}}
@@ -701,9 +701,9 @@
 %---------------------------
 \RequirePackage{algorithm}
 \RequirePackage{algpseudocode}
-\floatname{algorithm}{算法}  
-\renewcommand{\algorithmicrequire}{\bfseries{输入:}}  
-\renewcommand{\algorithmicensure}{\bfseries{输出:}}  
+\floatname{algorithm}{算法}
+\renewcommand{\algorithmicrequire}{\bfseries{输入:}}
+\renewcommand{\algorithmicensure}{\bfseries{输出:}}
 
 
 %改变图表的编号格式
@@ -713,7 +713,7 @@
 % 图和表下方的注释为五号字，宋体，居左（英文用Times New Roman体10.5磅），单倍行距。
 
 \renewcommand{\thefigure}{\thechapter.\@arabic \c@figure}
-\renewcommand{\thetable}{\thechapter.\@arabic \c@table} 
+\renewcommand{\thetable}{\thechapter.\@arabic \c@table}
 % 图序与图名之间空1个汉字符。  
 \RequirePackage[labelsep = quad]{caption}
 % 这应该图和表单独设置，但是我都设置了6，你可以自己在插入表格时单独设定图的要求
@@ -729,7 +729,7 @@
 \newcommand{\printbib}{
     \zihao{5}
     \bibliographystyle{bib/lzubib}
-    \cleardoublepage 
+    \cleardoublepage
     \phantomsection
     \addcontentsline{toc}{chapter}{参考文献}
     \bibliography{\the \bibdatabase}
@@ -739,12 +739,12 @@
 % 修复url打乱引文格式问题，修改url字体使其符合文件规定
 \urlstyle{rm}
 \def\UrlBreaks{\do\A\do\B\do\C\do\D\do\E\do\F\do\G\do\H\do\I\do\J
-\do\K\do\L\do\M\do\N\do\O\do\P\do\Q\do\R\do\S\do\T\do\U\do\V
-\do\W\do\X\do\Y\do\Z\do\[\do\\\do\]\do\^\do\_\do\`\do\a\do\b
-\do\c\do\d\do\e\do\f\do\g\do\h\do\i\do\j\do\k\do\l\do\m\do\n
-\do\o\do\p\do\q\do\r\do\s\do\t\do\u\do\v\do\w\do\x\do\y\do\z
-\do\.\do\@\do\\\do\/\do\!\do\_\do\|\do\;\do\>\do\]\do\)\do\,
-\do\?\do\'\do+\do\=\do\#}
+    \do\K\do\L\do\M\do\N\do\O\do\P\do\Q\do\R\do\S\do\T\do\U\do\V
+    \do\W\do\X\do\Y\do\Z\do\[\do\\\do\]\do\^\do\_\do\`\do\a\do\b
+    \do\c\do\d\do\e\do\f\do\g\do\h\do\i\do\j\do\k\do\l\do\m\do\n
+    \do\o\do\p\do\q\do\r\do\s\do\t\do\u\do\v\do\w\do\x\do\y\do\z
+    \do\.\do\@\do\\\do\/\do\!\do\_\do\|\do\;\do\>\do\]\do\)\do\,
+    \do\?\do\'\do+\do\=\do\#}
 
 \endinput
 %%
