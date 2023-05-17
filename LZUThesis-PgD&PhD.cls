@@ -153,7 +153,11 @@
 %颜色宏包
 %字体宏包
 %=======package
-\RequirePackage{amsmath,amsfonts,amssymb,mathrsfs}
+\RequirePackage{amsmath}
+% \RequirePackage{amsfonts}
+% \RequirePackage{amssymb}
+\RequirePackage{mathrsfs}
+
 \RequirePackage{graphicx}
 \graphicspath{{figures/}{figure/}{pictures/}
       {picture/}{pic/}{pics/}{image/}{images/}}
