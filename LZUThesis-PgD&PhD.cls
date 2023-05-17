@@ -96,8 +96,8 @@
     $\mathring{\text{A}}$
 }
 
-    % \makebox[0pt][l]{$\square$}\raisebox{.15ex}{\hspace{0.1em}$\checkmark$}
-    % \mbox{\ooalign{$\checkmark$\cr\hidewidth$\square$\hidewidth\cr}}
+% \makebox[0pt][l]{$\square$}\raisebox{.15ex}{\hspace{0.1em}$\checkmark$}
+% \mbox{\ooalign{$\checkmark$\cr\hidewidth$\square$\hidewidth\cr}}
 
 \newcommand{\done}{ \makebox[0pt][l]{$\square$}\raisebox{.15ex}{\hspace{0.1em}$\checkmark$}}
 
@@ -126,24 +126,24 @@
 \RequirePackage{listings}
 
 \lstset{
- breaklines=true, %对过长的代码自动换行
- columns=fixed,
- numbers=left,                                        % 在左侧显示行号
- numberstyle=\tiny\color{gray},                       % 设定行号格式
- frame=none,                                          % 不显示背景边框
- backgroundcolor=\color[RGB]{245,245,244},            % 设定背景颜色
- keywordstyle=\color[RGB]{40,40,255},                 % 设定关键字颜色
- numberstyle=\footnotesize\color{darkgray},
- commentstyle=\it\color[RGB]{0,96,96},                % 设置代码注释的格式
- stringstyle=\rmfamily\slshape\color[RGB]{128,0,0},   % 设置字符串格式
- showstringspaces=false,                              % 不显示字符串中的空格
- language=tex,
- alsolanguage=[ANSI]C, %可以添加很多个alsolanguage,如alsolanguage=matlab,alsolanguage=VHDL等
- alsolanguage=python,
- alsolanguage=java,
- alsolanguage=XML,
- alsolanguage=c++,
- alsolanguage=matlab,
+    breaklines=true, %对过长的代码自动换行
+    columns=fixed,
+    numbers=left,                                        % 在左侧显示行号
+    numberstyle=\tiny\color{gray},                       % 设定行号格式
+    frame=none,                                          % 不显示背景边框
+    backgroundcolor=\color[RGB]{245,245,244},            % 设定背景颜色
+    keywordstyle=\color[RGB]{40,40,255},                 % 设定关键字颜色
+    numberstyle=\footnotesize\color{darkgray},
+    commentstyle=\it\color[RGB]{0,96,96},                % 设置代码注释的格式
+    stringstyle=\rmfamily\slshape\color[RGB]{128,0,0},   % 设置字符串格式
+    showstringspaces=false,                              % 不显示字符串中的空格
+    language=tex,
+    alsolanguage=[ANSI]C, %可以添加很多个alsolanguage,如alsolanguage=matlab,alsolanguage=VHDL等
+    alsolanguage=python,
+    alsolanguage=java,
+    alsolanguage=XML,
+    alsolanguage=c++,
+    alsolanguage=matlab,
 }
 
 
@@ -160,7 +160,7 @@
 
 \RequirePackage{graphicx}
 \graphicspath{{figures/}{figure/}{pictures/}
-      {picture/}{pic/}{pics/}{image/}{images/}}
+        {picture/}{pic/}{pics/}{image/}{images/}}
 \RequirePackage[svgnames]{xcolor}
 
 
@@ -219,7 +219,7 @@
 
 % 自定义目录
 \newcommand{\customcontent}{
-  % 常规目录
+    % 常规目录
     \tableofcontents
 
     % 图表目录标题
@@ -355,11 +355,11 @@
     \cleardoublepage
     \thispagestyle{empty}
     \begin{flushleft}
-      {\zihao{5}\heiti 学校代码：\the\schoolcode}
-      \hspace{260pt}
-      {\zihao{5}\heiti 密级：\the\secret}
+        {\zihao{5}\heiti 学校代码：\the\schoolcode}
+        \hspace{260pt}
+        {\zihao{5}\heiti 密级：\the\secret}
 
-      {\zihao{5}\heiti \quad 分类号：\the\cid}
+        {\zihao{5}\heiti \quad 分类号：\the\cid}
     \end{flushleft}
 
     \begin{center}
@@ -386,33 +386,33 @@
             \forloop{title_str_number}{1}{\value{title_str_number}<6}{%
                 \StrFindGroup{\@title}{\value{title_str_number}}[\mygroup]%
                 \IfStrEq{\mygroup}{}{}{%
-                    & {\StrFindGroup{\@title}{\value{title_str_number}}[\mygroup]\LZUunderline[320pt]{ \bfseries\songti \zihao{3}\mygroup}}\\[0.40cm]%
+                                                                     & {\StrFindGroup{\@title}{\value{title_str_number}}[\mygroup]\LZUunderline[320pt]{ \bfseries\songti \zihao{3}\mygroup}} \\[0.40cm]%
                 }%
             }%
             \bfseries\songti  \zihao{4} 论文题目（外文）% “论文题目（英文）”这几个字，应该是加粗（宋体加粗）
             \forloop{title_str_number}{1}{\value{title_str_number}<6}{%
                 \StrFindGroup{\the\entitle}{\value{title_str_number}}[\mygroup]%
                 \IfStrEq{\mygroup}{}{}{%
-                    & {\StrFindGroup{\the\entitle}{\value{title_str_number}}[\mygroup]\LZUunderline[320pt]{\zihao{3}\bfseries\mygroup}}\\[0.40cm]%
+                                                                     & {\StrFindGroup{\the\entitle}{\value{title_str_number}}[\mygroup]\LZUunderline[320pt]{\zihao{3}\bfseries\mygroup}}     \\[0.40cm]%
                 }%
             }%
             % “学生姓名等、指导教师、……”这几个字，应该是加粗（宋体加粗）
-            {\bfseries\songti \zihao{4}{作\hfill 者\hfill 姓\hfill 名}} &
-            {\LZUunderline[320pt]{ \bfseries\songti \zihao{-3}\@author}}\\[0.40cm]
+            {\bfseries\songti \zihao{4}{作\hfill 者\hfill 姓\hfill 名}}  &
+            {\LZUunderline[320pt]{ \bfseries\songti \zihao{-3}\@author}}                                                                                                                     \\[0.40cm]
             {\bfseries\songti \zihao{4} {学\hfill 科\hfill 专\hfill 业}} &
-            {\LZUunderline[320pt]{ \bfseries\songti \zihao{-3}\the\major}} \\[0.40cm]
-            {\bfseries\songti \zihao{4}{研\hfill 究\hfill 方\hfill 向}} &
-            {\LZUunderline[320pt]{ \bfseries\songti \zihao{-3}  \the\research}} \\[0.40cm]
-            {\bfseries\songti \zihao{4}{教\hfill 育\hfill 类\hfill 型}} &
-            {\LZUunderline[320pt]{ \bfseries\songti \zihao{-3}  \the\education}} \\[0.40cm]
-            {\bfseries\songti \zihao{4}{指\hfill 导\hfill 教\hfill 师}} &
-            {\LZUunderline[320pt]{ \bfseries\songti \zihao{-3}  \the\advisor}} \\[0.40cm]
-            {\bfseries\songti \zihao{4}{合\hfill 作\hfill 导\hfill 师}} &
-            {\LZUunderline[320pt]{ \bfseries\songti \zihao{-3}  \the\codvisor}} \\[0.40cm]
-            {\bfseries\songti \zihao{4}{论文工作时间段}} &
-            {\LZUunderline[320pt]{ \bfseries\songti \zihao{-3}  \the\elapse}} \\[0.40cm]
-            {\bfseries\songti \zihao{4}{答\hfill 辩\hfill 日\hfill 期}} &
-            {\LZUunderline[320pt]{ \bfseries\songti \zihao{-3}  \the\defense}} \\[0.40cm]
+            {\LZUunderline[320pt]{ \bfseries\songti \zihao{-3}\the\major}}                                                                                                                   \\[0.40cm]
+            {\bfseries\songti \zihao{4}{研\hfill 究\hfill 方\hfill 向}}  &
+            {\LZUunderline[320pt]{ \bfseries\songti \zihao{-3}  \the\research}}                                                                                                              \\[0.40cm]
+            {\bfseries\songti \zihao{4}{教\hfill 育\hfill 类\hfill 型}}  &
+            {\LZUunderline[320pt]{ \bfseries\songti \zihao{-3}  \the\education}}                                                                                                             \\[0.40cm]
+            {\bfseries\songti \zihao{4}{指\hfill 导\hfill 教\hfill 师}}  &
+            {\LZUunderline[320pt]{ \bfseries\songti \zihao{-3}  \the\advisor}}                                                                                                               \\[0.40cm]
+            {\bfseries\songti \zihao{4}{合\hfill 作\hfill 导\hfill 师}}  &
+            {\LZUunderline[320pt]{ \bfseries\songti \zihao{-3}  \the\codvisor}}                                                                                                              \\[0.40cm]
+            {\bfseries\songti \zihao{4}{论文工作时间段}}                    &
+            {\LZUunderline[320pt]{ \bfseries\songti \zihao{-3}  \the\elapse}}                                                                                                                \\[0.40cm]
+            {\bfseries\songti \zihao{4}{答\hfill 辩\hfill 日\hfill 期}}  &
+            {\LZUunderline[320pt]{ \bfseries\songti \zihao{-3}  \the\defense}}                                                                                                               \\[0.40cm]
         \end{tabular}
         \par
         \vspace{20pt}
@@ -432,7 +432,7 @@
     \newcommand\middlespace{0.08\textwidth}
 
     \thispagestyle{empty}
-%\cleardoublepage
+    %\cleardoublepage
     \baselineskip 22.5pt
     \parskip 0pt
 
@@ -464,7 +464,7 @@
     本学位论文研究内容：
 
 
-% 如果不能公开，请把下面这两个置换    \done   $\square$
+    % 如果不能公开，请把下面这两个置换    \done   $\square$
     \done 可以公开
 
     $\square$  不宜公开，已在学位办公室办理保密申请，解密后适用本授权书。
@@ -498,33 +498,33 @@
 % （4）摘要内容后下空1行，行距20磅，段前段后0磅。
 % （5）摘要内容后为“关键词”，小四号字，宋体，行距20磅，段前段后0磅，“关键词”三字加粗。关键词数量为3-5个，词与词间用逗号隔开。
 \newcommand{\ZhAbstract}[2]{%
-    \clearpage
-    \phantomsection
-    \addcontentsline{toc}{chapter}{中文摘要}
-    \thispagestyle{frontmatterstyle}
-    \begin{center}%
-        \setlength{\parskip}{24pt}
-        \begin{minipage}{0.8\textwidth}
-            \linespread{1.3889}
-            \centering
-            % 中文摘要标题，应该是加粗（黑体加粗）
-            \zihao{3}\bfseries\heiti \noindent\@title\the\titlextra
-        \end{minipage}
-    \end{center}%
-    \begin{center}%
-        \linespread{1}
-        \setlength{\parskip}{24pt}
-        \zihao{3}\bfseries\heiti   中文摘要
-    \end{center}%
-    %行距20磅 http://blog.sina.com.cn/s/blog_5e16f1770100ly96.html
-    \setlength{\baselineskip}{20pt}
-    \selectfont
-    \setlength{\parskip}{0pt}
-    \vspace{10pt}
-    \par #1\\%
-    \vbox{}\\
-    % 关键词这几个字，应该是加粗（宋体加粗）
-   {\bfseries\songti \indent 关键词：} #2
+\clearpage
+\phantomsection
+\addcontentsline{toc}{chapter}{中文摘要}
+\thispagestyle{frontmatterstyle}
+\begin{center}%
+    \setlength{\parskip}{24pt}
+    \begin{minipage}{0.8\textwidth}
+        \linespread{1.3889}
+        \centering
+        % 中文摘要标题，应该是加粗（黑体加粗）
+        \zihao{3}\bfseries\heiti \noindent\@title\the\titlextra
+    \end{minipage}
+\end{center}%
+\begin{center}%
+    \linespread{1}
+    \setlength{\parskip}{24pt}
+    \zihao{3}\bfseries\heiti   中文摘要
+\end{center}%
+%行距20磅 http://blog.sina.com.cn/s/blog_5e16f1770100ly96.html
+\setlength{\baselineskip}{20pt}
+\selectfont
+\setlength{\parskip}{0pt}
+\vspace{10pt}
+\par #1\\%
+\vbox{}\\
+% 关键词这几个字，应该是加粗（宋体加粗）
+{\bfseries\songti \indent 关键词：} #2
 }
 
 % 2.英文摘要
@@ -535,32 +535,32 @@
 % （5）摘要内容后为“Keywords”，12磅，行距20磅，段前段后0磅。“Keywords”加粗。
 
 \newcommand{\EnAbstract}[2]{%
-    \clearpage
-    \phantomsection
-    \addcontentsline{toc}{chapter}{Abstract}
-    \thispagestyle{frontmatterstyle}
-    \begin{center}%
-        \setlength{\parskip}{24pt}
-        \begin{minipage}{0.8\textwidth}
-            \linespread{1}
-            \selectfont
-            \centering
-            \zihao{3} \bfseries \noindent \expandafter\MakeUppercase\expandafter{\the\entitle\ \the\entitletra}%
-        \end{minipage}
-    \end{center}%
-    \begin{center}%
+\clearpage
+\phantomsection
+\addcontentsline{toc}{chapter}{Abstract}
+\thispagestyle{frontmatterstyle}
+\begin{center}%
+    \setlength{\parskip}{24pt}
+    \begin{minipage}{0.8\textwidth}
         \linespread{1}
         \selectfont
-        \setlength{\parskip}{18pt}
-        \zihao{3}\fontspec{Arial}\bfseries Abstract %Linux没有这个字体，需要自己安装，或者自定义命令
-    \end{center}%
-    \setlength{\parskip}{0pt}
-    \setlength{\baselineskip}{20pt} %行距20磅
+        \centering
+        \zihao{3} \bfseries \noindent \expandafter\MakeUppercase\expandafter{\the\entitle\ \the\entitletra}%
+    \end{minipage}
+\end{center}%
+\begin{center}%
+    \linespread{1}
     \selectfont
-    \vspace{11pt}
-    \par #1\\%
-    \vbox{}\\
-    {\bfseries \indent Keywords:} #2
+    \setlength{\parskip}{18pt}
+    \zihao{3}\fontspec{Arial}\bfseries Abstract %Linux没有这个字体，需要自己安装，或者自定义命令
+\end{center}%
+\setlength{\parskip}{0pt}
+\setlength{\baselineskip}{20pt} %行距20磅
+\selectfont
+\vspace{11pt}
+\par #1\\%
+\vbox{}\\
+{\bfseries \indent Keywords:} #2
 }
 
 
@@ -642,9 +642,9 @@
 %---------------------------
 \RequirePackage{algorithm}
 \RequirePackage{algpseudocode}
-\floatname{algorithm}{算法}  
-\renewcommand{\algorithmicrequire}{\bfseries{输入:}}  
-\renewcommand{\algorithmicensure}{\bfseries{输出:}}  
+\floatname{algorithm}{算法}
+\renewcommand{\algorithmicrequire}{\bfseries{输入:}}
+\renewcommand{\algorithmicensure}{\bfseries{输出:}}
 
 
 %改变图表的编号格式
@@ -764,46 +764,46 @@
 \newtoks \finalgrade
 \newcommand{\Grade}{
 
-\cleardoublepage
-\phantomsection
-\setcounter{section}{0}
-\setcounter{chapter}{1}
-\addcontentsline{toc}{chapter}{论文（设计）成绩}
+    \cleardoublepage
+    \phantomsection
+    \setcounter{section}{0}
+    \setcounter{chapter}{1}
+    \addcontentsline{toc}{chapter}{论文（设计）成绩}
 
-\begin{center}
-    \zihao{-3}\bfseries\songti  % 成绩这一页整体设置，应该是加粗（宋体加粗）
-    \begin{tabularx}{\textwidth}{|X|}
-        \multicolumn{1}{c}{
-            \zihao{3}\heiti\mdseries {论文（设计）成绩表}
-        } \\
-        \hline
-        导师评语\\%
-        \centerline{%
+    \begin{center}
+        \zihao{-3}\bfseries\songti  % 成绩这一页整体设置，应该是加粗（宋体加粗）
+        \begin{tabularx}{\textwidth}{|X|}
+            \multicolumn{1}{c}{
+                \zihao{3}\heiti\mdseries {论文（设计）成绩表}
+            }                                                                             \\
+            \hline
+            导师评语                                                                          \\%
+            \centerline{%
             \begin{minipage}[t][10cm][t]{0.92\textwidth}
-                \setlength\parindent{\ccwd}
-                \zihao{4} \mdseries \the \supervisorcomment
-            \end{minipage}}\\
-        \zihao{4}{建议成绩}\LZUunderline[80pt]{\the \recommendedgrade}
-        \hfill
-        指导教师（签字）\LZUunderline[80pt]{
-            \the \supervisorsignature
-        }\\
-        \hline
-        答辩小组意见\\
-        \centerline{%
-            \begin{minipage}[t][2cm][t]{0.92\textwidth}
-                \setlength\parindent{\ccwd}
-                \zihao{-4} \the\committeecomment
-            \end{minipage}
-        }
-        \hfill 答辩委员会负责人（签字）\underline{\hspace{80pt}}\\
-        \hline
-        \\[2.3cm]
-        成绩\LZUunderline[80pt]{\the \finalgrade}\hfill 学院（盖章）\underline{\hspace{80pt}}\\
-        \hfill{\zihao{-4}年\hspace{20pt}月\hspace{20pt}日}\\
-        \hline
-    \end{tabularx}
-\end{center}
+                    \setlength\parindent{\ccwd}
+                    \zihao{4} \mdseries \the \supervisorcomment
+                \end{minipage}}                                   \\
+            \zihao{4}{建议成绩}\LZUunderline[80pt]{\the \recommendedgrade}
+            \hfill
+            指导教师（签字）\LZUunderline[80pt]{
+                \the \supervisorsignature
+            }                                                                             \\
+            \hline
+            答辩小组意见                                                                        \\
+            \centerline{%
+                \begin{minipage}[t][2cm][t]{0.92\textwidth}
+                    \setlength\parindent{\ccwd}
+                    \zihao{-4} \the\committeecomment
+                \end{minipage}
+            }
+            \hfill 答辩委员会负责人（签字）\underline{\hspace{80pt}}                                  \\
+            \hline
+            \\[2.3cm]
+            成绩\LZUunderline[80pt]{\the \finalgrade}\hfill 学院（盖章）\underline{\hspace{80pt}} \\
+            \hfill{\zihao{-4}年\hspace{20pt}月\hspace{20pt}日}                               \\
+            \hline
+        \end{tabularx}
+    \end{center}
 }
 
 
