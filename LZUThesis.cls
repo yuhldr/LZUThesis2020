@@ -1,5 +1,5 @@
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesClass{LZUThesis}[2023/03/21 V3.3.0 Thesis for LZUer By yuhldr]
+\ProvidesClass{LZUThesis}[2023/05/19 V3.5.0.2023 Thesis for LZUer By yuhldr]
 \LoadClass[12pt, a4paper, UTF8, openany,oneside]{ctexbook}
 
 % 部分内容参考了https://github.com/suchot/LZUThesis2017，
