@@ -1,7 +1,17 @@
 
 # 更新日志
 
-- 页眉页脚紧贴下边缘问题
+> 不一定是这一天更新的，只是这一天我想起来在这里补充了，更多请查看 `git history`
+
+## 2023.5.19
+
+- feat: 中文参考文献支持 `language = {zh},`
+- fix: 参考文献期刊名不再使用强调字体
+- fix: 本科生目录页过多时编码问题：[gitee](https://gitee.com/yuhldr/LZUThesis2020/issues/I73ZGA)；研究所生目录页要求接着罗马编码，所以不影响
+- fix: 支持数学特殊符号 `\hbar`
+- feat: 添加专业术语表示例：[github](https://github.com/yuhldr/LZUThesis2020/issues/20)
+- fix: `绪论` 两个字之间只要一个空格
+- fix: 页眉页脚紧贴下边缘问题：[github](https://github.com/yuhldr/LZUThesis2020/issues/21)
 
 ## 2023.3.28
 
