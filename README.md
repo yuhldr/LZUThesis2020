@@ -2,7 +2,7 @@
 
 # 兰州大学毕业论文LaTeX模板
 
-- 本科：2021正式开始使用新版毕业论文规范，[详情点我](http://jwc.lzu.edu.cn/lzupage/2021/02/25/N20210225145827.html)，此模板已经全面适配
+- 本科：2023正式开始使用新版毕业论文规范，[详情点我](http://jwc.lzu.edu.cn/lzupage/2023/03/06/N20230306160525.html)，此模板已经全面适配
 - 研究生：2023新标准，[兰州大学博士硕士学位论文写作格式示例.PDF](https://ge.lzu.edu.cn/xiazaizhuanqu/xuewei/2023/0328/210732.html)
 
 ## 特点
@@ -29,7 +29,7 @@
 
 ## 项目主要文件
 
-本项目精简了文件，只有 `LZUThesis.cls` 和 `bib`、`figure` 文件夹是必须的
+本项目精简了文件，只有 `*.cls` 和 `bib`、`figure` 文件夹是必须的
 
 - [bib](bib) 文件夹里，[database.bib](bib/database.bib) 是用来放你的参考文献的，可以修改；[lzubib.bst](bib/lzubib.bst)是参考文献配置文件，小白请千万不要更改；
 
@@ -58,6 +58,6 @@
 --------
 
 
-建议你用 `git` 管理毕业论文，每天写完以后就提交到gitee（速度比github快无数倍）上！！！不然不小心删除了或者中病毒了什么的，就。。。
+建议你用 `git` 管理毕业论文，每天写完以后就提交到gitee上（速度比github快无数倍）！！！不然不小心删除了或者中病毒了什么的，就。。。
 
 更多LaTex模板资源可以去：[latexstudio](https://www.latexstudio.net)，资源和一些教程确实不错
