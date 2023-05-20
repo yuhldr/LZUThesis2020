@@ -18,7 +18,7 @@ bks:
 	cp template.tex build/bks/
 	cp LZUThesis.cls build/bks/
 
-	cd build && mv bks bks_${VERSION}_${FILE_DATE} && zip -r ../disk/bks.zip bks_${VERSION}_${FILE_DATE}
+	cd build && mv bks 本科生_${VERSION}_${FILE_DATE} && zip -r ../disk/bks.zip 本科生_${VERSION}_${FILE_DATE}
 
 	ls -l disk/
 
@@ -35,7 +35,7 @@ yjs:
 	cp template-PgD\&PhD.tex build/yjs/template.tex
 	cp LZUThesis-PgD\&PhD.cls build/yjs/
 
-	cd build && mv yjs yjs_${VERSION}_${FILE_DATE} && zip -r ../disk/yjs.zip yjs_${VERSION}_${FILE_DATE}
+	cd build && mv yjs 研究生_${VERSION}_${FILE_DATE} && zip -r ../disk/yjs.zip 研究生_${VERSION}_${FILE_DATE}
 
 	ls -l disk/
 
