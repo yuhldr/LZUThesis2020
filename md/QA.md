@@ -132,6 +132,10 @@ language = {中文},
 
 ## 其他
 
+## 签名没有对齐
+
+- [见 Issue](https://gitee.com/yuhldr/LZUThesis2020/issues/I77IDC#note_18273533)
+
 ## chapter间距问题
 
 - [讨论1](https://github.com/yuhldr/LZUThesis2020/issues/7)
