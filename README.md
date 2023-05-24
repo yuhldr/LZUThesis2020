@@ -45,6 +45,12 @@
 
 --------
 
+## 代码贡献说明
+
+[PR说明](md/CONTRIBUTE.md)
+
+
+
 ## 其他
 
 简单做了两个答辩 `latex` 的 PPT模板：[这里](md/OTHER.md)
