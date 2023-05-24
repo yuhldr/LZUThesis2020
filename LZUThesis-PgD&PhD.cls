@@ -707,7 +707,7 @@
     \cleardoublepage
     \phantomsection
     \setcounter{section}{0}
-    \setcounter{chapter}{1}
+    \stepcounter{chapter}
     \renewcommand{\thechapter}{A}%
     \addcontentsline{toc}{chapter}{\texorpdfstring{附 \qquad 录}{附录}}
     \chapter*{附 \qquad 录}
