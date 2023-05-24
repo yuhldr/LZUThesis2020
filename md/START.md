@@ -1,7 +1,26 @@
 # 从0配置
 
-据说这个网站：[overleaf](https://cn.overleaf.com/) 挺好用（记得在菜单里把编译方式改成 `xelatex`！！不要动不动就说模板是坏的……），可以直接直接上传这个模板，在线使用。如果你就这一次用LaTex，以后都不需要了，可以试一下，但是如果你还上研究生要发文章，还是按照下面的本地安装一下吧
+> 注意！！最后一次编译前，请返回 [项目这里](https://github.com/yuhldr/LZUThesis2020/releases)，**更新** 到最新的模板，一般只需要更新 `*.cls` 文件即可、部分时候需要更新 `bib/lzubib.bst`，详细变化请查看 [更新说明](CHANGELOG.md)
 
+ 所以平时不要轻易修改这两个文件，有问题来 [issue](https://github.com/yuhldr/LZUThesis2020/issues/new/choose) 反馈、或提交 [PR](https://github.com/yuhldr/LZUThesis2020/pulls)
+
+## 方法一
+
+> 如果你就这一次用LaTex，以后都不需要了，可以试一下，但是如果你还上研究生要发文章，还是按照 [方法二](#方法二) 本地安装一下吧
+
+1. 打开 [overleaf](https://cn.overleaf.com/) 网站
+2. [点我](https://github.com/yuhldr/LZUThesis2020/releases/tag/%E8%87%AA%E5%8A%A8%E6%89%93%E5%8C%85) 下载压缩包、然后在 [overleaf](https://cn.overleaf.com/) 这个网站上传
+    
+    依次点击：`创建新项目 - 上传项目`（直接上传刚才下载的压缩包即可）
+
+3. 修改编译方式
+
+   左上角 `菜单` 里把 `设置-编译器` 里的 `pdfLatex` 改成 `xelatex`！！
+
+
+## 方法二
+
+> 数据在本地，自由度更高、安全性更高
 
 用 `LaTex` 需要安装什么，需要安装 `texlive`，外加一个 `IDE`（比如 `vscode`）
 1. 安装 `texlive`
@@ -13,7 +32,7 @@
 
 -----
 
-## texlive安装
+### texlive安装
 
 已经出2022了，2023也快了，一般四月份，别更新，我不一定会去适配 `texlive2023`，可以用兰大的镜像下载应该在用校园网时快一些，额，你还是用清华的镜像吧，我刚才找了一下，兰大镜像这会儿竟然挂了。。。
 
@@ -29,7 +48,7 @@
 - 不要解压，`iso`文件直接挂载
 - 有些电脑安装极慢，甚至一个多小时。。。
 
-## 测试是否安装成功
+### 测试是否安装成功
 
 `终端` （windows10指的是 `powershell`）输入 `latex`，如果可以看到
 
@@ -41,7 +60,7 @@ This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded forma
 
 说明成功
 
-## 编译器选择
+### 编译器选择
 
 用vscode吧，配置很简单
 
