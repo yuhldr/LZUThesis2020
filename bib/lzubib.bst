@@ -949,36 +949,38 @@ FUNCTION {incollection}
   fin.entry
 }
 
+
 FUNCTION {inproceedings}
 { output.bibitem
   format.authors "author" output.check
   new.block
   format.title "[C]" * "title" output.check
   new.block
-  format.address.publisher output
-  new.block
   crossref missing$
-    { 
-      address empty$
-    { 
-      year output
-    }
-    { 
-      year output
-      new.sentence
-      %publisher output
-    }
-      if$
-      new.block
+    { format.in.ed.booktitle "booktitle" output.check
+      format.bvolume output
+      format.number.series output
       format.pages output
-      %remove.dots
+      address empty$
+        { organization publisher new.sentence.checkb
+          organization output
+          publisher output
+          format.date "year" output.check
+        }
+        { address output.nonnull
+          format.date "year" output.check
+          new.sentence
+          organization output
+          publisher output
+        }
+      if$
     }
     { format.incoll.inproc.crossref output.nonnull
       format.pages output
     }
   if$
   new.block
-  format.note output  
+  note output
   fin.entry
 }
 
