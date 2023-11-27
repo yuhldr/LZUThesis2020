@@ -41,3 +41,9 @@ yjs:
 
 
 all: clear yjs bks
+
+push:
+	git tag -d 自动打包
+	git tag 自动打包
+	git push -u origin_github --tags -f
+	git push -u origin --tags -f
