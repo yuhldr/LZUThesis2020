@@ -565,12 +565,12 @@ FUNCTION {format.in.ed.booktitle}
     { "" }
     { editor empty$
     { lang empty$
-        { "Proceedings of " booktitle * }
+        { "In " booktitle * }
         { " " booktitle * }
       if$
     }
     { lang empty$
-        { collection.in format.editors * ". Proceedings of " * booktitle * }
+        { collection.in format.editors * ". In " * booktitle * }
         { collection.in format.editors * ". " * booktitle * }
       if$
     }
