@@ -678,17 +678,16 @@
 %参考文献
 %=======%
 %著录项目和著录格式遵照《信息与文献参考文献著录规则》（GB/T 7714－2015）的规定执行。
-% \RequirePackage{gbt7714}
+\RequirePackage{gbt7714}
 \newtoks\bibdatabase
 \newcommand{\printbib}{
     \zihao{5}
     % 这三种自己选择，因为
     % 2020官网这里，要求gbt7714：https://ge.lzu.edu.cn/xueweishouyu/guizhangzhidu/lunwenguanli/2020/1223/158947.html
-    % \bibliographystyle{gbt7714-numerical}
-    % \bibliographystyle{gbt7714-author-year}
+    \bibliographystyle{gbt7714-numerical}
     % 2023官网这里要求：https://ge.lzu.edu.cn/xiazaizhuanqu/xuewei/2023/0328/210732.html
     % 要求，只是示例没写要求，但是英文参考文献作者没大写（大写太丑了）
-    \bibliographystyle{bib/lzubib}
+    % \bibliographystyle{bib/lzubib}
     \cleardoublepage
     \phantomsection
     \addcontentsline{toc}{chapter}{参考文献}

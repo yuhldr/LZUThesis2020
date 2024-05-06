@@ -735,10 +735,12 @@
 %%=======%
 %参考文献
 %=======%
+\RequirePackage{gbt7714}
 \newtoks\bibdatabase
 \newcommand{\printbib}{
     \zihao{5}
-    \bibliographystyle{bib/lzubib}
+    \bibliographystyle{gbt7714-numerical}
+    % \bibliographystyle{bib/lzubib}
     \cleardoublepage
     \phantomsection
     \addcontentsline{toc}{chapter}{参考文献}
