@@ -63,6 +63,10 @@ V2.1.3以及以后的版本，为了让英文字体完全与Times New Roman字�
 
 ### 研究生论文参考文献丑
 
+现在默认使用 `gbt7714` 格式，如果还恢复自定义的格式，在cls文件中搜索 `bibliographystyle` 注释掉 `\bibliographystyle{gbt7714-numerical}` 这一行，取消注释 `\bibliographystyle{bib/lzubib}` 这一行即可
+
+> 注意，自定义格式，涉及到专利、会议论文等特殊格式，有问题
+
 - [见讨论：最后几句](https://github.com/yuhldr/LZUThesis2020/issues/15)
 - [官方参考文献要求的是GBT7714](https://ge.lzu.edu.cn/xueweishouyu/guizhangzhidu/lunwenguanli/2020/1223/158947.html)
 - [GBT7714](http://www.cessp.org.cn/a258.html)
