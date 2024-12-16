@@ -204,9 +204,6 @@
 \RequirePackage{tablefootnote}
 % 可以换页的表格
 \RequirePackage{longtable}
-% 连续参考文献横杠连接
-\RequirePackage{cite}
-\newcommand{\upcite}[1]{\textsuperscript{\cite{#1}}}
 
 
 % 学位论文页码的摘要页和目录页用罗马数字单独编连续码，正文和后置部分用阿拉伯数字、新罗马数字体编连续码，页码排在页脚居中位置。

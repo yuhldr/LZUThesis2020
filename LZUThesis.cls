@@ -207,9 +207,6 @@
 \RequirePackage{tablefootnote}
 % 可以换页的表格
 \RequirePackage{longtable}
-% 连续参考文献横杠连接
-\RequirePackage{cite}
-\newcommand{\upcite}[1]{\textsuperscript{\cite{#1}}}
 
 
 % 3.图或表的目录。图和表应有序号，序号与名称之间空1个字符间隙，并与正文保持一致。“图/表目录”三个字字体为黑体，三号，居中；标题字体为宋体，四号，如“图1.1本科生总体数据分析”。标题文字居左，页码居右，之间用连续点连接。
