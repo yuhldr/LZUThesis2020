@@ -148,7 +148,9 @@ This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded forma
 
 ### 参考文献右上角
 
-可以使用 `\upcite{}` 命令，已经自定义了
+> 已经默认如此
+
+~~可以使用 `\upcite{}` 命令，已经自定义了~~
 
 
 ## 高级操作

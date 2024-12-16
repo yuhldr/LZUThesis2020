@@ -1,4 +1,4 @@
-VERSION = 3.5.0.2023
+VERSION = 3.5.1.2024
 FILE_DATE = `date +%Y-%m-%d`
 
 clear:
@@ -41,6 +41,12 @@ yjs:
 
 
 all: clear yjs bks
+
+
+test: all
+	cd build/本科生_${VERSION}_${FILE_DATE} && xelatex template.tex bibtex template.tex xelatex template.tex xelatex template.tex
+	cd build/研究生_${VERSION}_${FILE_DATE} && xelatex template.tex bibtex template.tex xelatex template.tex xelatex template.tex
+
 
 push:
 	git tag -d 自动打包
