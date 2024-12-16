@@ -223,8 +223,10 @@
     \tableofcontents
 
     % 图表目录标题
-    \CTEXoptions[listfigurename={图\quad 目\quad 录}]
-    \CTEXoptions[listtablename={表\quad 目\quad 录}]
+    \ctexset{
+        listfigurename = {图\quad 目\quad 录},
+        listtablename = {表\quad 目\quad 录}
+    }
 
     % 插图目录
     \renewcommand{\numberline}[1]{\figlabel~##1\hspace*{1em}}
