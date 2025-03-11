@@ -1,5 +1,5 @@
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesClass{LZUThesis}[2023/05/19 V3.5.0.2023 Thesis for LZUer By yuhldr]
+\ProvidesClass{LZUThesis}[2025/03/11 V4.0.0.2025 Thesis for LZUer By yuhldr]
 \LoadClass[12pt, a4paper, UTF8, openany,oneside]{ctexbook}
 
 % 部分内容参考了https://github.com/suchot/LZUThesis2017，
@@ -734,28 +734,21 @@
 %%=======%
 %参考文献
 %=======%
-\RequirePackage{gbt7714}
-\newtoks\bibdatabase
+\newtoks\bibdatabase % 暂时不删除，防止不兼容之前的版本
+
+%著录项目和著录格式遵照《信息与文献参考文献著录规则》（GB/T 7714－2015）的规定执行。
+% https://github.com/hushidong/biblatex-gb7714-2015
+% 其实严格来说gb7714-2015不应该设置gbnamefmt=lowercase，但是太多老师、学院觉得作者全大写丑
+\RequirePackage[backend=biber, style=gb7714-2015, gbnamefmt=lowercase]{biblatex}
+\addbibresource{database.bib}
 \newcommand{\printbib}{
     \zihao{5}
-    \bibliographystyle{gbt7714-numerical}
-    % \bibliographystyle{bib/lzubib}
     \cleardoublepage
     \phantomsection
     \addcontentsline{toc}{chapter}{参考文献}
-    \bibliography{\the \bibdatabase}
+    \printbibliography
 }
 
-
-% 修复url打乱引文格式问题，修改url字体使其符合文件规定
-\urlstyle{rm}
-\def\UrlBreaks{\do\A\do\B\do\C\do\D\do\E\do\F\do\G\do\H\do\I\do\J
-    \do\K\do\L\do\M\do\N\do\O\do\P\do\Q\do\R\do\S\do\T\do\U\do\V
-    \do\W\do\X\do\Y\do\Z\do\[\do\\\do\]\do\^\do\_\do\`\do\a\do\b
-    \do\c\do\d\do\e\do\f\do\g\do\h\do\i\do\j\do\k\do\l\do\m\do\n
-    \do\o\do\p\do\q\do\r\do\s\do\t\do\u\do\v\do\w\do\x\do\y\do\z
-    \do\.\do\@\do\\\do\/\do\!\do\_\do\|\do\;\do\>\do\]\do\)\do\,
-    \do\?\do\'\do+\do\=\do\#}
 
 \endinput
 %%

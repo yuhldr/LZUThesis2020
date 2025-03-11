@@ -1,5 +1,5 @@
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesClass{LZUThesis-PgD&PhD}[2023/05/19 V3.5.0.2023 Thesis for LZUer PgD&PhD By yuhldr Use 2023 standard]
+\ProvidesClass{LZUThesis-PgD&PhD}[2025/03/11 V4.0.0.2025 Thesis for LZUer PgD&PhD By yuhldr Use 2023 standard]
 \LoadClass[12pt, a4paper, UTF8, openany,oneside]{ctexbook}
 
 % 兰州大学研究生学位论文写作参考规范 https://ge.lzu.edu.cn/xueweishouyu/guizhangzhidu/lunwenguanli/2020/1223/158947.html
@@ -676,21 +676,19 @@
 %%=======%
 %参考文献
 %=======%
+\newtoks\bibdatabase % 暂时不删除，防止不兼容之前的版本
+
 %著录项目和著录格式遵照《信息与文献参考文献著录规则》（GB/T 7714－2015）的规定执行。
-\RequirePackage{gbt7714}
-\newtoks\bibdatabase
+% https://github.com/hushidong/biblatex-gb7714-2015
+% 其实严格来说gb7714-2015不应该设置gbnamefmt=lowercase，但是太多老师、学院觉得作者全大写丑
+\RequirePackage[backend=biber, style=gb7714-2015, gbnamefmt=lowercase]{biblatex}
+\addbibresource{database.bib}
 \newcommand{\printbib}{
     \zihao{5}
-    % 这三种自己选择，因为
-    % 2020官网这里，要求gbt7714：https://ge.lzu.edu.cn/xueweishouyu/guizhangzhidu/lunwenguanli/2020/1223/158947.html
-    \bibliographystyle{gbt7714-numerical}
-    % 2023官网这里要求：https://ge.lzu.edu.cn/xiazaizhuanqu/xuewei/2023/0328/210732.html
-    % 要求，只是示例没写要求，但是英文参考文献作者没大写（大写太丑了）
-    % \bibliographystyle{bib/lzubib}
     \cleardoublepage
     \phantomsection
     \addcontentsline{toc}{chapter}{参考文献}
-    \bibliography{\the \bibdatabase}
+    \printbibliography
 }
 
 
