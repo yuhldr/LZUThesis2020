@@ -31,7 +31,7 @@
 
 本项目精简了文件，只有 `*.cls` 和 `bib`、`figure` 文件夹是必须的
 
-- [bib](bib) 文件夹里，[database.bib](bib/database.bib) 是用来放你的参考文献的，可以修改；[lzubib.bst](bib/lzubib.bst)是参考文献配置文件，小白请千万不要更改；
+- [database.bib](database.bib) 文件夹里，[database.bib](database.bib) 是用来放你的参考文献的；（之前在 `bib` 文件夹里，`4.0.0.2025` 版本开始必须移出来）
 
 - [figure](figure) 文件夹是一个图和导师签名
 

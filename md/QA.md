@@ -13,9 +13,13 @@ mac、linux、windows三系统全部测试通过，linux缺一个字体，看 [l
 
 - 请卸载 `CTEX`、`MIKTex`，使用 `texlive`
 
-- 不要用 `texwork`、`texstudio`、`texmaker`，用 `vscode`（[点我：编译器选择](./START.md/#编译器选择)），如果你实在喜欢前者，自己百度怎么 `bibtex`
+- 用 `texstudio(推荐)` 或 `vscode`（[点我：编译器选择](./START.md/#编译器选择)）。不要用 `texwork`、`texmaker`，
 
-- 不要用 `pdflatex` 那个！需要四步走，`xelatex`、`bibtex`、`xelatex`、`xelatex`，看不懂这句话的话，具体百度一下
+- 不要用 `pdflatex` 那个！需要四步走，`xelatex`、`biber`、`xelatex`、`xelatex`，看不懂这句话的话，具体百度一下
+
+比如 `texstudio` 设置中 `pdflatex` 修改为 `xelatex`
+
+![texstudio](images/texstudio.png)
 
 
 ### 可能是Linux环境字体导致
@@ -61,77 +65,13 @@ V2.1.3以及以后的版本，为了让英文字体完全与Times New Roman字�
 
 ## 参考文献
 
-### 研究生论文参考文献丑
+无需额外处理，[biblatex-gb7714-2015](https://github.com/hushidong/biblatex-gb7714-2015) 已经自动处理，如果修改部分设置，可前往该项目网站。
 
-现在默认使用 `gbt7714` 格式，如果还恢复自定义的格式，在cls文件中搜索 `bibliographystyle` 注释掉 `\bibliographystyle{gbt7714-numerical}` 这一行，取消注释 `\bibliographystyle{bib/lzubib}` 这一行即可
+以前的以下问题已经消失
 
-> 注意，自定义格式，涉及到专利、会议论文等特殊格式，有问题
-
-- [见讨论：最后几句](https://github.com/yuhldr/LZUThesis2020/issues/15)
-- [官方参考文献要求的是GBT7714](https://ge.lzu.edu.cn/xueweishouyu/guizhangzhidu/lunwenguanli/2020/1223/158947.html)
-- [GBT7714](http://www.cessp.org.cn/a258.html)
-
-
-### 参考文献标题中英文变成小写
-
-如直接从百度学术导出下列文献：
-
-```bib
-@article{陆冰鉴2020基于,
-  title={基于EEMD和LSTM的短期风速预测模型研究},
-  author={陆冰鉴 and 周鹏 and 王兴 and 周可},
-  journal={软件工程},
-  number={3},
-  pages={43-48},
-  year={2020},
-}
-```
-
-编译后会发现专有名词 `EEMD` 以及 `LSTM` 都变为了小写：
-
-此时给 title 整体多套一个大括号，即使用如下形式，即可解决问题：
-
-```bib
-title={{基于EEMD和LSTM的短期风速预测模型研究}},
-```
-
-- [见讨论](https://github.com/yuhldr/LZUThesis2020/issues/9)
-
-
-### 参考文献多位中文作者
-
-一般情况下是这样处理的
-
-```tex
-[1] Partl H, Hyna I, 兰朵儿, et al. 一份不太简短的 latex2ε 介绍 [J]. 测试期刊, 2016, 360(6403):444--446.
-```
-
-这里的 `et al.` 看起来，不太对，对于中文应该是 `等.`
-
-已经适配，可以这样处理
-
-```bib
-@Article{partl2021,
-  author = {Partl, Hubert and Hyna, Irene  and 兰朵儿 and Schlegl, Elisabeth},
-  title  = {一个中文等测试},
-  year   = {2021},
-  language = {中文},
-  journal = {测试期刊},
-  volume={3},
-  number={6},
-  pages={10--20},
-}
-```
-
-> 注意，其中加了一条
-
-```tex
-language = {中文},
-```
-
-感谢 [versemonger](https://gitee.com/versemonger) 的代码提供
-
-> 2023-5-19更新：有些地方导出的是 `language = {zh},`，也可以，已经支持
+- 研究生论文参考文献丑：通过默认设置 `gbnamefmt=lowercase` 英文作者首字母大写（而不是所有字母大写）
+- 参考文献标题中英文变成小写
+- 参考文献多位中文作者
 
 
 ## 其他

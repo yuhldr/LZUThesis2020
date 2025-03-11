@@ -40,6 +40,22 @@
 
 > 不一定是这一天更新的，只是这一天我想起来在这里补充了，更多请查看 `git history`
 
+
+## 2025.03.11
+
+> 4.0.0.2025
+
+`gb7714-2015` 中要求的英文作者所有字母大写实在是太丑了，不断有学院、学生反对，这次彻底改了
+
+使用 [biblatex-gb7714-2015](https://github.com/hushidong/biblatex-gb7714-2015) 中的gbnamefmt=lowercase 命令，文献编译命令 `bibtex` 改为 `biber`。
+
+> ⚠️ 请注意本次更新需要3步
+
+1. 替换现在这个新的 `.cls` 文件。（或者你根据git更新记录只修改 `cls` 文件中 `\printbib` 命令附近的变化）
+2. 参考文献文件 `database.bib` 从 `bib` 文件夹移动到 `bib` 上一层（即与 `template.tex` 同一个文件夹）
+3. 编译命令 `bibtex` 改为 `biber`，vscode设置或texstudio设置中需要修改！！完整设置见 [START.md](START.md)
+
+
 ## 2024.12.16
 
 > 3.5.1.2024

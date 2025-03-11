@@ -1,4 +1,4 @@
-VERSION = 3.5.1.2024
+VERSION = 4.0.0.2025
 FILE_DATE = `date +%Y-%m-%d`
 
 clear:
@@ -11,7 +11,7 @@ bks:
 	mkdir -p disk
 	mkdir -p build/bks
 
-	cp -r bib build/bks/
+	cp database.bib build/bks/
 	cp -r figures build/bks/
 	rm build/bks/figures/*.psd
 
@@ -28,7 +28,7 @@ yjs:
 	mkdir -p disk
 	mkdir -p build/yjs 
 
-	cp -r bib build/yjs/
+	cp database.bib build/yjs/
 	cp -r figures build/yjs/
 	rm build/yjs/figures/*.psd
 
@@ -44,8 +44,8 @@ all: clear yjs bks
 
 
 test: all
-	cd build/本科生_${VERSION}_${FILE_DATE} && xelatex template.tex bibtex template.tex xelatex template.tex xelatex template.tex
-	cd build/研究生_${VERSION}_${FILE_DATE} && xelatex template.tex bibtex template.tex xelatex template.tex xelatex template.tex
+	cd build/本科生_${VERSION}_${FILE_DATE} && xelatex template.tex && biber template && xelatex template.tex && xelatex template.tex
+	cd build/研究生_${VERSION}_${FILE_DATE} && xelatex template.tex && biber template && xelatex template.tex && xelatex template.tex
 
 
 push:
