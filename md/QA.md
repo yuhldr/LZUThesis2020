@@ -17,9 +17,19 @@ mac、linux、windows三系统全部测试通过，linux缺一个字体，看 [l
 
 - 不要用 `pdflatex` 那个！需要四步走，`xelatex`、`biber`、`xelatex`、`xelatex`，看不懂这句话的话，具体百度一下
 
-比如 `texstudio` 设置中 `pdflatex` 修改为 `xelatex`
+比如 `texstudio` 设置中 `pdflatex` 修改为 `xelatex`，以及 `bibtex` 改为 `biber`
 
-![texstudio](images/texstudio.png)
+改为 xelatex | 改为 biber
+-|-
+![alt text](images/texstudio.png) | ![alt text](images/texstudio2.png)
+
+
+### biber编译失败
+
+我在部分 `windows10` 上遇到过一个奇怪的问题。类似[这个](https://github.com/plk/biber/issues/59)，自己网上百度解决吧。我不用` windows10`，懒得管了
+
+你是在解决不了就用 [overleaf](https://www.overleaf.com/project) 在线编译吧
+
 
 
 ### 可能是Linux环境字体导致
@@ -27,13 +37,13 @@ mac、linux、windows三系统全部测试通过，linux缺一个字体，看 [l
 > 因为linux上默认没有Arial字体
 
 - 方法一：可以自己网上找一下，下载安装，注意名字（不是文件名，而是安装以后的字体名）要完全对上
-- 方法二：可以搜索在 [LZUThesis.cls](LZUThesis.cls) 文件中搜索 `\fontspec{Arial}`，将这一个命令删除，这个字母不用这个字体了（有点不符合论文对英摘要的要求）。
+- 方法二：可以搜索在 `LZUThesis.cls` 文件中搜索 `\fontspec{Arial}`，将这一个命令删除，这个字母不用这个字体了（有点不符合论文对英摘要的要求）。
 
 ### 可能是缓存问题
 
 > 编译的和预期有差别，你把缓存的文件清理一下，重新四步走进行编译，或者直接保存、重启电脑
 
-- 缓存的文件：比如你的文件名是 `paper.tex`，那就删除以 `paper` 开头的所有文件，当然，`paper.tex` 不要删除！！！！
+- 缓存的文件：比如你的文件名是 `template.tex`，那就删除以 `template` 开头的所有文件，当然，`template.tex` 不要删除！！！！
 
 - 理论上是这么做的，但是你删错了不关我的事。。。
 
