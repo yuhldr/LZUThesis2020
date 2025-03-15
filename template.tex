@@ -492,6 +492,7 @@ matlab代码有专门的库，但是没必要高亮太多，而且中文适配�
     \item 右上角\cite{partl2016,partl2021,partl2022-2}
     \item 中文参考文献 \cite{李刚2006基于动态光谱的脉搏血氧测量精度分析}
     \item 标题中特殊符号，bib中双层大括号即可 \cite{PhysRevLett.108.024101}
+    \item 更多测试（zotero导出）\cite{huangInvestigationThermalRectification2024, wanModulatingThermalConductivity2024, wuThermalRectificationAsymmetric2024, xiaoMOFNanozymemediatedAcetylcholinesterasefree2024}
 \end{itemize}
 
 
@@ -501,29 +502,6 @@ matlab代码有专门的库，但是没必要高亮太多，而且中文适配�
 有参考文献时，编译要经过4步，直接 xelatex --> biber --> xelatex --> xelatex，不然很多问题，vscode配置以后很方便，以下内容放在设置中，重新打开vscode即可，注意命令后面不包含.tex，而是直接 xelatex template 和 biber template
 
 修改后可以参考文献自动生成中文等字符\cite{partl2021}\cite{partl2022}\cite{partl2022-2}，引用网络资源时链接格式规范化\cite{intelnewsroomIntelUnveils12th2021,wilsonHistoryDevelopmentParallel1994}。
-
-测试右上角 \cite{partl2021}
-
-\subsubsection{中英文参考文献说明}
-
-感谢的代码贡献
-\href{https://gitee.com/versemonger}{潘麒}
-
-进一步说明，对于中文参考文献，建议添加条目 language={中文} 这一行，否则多个作者，不是 “等.”\cite{partl2021} 而是 “et al.”\cite{partl2016}
-\begin{lstlisting}[language = tex]
-
-    @Article{partl2021,
-    author = {Partl, Hubert and Hyna, Irene  and 兰朵儿 and Schlegl, Elisabeth},
-    title  = {一个中文等测试},
-    year   = {2021},
-    language = {中文},
-    journal = {测试期刊},
-    volume={3},
-    number={6},
-    pages={10--20},
-  }
-  
-\end{lstlisting}
 
 
 % subsection 参考文献 (end)
