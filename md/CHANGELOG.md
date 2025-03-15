@@ -40,6 +40,18 @@
 
 > 不一定是这一天更新的，只是这一天我想起来在这里补充了，更多请查看 `git history`
 
+## 2025.3.15
+
+> 4.0.1.2025
+
+有些地方导出的参考文献包含 `url` 和 `doi`，默认不显示
+
+
+遇到问题去这里找答案[biblatex-gb7714-2015](https://github.com/hushidong/biblatex-gb7714-2015?tab=readme-ov-file#tutorial%E4%BD%BF%E7%94%A8%E5%85%A5%E9%97%A8)
+
+因为是直接引用的，具体的设置在 `.cls` 文件中的 `backend=biber` 这一行，
+
+
 
 ## 2025.03.11
 
