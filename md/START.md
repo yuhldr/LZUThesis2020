@@ -1,8 +1,8 @@
 # 从 0 配置
 
-> 注意！！最后一次编译前，请返回 [项目这里](https://github.com/yuhldr/LZUThesis2020/releases)，**更新** 到最新的模板，一般只需要更新 `*.cls` 文件即可、部分时候需要更新 `lzubib.bst`，详细变化请查看 [更新说明](CHANGELOG.md)
+> 注意！！最后一次编译前，请返回 [项目这里](https://github.com/yuhldr/LZUThesis2020/releases)，**更新** 到最新的模板，一般只需要更新 `*.cls` 文件即可，详细变化请查看 [更新说明](CHANGELOG.md)
 
-所以平时不要轻易修改这两个文件，有问题来 [issue](https://github.com/yuhldr/LZUThesis2020/issues/new/choose) 反馈、或提交 [PR](https://github.com/yuhldr/LZUThesis2020/pulls)
+所以平时不要轻易修改`*.cls`文件，有问题来 [issue](https://github.com/yuhldr/LZUThesis2020/issues/new/choose) 反馈、或提交 [PR](https://github.com/yuhldr/LZUThesis2020/pulls)
 
 ## 方法一
 
@@ -195,63 +195,8 @@ This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded forma
    - 鼠标光标在 `.tex` 文件里，快捷键`ctrl-J`，右边 pdf 会指出当前位置
    - 鼠标左键双击 `pdf` 会显示对应左边 `.tex` 哪里
 
-## 一些使用技巧
-
-## 高级操作
-
-一般人，不要按照下面的操作！！！你会把模板改坏的，最后改到编译错误让你自己崩溃（改到你仰望我的 LaTex 水平 😂，好吧，其实我也是一天学会的，不过本科阶段你们好好学习时我就折腾过……）。。。
-
-1. 如果你觉得封面上“本科生毕业论文（设计）”和“毕业论文（设计）成绩表”这几个字的字体与学校的范例不一样（我现在用的是黑体）你可以修改 LZUThesis.cls 文件，把它设置成雅黑字体。windows 电脑上应该是有 yahei 这个命令，可以直接用；linux 和 mac 需要你自己安装字体，然后自己新建一个这样的命令。
-
-   ```tex
-   %windows系统不需要这个操作，只有linux与mac需要先百度去安装字体，再自定义如下命令
-
-   \setCJKfamilyfont{yahei}{MicrosoftYaHei}
-   \newcommand{\yahei}{\CJKfamily{yahei}}
-   ```
-
-   然后把现在设置在那几个字前面的`\heiti`改成`\yahei`
-
-   > `MicrosoftYaHei` 为你的字体在你电脑上上显示的名字，比如苹果电脑上：打开字体册应用，找到你自己安装的雅黑字体的 PostScript 名称
-
-2. ~~成绩页等加粗字体有问题，并不是宋体加粗而是黑体！~~
-
-   > 2020.5.29(2.0.0)版已经解决该问题，开启伪加粗即可，详见：[现状 0：以前用的这个模板，现在需要升级](#%e7%8e%b0%e7%8a%b60%e4%bb%a5%e5%89%8d%e7%94%a8%e7%9a%84%e8%bf%99%e4%b8%aa%e6%a8%a1%e6%9d%bf%e7%8e%b0%e5%9c%a8%e9%9c%80%e8%a6%81%e5%8d%87%e7%ba%a7)
-
-   ~~中文在 xelatex 中，windows 并不支持加粗命令`\textbf{}`或者`\bfseries`，为了方便和适配更多的系统，[大家一般都换成了黑体](https://www.zhihu.com/question/58456658)，我测试过打开全局伪加粗，windows 并没有效果（mac 和 linux 不打开就有效果），你要是很严谨（强迫症），可以自己安装加粗字体，自定义命令实现加粗（mac 和 linux 用户，可以直接使用加粗的命令，会自动伪加粗，效果也不错，我就是这么用的），需要改的地方如下~~
-
-   ~~在最新版的 LZUThesis.cls 文件中搜索：`应该是加粗`，可以找到应该改的地方，把这里的黑体设置，改成旁边注释括号里的要求~~
-
-   ~~示例如下：~~
-
-   ```tex
-   原本是
-
-   \begin{center}
-       {\heiti\zihao{3}{诚信责任书}} % “诚信责任书”这几个字，应该是加粗（宋体加粗）
-   \end{center}
-
-   mac或linux可以改成伪加粗
-
-   \begin{center}
-       {\songti\bfseries\zihao{3}{诚信责任书}} % “诚信责任书”这几个字，应该是加粗（宋体加粗）
-   \end{center}
-
-   windows需要改成：
-
-   %先百度安装字体，再在最前面合适的地方自定义加粗字体，比如你安装的字体名是：宋粗体
-   \setCJKfamilyfont{csong}{宋粗体}
-   \newcommand{\csong}{\CJKfamily{csong}}
-
-   %然后修改需要修改的地方
-   \begin{center}
-       {\csong\zihao{3}{诚信责任书}} % “诚信责任书”这几个字，应该是加粗（宋体加粗）
-   \end{center}
-   ```
-
-以上问题我在模板中没有修改的原因：
-
 > 一个模板，对于大多数人来说，拿来就可以用（兼容性好、体验也可以）才是最重要的
 > ，而一些细节问题，是为那些有能力（或者说爱折腾，不是贬义词）的人留下的，所以我对于遗留的问题在 cls 文件里，都做了注释说明
 
-1. 如果你曾经修改过参考文献格式 lzubib.bst 文件，请到 bib 文件夹中覆盖或修改，但是我觉得我的可能更完美 ~
+
+更多问题看 [QA](QA.md)

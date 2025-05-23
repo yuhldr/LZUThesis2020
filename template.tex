@@ -335,6 +335,9 @@ width=0.3\textwidth
 
 这个加粗、斜体、英文字体（含正文和公式内字体），有不同的处理方式，在 .cls 模板文件文件搜索 bm 查看详细说明
 
+
+测试不同情况：$\mathcal{P}\mathcal{T}$ 就是宋敏\songti{玥}这个玥编译不出来，一般linux上容易出现这个问题，问AI怎么自定义局部字体，或在windows环境编译
+
 \subsection{一些特殊符号}
 
 \begin{itemize}
@@ -489,7 +492,7 @@ matlab代码有专门的库，但是没必要高亮太多，而且中文适配�
     \item 连接符号测试\cite{partl2022-3}
     \item 中文空格测试\cite{partl2022}
     \item 连续显示\cite{partl2021,partl2022-2,partl2022-3}
-    \item 右上角\cite{partl2016,partl2021,partl2022-2}
+    \item 右上角\supercite{partl2016,partl2021,partl2022-2}，如果全文需要，删除cls文件中的', citestyle=numeric' 内容
     \item 中文参考文献 \cite{李刚2006基于动态光谱的脉搏血氧测量精度分析}
     \item 标题中特殊符号，bib中双层大括号即可 \cite{PhysRevLett.108.024101}
     \item 更多测试（zotero导出）\cite{huangInvestigationThermalRectification2024, wanModulatingThermalConductivity2024, wuThermalRectificationAsymmetric2024, xiaoMOFNanozymemediatedAcetylcholinesterasefree2024}
