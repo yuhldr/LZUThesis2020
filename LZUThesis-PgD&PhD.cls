@@ -50,7 +50,7 @@
 {%
     \ctexset{
         % 给的word示例，正文章节前面，空间小，你如果追求一致，可以尝试取消下面的注释
-        % chapter/fixskip = true,
+        chapter/fixskip = true,
         contentsname={目\quad 录}
     }
 }
