@@ -680,8 +680,9 @@
 
 %著录项目和著录格式遵照《信息与文献参考文献著录规则》（GB/T 7714－2015）的规定执行。
 % https://github.com/hushidong/biblatex-gb7714-2015
-% 其实严格来说gb7714-2015不应该设置gbnamefmt=lowercase，但是太多老师、学院觉得作者全大写丑
-\RequirePackage[backend=biber, style=gb7714-2015, gbnamefmt=lowercase, url=false, doi=false]{biblatex}
+% 1. 其实严格来说gb7714-2015不应该设置gbnamefmt=lowercase，但是太多老师、学院觉得作者全大写丑
+% 2. 默认引用不右上角角标，如果右上角角标，删除 `,citestyle=numeric` 部分
+\RequirePackage[backend=biber, style=gb7714-2015, gbnamefmt=lowercase, url=false, doi=false, citestyle=numeric]{biblatex}
 \addbibresource{database.bib}
 \newcommand{\printbib}{
     \zihao{5}
