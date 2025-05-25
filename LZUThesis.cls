@@ -93,7 +93,19 @@
 % \makebox[0pt][l]{$\square$}\raisebox{.15ex}{\hspace{0.1em}$\checkmark$}
 % \mbox{\ooalign{$\checkmark$\cr\hidewidth$\square$\hidewidth\cr}}
 
-\newcommand{\done}{ \makebox[0pt][l]{$\square$}\raisebox{.15ex}{\hspace{0.1em}$\checkmark$}}
+
+\newcommand{\undone}{
+    \scalebox{1.5}{\raisebox{-0.8pt}{$\square$}}
+}
+
+\newcommand{\done}{
+    \hspace{-7.5pt}
+    \scalebox{1.5}{
+        \makebox[0pt][l]{\raisebox{-0.8pt}{$\square$}}
+        \raisebox{.1ex}{\hspace{-0.18em}$\checkmark$}
+    }
+    \hspace{-11pt}
+}
 
 %============================ 我自己用的一些小命令 =========%
 
@@ -451,10 +463,10 @@
 
     本毕业论文（设计）研究内容：
 
-    % 如果不能公开，请把下面这两个置换    \done   $\square$
+    % 如果不能公开，请把下面这两个置换    \done   \undone
     \done 可以公开
 
-    $\square$  不宜公开，已在学位办公室办理保密申请，解密后适用本授权书。
+    \undone 不宜公开，已在学位办公室办理保密申请，解密后适用本授权书。
 
     （请在以上选项内选择其中一项打“$\surd$”）
 
