@@ -272,8 +272,9 @@
 
 \fancypagestyle{mainmatterstyle}{
     \fancyhf{}
-    \lhead{\songti\zihao{-5}兰州大学\the\yjsType 学位论文}% % todo
-    \rhead{\songti\zihao{-5}\@title}
+    % 2023年新增两边缩进2字符
+    \lhead{\hspace*{2em}\songti\zihao{-5}兰州大学\the\yjsType 学位论文}% % todo
+    \rhead{\songti\zihao{-5}\@title\hspace*{2em}}
     % Footers
     \fancyfoot{} % clear all footer fields
     \cfoot[C]{\thepage}
@@ -691,9 +692,16 @@
 
 %著录项目和著录格式遵照《信息与文献参考文献著录规则》（GB/T 7714－2015）的规定执行。
 % https://github.com/hushidong/biblatex-gb7714-2015
-% 1. 其实严格来说gb7714-2015不应该设置gbnamefmt=lowercase，但是太多老师、学院觉得作者全大写丑
-% 2. 默认引用不右上角角标，如果右上角角标，删除 `,citestyle=numeric` 部分
+
+% 版式1：严格按照gb7714-2015版式, 
+% \RequirePackage[backend=biber, style=gb7714-2015, gbnamefmt=lowercase, url=false, doi=false]{biblatex}
+
+% 版式2：研究生院word生成PDF版本
+% 按照和word生成字号大小一致
 \RequirePackage[backend=biber, style=gb7714-2015, gbnamefmt=lowercase, url=false, doi=false, citestyle=numeric]{biblatex}
+\let\oldcite\cite
+\renewcommand{\cite}[1]{\textsuperscript{\textsuperscript{\oldcite{#1}}}}
+
 \addbibresource{database.bib}
 \newcommand{\printbib}{
     \zihao{5}
