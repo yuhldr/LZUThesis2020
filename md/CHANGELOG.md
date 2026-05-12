@@ -40,6 +40,24 @@
 
 > 不一定是这一天更新的，只是这一天我想起来在这里补充了，更多请查看 `git history`
 
+## 2026.5.11
+
+> 仅修改了研究生版 LZUThesis-PgD&PhD.cls
+
+- 修改页眉文字，（文字内容不同，缺少两边对齐） 
+- 新增了跨页伪代码 `breakablealgorithm`，用法与`algorithm`一致
+- 修复表内字体大小为5号，并添加四级子标题章节号 ```\AtEndPreamble{
+  \AtBeginEnvironment{tabular}{\zihao{5}}
+  \AtBeginEnvironment{tabularx}{\zihao{5}}
+}
+% 4级子标题编号，不需要标题可注释
+\setcounter{secnumdepth}{4}```
+- 修改了引用的大小和连线问题（1.兰大word导出上标大小比真国标略小。2. [38bf209
+](https://github.com/yuhldr/LZUThesis2020/commit/38bf2099444da709b906257c866e44cca7079a0a)版本修复的连线仍存在过短却连线的问题，例如，原版为[1-2,4-7]但标准为[1,2,4-7]） `\RequirePackage[backend=biber, style=gb7714-2015, gbnamefmt=lowercase, url=false, doi=false, gbcitecomp=true]{biblatex}
+\let\oldcite\cite
+\renewcommand{\cite}[1]{\textsuperscript{\oldcite{#1}}}
+`
+- 修改了伪代码编号错误 `\numberwithin{algorithm}{chapter}`
 
 ## 2025.5.23
 

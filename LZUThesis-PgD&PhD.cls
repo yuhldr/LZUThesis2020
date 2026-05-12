@@ -43,8 +43,8 @@
 %%
 \def\CTEX@subsubsection@format{\heiti\zihao{-4}}
 % \def\CTEX@subsubsection@indent{2\ccwd}
-% \def\CTEX@subsubsection@beforeskip{2ex \@plus 1ex \@minus .2ex}
-% \def\CTEX@subsubsection@afterskip{1.0ex \@plus .2ex}
+\def\CTEX@subsubsection@beforeskip{2ex \@plus 1ex \@minus .2ex}
+\def\CTEX@subsubsection@afterskip{1.0ex \@plus .2ex}
 
 \@ifclasslater{ctexbook}{2011/03/13}
 {%
@@ -272,8 +272,9 @@
 
 \fancypagestyle{mainmatterstyle}{
     \fancyhf{}
-    \lhead{\songti\zihao{-5}兰州大学\the\yjsType 学位论文}% % todo
-    \rhead{\songti\zihao{-5}\@title}
+    % 2023年新增两边缩进2字符
+    \lhead{\hspace*{2em}\songti\zihao{-5}兰州大学\the\yjsType 学位论文}% % todo
+    \rhead{\songti\zihao{-5}\@title\hspace*{2em}}
     % Footers
     \fancyfoot{} % clear all footer fields
     \cfoot[C]{\thepage}
@@ -419,7 +420,7 @@
             {\LZUunderline[320pt]{ \bfseries\songti \zihao{-3}  \the\advisor}}                                                                                                               \\[0.40cm]
             {\bfseries\songti \zihao{4}{合\hfill 作\hfill 导\hfill 师}}  &
             {\LZUunderline[320pt]{ \bfseries\songti \zihao{-3}  \the\codvisor}}                                                                                                              \\[0.40cm]
-            {\bfseries\songti \zihao{4}{论文工作时间段}}                    &
+            {\bfseries\songti \zihao{4}{论\hfill  文\hfill  工\hfill  作\hfill 时\hfill 段}}                    &
             {\LZUunderline[320pt]{ \bfseries\songti \zihao{-3}  \the\elapse}}                                                                                                                \\[0.40cm]
             {\bfseries\songti \zihao{4}{答\hfill 辩\hfill 日\hfill 期}}  &
             {\LZUunderline[320pt]{ \bfseries\songti \zihao{-3}  \the\defense}}                                                                                                               \\[0.40cm]
@@ -657,6 +658,29 @@
 \renewcommand{\algorithmicensure}{\bfseries{输出:}}
 
 
+%---------------------------
+%跨页版程序伪代码实现
+%---------------------------
+\newenvironment{breakablealgorithm}{
+\begin{center}
+    \refstepcounter{algorithm}
+    \hrule height.8pt depth0pt \kern2pt
+    \renewcommand{\caption}[2][\relax]{% 在环境内重定义 \caption
+    {\raggedright\textbf{算法 \thealgorithm} ##2\par}%
+    \ifx\relax##1\relax % 如果没有提供可选参数（目录标题）
+        \addcontentsline{loa}{algorithm}{\protect\numberline{\thealgorithm}##2}%
+    \else % 如果提供了可选参数
+        \addcontentsline{loa}{algorithm}{\protect\numberline{\thealgorithm}##1}%
+    \fi
+    \kern2pt\hrule\kern2pt
+    }
+}
+{
+\kern2pt\hrule\relax% 底部线
+\end{center}
+}
+
+
 %改变图表的编号格式
 
 % 图：图名置于图的下方，五号字，宋体，居中（英文用Times New Roman体10.5磅），单倍行距，段前6磅，段后12磅，图序与图名之间空1个汉字符。
@@ -666,6 +690,8 @@
 \renewcommand{\theequation}{\thechapter-\@arabic \c@equation}
 \renewcommand{\thefigure}{\thechapter-\@arabic \c@figure}
 \renewcommand{\thetable}{\thechapter-\@arabic  \c@table}
+% 修改算法编号问题（算法全文计数）
+\numberwithin{algorithm}{chapter}
 \renewcommand{\thealgorithm}{\thechapter-\arabic {algorithm}}
 % 图序与图名之间空2个汉字符。2020年新规定 【2020】77号 文件
 \DeclareCaptionLabelSeparator{qquad}{\qquad}  %两个汉字符
@@ -681,6 +707,14 @@
 % \setlength{\abovedisplayskip}{1pt}
 % \setlength{\belowdisplayskip}{1pt}
 
+% 修改表格字体5号（2023年版）
+\AtEndPreamble{
+  \AtBeginEnvironment{tabular}{\zihao{5}}
+  \AtBeginEnvironment{tabularx}{\zihao{5}}
+}
+% 4级子标题编号，不需要标题可注释
+\setcounter{secnumdepth}{4}
+
 % 公式左对齐
 \newcommand{\mathleft}{\@fleqntrue\@mathmargin 21pt}
 
@@ -691,9 +725,16 @@
 
 %著录项目和著录格式遵照《信息与文献参考文献著录规则》（GB/T 7714－2015）的规定执行。
 % https://github.com/hushidong/biblatex-gb7714-2015
-% 1. 其实严格来说gb7714-2015不应该设置gbnamefmt=lowercase，但是太多老师、学院觉得作者全大写丑
-% 2. 默认引用不右上角角标，如果右上角角标，删除 `,citestyle=numeric` 部分
-\RequirePackage[backend=biber, style=gb7714-2015, gbnamefmt=lowercase, url=false, doi=false, citestyle=numeric-comp]{biblatex}
+
+% 版式1：严格按照gb7714-2015版式, 
+% \RequirePackage[backend=biber, style=gb7714-2015, gbnamefmt=lowercase, url=false, doi=false]{biblatex}
+
+% 版式2：研究生院word生成PDF版本
+% 按照和word生成字号大小一致，且连线风格为间隔三个才连线，例如[1-2,4-7]改成[1,2,4-7]
+\RequirePackage[backend=biber, style=gb7714-2015, gbnamefmt=lowercase, url=false, doi=false, gbcitecomp=true]{biblatex}
+\let\oldcite\cite
+\renewcommand{\cite}[1]{\textsuperscript{\oldcite{#1}}}
+
 \addbibresource{database.bib}
 \newcommand{\printbib}{
     \zihao{5}
