@@ -27,7 +27,7 @@
 
 2. 测试安装是否成功
 
-3. 配置编译器，可见[编译器选择](#编译器选择)，不要使用 `TexLive` 自带的 `texwork`！！请使用`texstudio` 或 `vscode`！！
+3. 配置编辑器，可见[编辑器选择](#编辑器选择)，不要使用 `TexLive` 自带的 `texwork`！！请使用`texstudio` 或 `vscode`！！
 
 ---
 
@@ -59,7 +59,24 @@ This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded forma
 
 说明成功
 
-### 编译器选择
+### texlive 安装过程的一些错误处理
+1. 报错大致如下（可能有些许差异）  
+```
+open(>C:\Users|x(00d5)x{00c5)3é\AppData\LocalTemp\7v1OwfO5rB(hguYDKBg5H/a2ping.windows.r65891.tar.xz) failed: No such file or directory at F:/texlive2024/tlpkg/TeXLive/TLUtils.pm line 1525,<STDIN>line 220.
+```  
+这样的错误一般由中中文路径导致（表现为安装一分钟就停了，然后日志最后是上面的内容或有些许差异，而安装texlive的正常时长应该以小时为单位）  
+进一步确定错误：打开cmd（不要以管理员），如果看到的是：`C:\Users\一段中文,也就是你的用户名>`那么恭喜，请看下方解决部分  
+
+解决：  
+方法一：  
+在环境变量中，将TEMP和TMP的值改为一个不含中文的路径  
+使用此方法时，注意使用一个不需要管理员权限就可以访问的目录，否则之后的编辑器都要以管理员运行（很麻烦。。。）  
+方法二：  
+貌似有更改中文用户名为英文的方法，自行百度  
+方法二：  
+重装吧孩子。。。。。下辈子记得用户名用英文  
+
+### 编辑器选择
 
 推荐用 [texstudio](https://texstudio.sourceforge.net/) 吧，最简单，设置需要修改两个地方
 
